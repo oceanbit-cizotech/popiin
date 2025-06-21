@@ -1,0 +1,54 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+built application files
+*.apk
+*.ap_
+
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+
+# Windows thumbnail db
+Thumbs.db
+
+.idea
+.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+build/
+.navigation
+captures/
+output.json
+/app/google-services-dev.json
+*.bin
+*.bin
+*.bin
+.gradle/7.3.3/checksums/checksums.lock
+.gradle/7.3.3/checksums/checksums.lock
+.gradle/7.3.3/fileHashes/fileHashes.bin
+.gradle/7.3.3/checksums/checksums.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/outputFiles.bin
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/outputFiles.bin
+/app/release/
