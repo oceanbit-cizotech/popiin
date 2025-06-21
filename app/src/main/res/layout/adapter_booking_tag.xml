@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ticket"
+            type="com.popiin.model.TicketBook" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/_margin_half"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_book_tag"
+            style="@style/text_medium"
+            android:padding="@dimen/_margin_half"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/bg_ticket_tag"
+            android:textColor="@color/colorWhite"
+            android:text="@{ticket.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

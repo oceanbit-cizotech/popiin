@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_entry_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_padding_mid"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <include
+                android:id="@+id/top_header"
+                layout="@layout/incl_header_with_back"
+                bind:isHide="@{true}"
+                bind:title="@{@string/txt_payment_info}" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_header">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_padding">
+
+                    <!--                    <FrameLayout-->
+                    <!--                        android:id="@+id/img_back"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingVertical="@dimen/_margin"-->
+                    <!--                        android:paddingRight="@dimen/_margin"-->
+                    <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@+id/header">-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_gravity="center"-->
+                    <!--                            android:src="@drawable/ic_back_grey" />-->
+                    <!--                    </FrameLayout>-->
+
+                    <!-- first name-->
+                    <!-- <include
+                         android:id="@+id/first_name"
+                         layout="@layout/row_lbl_with_textview"
+                         bind:title="@{@string/lbl_firstname}" />-->
+
+
+                    <TextView
+                        android:id="@+id/lbl_title"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/lbl_firstname"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/first_name"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_first_name"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!--       &lt;!&ndash; last name&ndash;&gt;
+                           <include
+                               android:id="@+id/last_name"
+                               layout="@layout/row_lbl_with_textview"
+                               bind:title="@{@string/lbl_lastname}" />-->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/lbl_lastname"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/last_name"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_last_name"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!-- DOB-->
+                    <include
+                        android:id="@+id/tv_dob"
+                        layout="@layout/row_lbl_with_date_picker"
+                        bind:title="@{@string/lbl_date_of_birth}" />
+
+
+                    <!-- email address-->
+                    <!--  <include
+                          android:id="@+id/tv_email_address"
+                          layout="@layout/row_lbl_with_textview"
+                          bind:title="@{@string/apm_email_address}" />-->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/apm_email_address"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/email"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_email"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!-- address-->
+                    <include
+                        android:id="@+id/tv_address"
+                        layout="@layout/row_lbl_with_multiline_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        bind:title="@{@string/apm_address}" />
+
+                    <!-- event city-->
+                    <!--   <include
+                           android:id="@+id/tv_city"
+                           layout="@layout/row_lbl_with_textview"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_marginRight="@dimen/_margin_half"
+                           android:layout_weight="1"
+                           bind:title="@{@string/apm_city}" />-->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/apm_city"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/city"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_city"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!-- event pincode-->
+                    <!--   <include
+                           android:id="@+id/tv_pincode"
+                           layout="@layout/row_lbl_with_textview"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_pa
+                           rent"
+                           android:layout_weight="1"
+                           bind:title="@{@string/apm_postcode}" />-->
+
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/apm_postcode"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/postcode"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_postcode"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <TextView
+                        style="@style/text_x_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:layout_marginTop="@dimen/_margin2"
+                        android:layout_marginBottom="@dimen/_margin"
+                        android:text="@string/apm_bank_details"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans" />
+
+                    <!-- Account name-->
+                    <!--
+                                        <include
+                                            android:id="@+id/tv_account_name"
+                                            layout="@layout/row_lbl_with_textview"
+                                            bind:title="@{@string/apm_account_name}" />
+                    -->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/apm_account_name"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/account_name"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_account_name"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!-- Sort code-->
+                    <!--    <include
+                            android:id="@+id/tv_sort_code"
+                            layout="@layout/row_lbl_with_textview"
+                            bind:title="@{@string/apm_account_sort_code}" />-->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/apm_account_sort_code"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/sortcode"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_sortcode"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <!-- Account number-->
+                    <!--    <include
+                            android:id="@+id/tv_account_no"
+                            layout="@layout/row_lbl_with_edittext_number"
+                            bind:title="@{@string/apm_account_number}" />-->
+
+                    <TextView
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/apm_account_number"
+                        android:textColor="@color/colorPrimaryTextWithoutTrans"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/account_no"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/tv_error_account_no"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:textColor="@color/colorAccent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+                    <TextView
+                        android:id="@+id/tv_payment_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_marginTop="@dimen/_margin2"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <carbon.widget.LinearLayout
+                            android:id="@+id/ll_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorSemiGrey"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            app:carbon_cornerRadius="@dimen/_corner_radius_22_5">
+
+                            <carbon.widget.TextView
+                                android:id="@+id/tv_edit"
+                                style="@style/text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_margin_half"
+                                android:drawableLeft="@drawable/ic_venue_edit"
+                                android:drawablePadding="@dimen/_padding_half"
+                                android:gravity="center"
+                                android:text="@string/txt_edit"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorHeaderText"
+                                app:carbon_cornerRadius="@dimen/_corner_radius_22_5"
+                                tools:visibility="visible" />
+                        </carbon.widget.LinearLayout>
+
+
+                        <carbon.widget.TextView
+                            android:id="@+id/tv_save"
+                            style="@style/text_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_black_btn_with_round_corner"
+                            android:gravity="center"
+                            android:text="@string/btn_event_save"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite"
+                            android:visibility="gone"
+                            app:carbon_cornerRadius="@dimen/_corner_radius_22_5" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

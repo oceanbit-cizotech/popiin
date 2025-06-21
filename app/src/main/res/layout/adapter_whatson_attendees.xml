@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="venue"
+            type="com.popiin.res.VenueListRes.Venue" />
+    </data>
+
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin_20"
+        android:layout_marginVertical="@dimen/_margin_half"
+        android:background="@color/colorGreyLight"
+        android:paddingVertical="@dimen/_padding"
+        app:carbon_cornerRadius="@dimen/_corner_radius_20"
+        app:carbon_stroke="@color/colorRVBorder"
+        app:carbon_strokeWidth="1dp">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_venue"
+            android:layout_width="@dimen/map_list_item_heart_size"
+            android:layout_height="@dimen/map_list_item_heart_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:background="@color/colorBlue"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_blue_calendar"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:carbon_tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_venue_title"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="@{venue.venue_name}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="@id/iv_venue"
+            app:layout_constraintLeft_toRightOf="@id/iv_venue"
+            app:layout_constraintTop_toTopOf="@id/iv_venue"
+            tools:text="Title" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="@dimen/venue_reserve_edit_size"
+            android:layout_height="@dimen/venue_reserve_edit_size"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:src="@drawable/ic_edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_venue_title"
+            app:layout_constraintLeft_toRightOf="@id/tv_venue_title"
+            app:tint="@color/colorEdit" />
+
+        <ImageView
+            android:id="@+id/switch_event_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </carbon.widget.ConstraintLayout>
+</layout>

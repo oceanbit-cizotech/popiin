@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="image"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="value"
+            type="String" />
+
+        <variable
+            name="bgColor"
+            type="int" />
+
+    </data>
+
+    <carbon.widget.ConstraintLayout
+        android:background="@{bgColor}"
+        app:carbon_cornerRadius="@dimen/_corner_radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_sales_summary"
+            tools:src="@drawable/ic_sales_report_book"
+            android:src="@{image}"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="935"
+            android:id="@+id/tv_value"
+            android:fontFamily="@font/inter_semi_bold"
+            style="@style/text_x_medium"
+            android:text="@{value}"
+            app:layout_constraintBottom_toTopOf="@id/tv_title"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintLeft_toRightOf="@id/iv_sales_summary"
+            app:layout_constraintTop_toTopOf="@id/iv_sales_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="935"
+            android:id="@+id/tv_title"
+            style="@style/text_xsmall"
+            android:text="@{title}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_sales_summary"
+            android:textColor="@color/colorSalesSummDesc"
+            app:layout_constraintLeft_toLeftOf="@id/tv_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </carbon.widget.ConstraintLayout>
+
+</layout>

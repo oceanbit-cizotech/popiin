@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/search_bar"
+            layout="@layout/row_search_bar"
+            android:layout_marginTop="@dimen/_margin3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:hint="@{@string/txt_search_explore}" />
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_stories" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:paddingBottom="@dimen/_padding"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar">
+
+            <TextView
+                android:id="@+id/tv_trending_stories"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/txt_trending_stories"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_view_all"
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_margin_mid"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/txt_view_all"
+                android:textColor="@color/colorBlue"
+                app:layout_constraintBottom_toBottomOf="@id/tv_trending_stories"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_trending_stories" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_trend_stories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_marginTop="@dimen/_margin"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_view_all" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_margin2_mid"
+            android:layout_marginLeft="@dimen/_margin2"
+            android:layout_marginRight="@dimen/_margin_40"
+            android:background="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="@+id/search_bar"
+            app:layout_constraintRight_toRightOf="@+id/search_bar"
+            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:paddingHorizontal="@dimen/_padding2_mid"
+            android:paddingVertical="@dimen/_padding_half_mid"
+            android:text="@string/txt_search"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_22_5"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintLeft_toLeftOf="@id/search_bar"
+            app:layout_constraintRight_toRightOf="@id/search_bar"
+            app:layout_constraintTop_toBottomOf="@id/cl_stories"
+           />
+
+        <carbon.widget.FloatingActionButton
+            android:id="@+id/iv_current_location_icon"
+            android:layout_width="@dimen/img_gps_size"
+            android:layout_height="@dimen/img_gps_size"
+            android:layout_marginRight="@dimen/_margin_20"
+            android:background="@color/colorWhite"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_location_new"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            app:layout_constraintVertical_bias="0.75" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cor_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <include
+                    android:id="@+id/include_bottom_sheet"
+                    layout="@layout/dialog_map_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:behavior_fitToContents="true"
+                    app:behavior_hideable="false"
+                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+                <FrameLayout
+                    android:visibility="gone"
+                    app:layout_anchor="@+id/include_bottom_sheet"
+                    app:layout_anchorGravity="top|end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <carbon.widget.FloatingActionButton
+                        android:id="@+id/iv_current_location"
+                        android:layout_width="@dimen/img_gps_size"
+                        android:layout_height="@dimen/img_gps_size"
+                        android:layout_marginRight="@dimen/_margin_20"
+                        android:layout_marginTop="@dimen/_margin_90"
+                        android:background="@color/colorWhite"
+                        android:padding="@dimen/_padding_half"
+                        android:src="@drawable/ic_gps"
+                        app:carbon_cornerRadius="@dimen/_corner_radius_25"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+                </FrameLayout>
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

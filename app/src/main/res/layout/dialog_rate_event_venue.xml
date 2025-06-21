@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="selectedRate"
+            type="String" />
+
+        <variable
+            name="rate"
+            type="int" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <carbon.widget.LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin2"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_padding"
+            android:paddingBottom="@dimen/_padding"
+            app:carbon_cornerRadius="5dp"
+            app:carbon_elevation="2dp"
+            app:carbon_stroke="@color/colorPrimary"
+            app:carbon_strokeWidth="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:text="@string/txt_rate_your_experience"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin2"
+                android:gravity="center">
+
+                <include
+                    android:id="@+id/rate_very_cold"
+                    layout="@layout/include_rate_popup"
+                    bind:icon="@{@drawable/icn_loader1}" />
+
+                <include
+                    android:id="@+id/rate_cold"
+                    layout="@layout/include_rate_popup"
+                    bind:icon="@{@drawable/icn_loader2}" />
+
+                <include
+                    android:id="@+id/rate_hot"
+                    layout="@layout/include_rate_popup"
+                    bind:icon="@{@drawable/icn_loader3}" />
+
+                <include
+                    android:id="@+id/rate_very_hot"
+                    layout="@layout/include_rate_popup"
+                    bind:icon="@{@drawable/icn_loader4}" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_margin"
+                android:text="@{selectedRate}"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <carbon.widget.TextView
+                android:id="@+id/btn_submit"
+                style="@style/btn_style"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_margin2"
+                android:layout_marginTop="@dimen/_margin2"
+                android:layout_marginRight="@dimen/_margin2"
+                android:layout_marginBottom="@dimen/_margin_half"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:text="@string/txt_submit"
+                android:textColor="@color/colorWhite"
+                app:carbon_elevation="@dimen/_elevation_half" />
+
+        </carbon.widget.LinearLayout>
+
+        <carbon.widget.ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/colorWhite"
+            android:padding="10dp"
+            app:carbon_cornerRadius="18dp"
+            app:carbon_elevation="@dimen/_elevation_half"
+            app:layout_constraintBottom_toTopOf="@id/ll_main"
+            app:layout_constraintLeft_toRightOf="@id/ll_main"
+            app:layout_constraintRight_toRightOf="@+id/ll_main"
+            app:layout_constraintTop_toTopOf="@id/ll_main" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

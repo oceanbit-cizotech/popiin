@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="ticket"
+            type="com.popiin.model.TicketBook" />
+        <variable
+            name="isdelete"
+            type="Boolean" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:layout_margin="@dimen/_margin_half_half"
+                bind:title="@{@string/abt_booking_type}"
+                bind:value="@{ticket.name}"
+                layout="@layout/row_lbl_with_textview_medium"
+                android:layout_weight="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <include
+                android:id="@+id/include_price"
+                android:layout_margin="@dimen/_margin_half_half"
+                bind:title="@{@string/abt_price}"
+                bind:value="@{price}"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/row_lbl_with_textview_medium" />
+            <include
+                android:layout_margin="@dimen/_margin_half_half"
+                layout="@layout/row_lbl_with_textview_medium"
+                bind:title="@{@string/abt_quantity}"
+                bind:value="@{ticket.quantity}"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_margin="@dimen/_margin_half_half"
+                android:layout_weight="1"
+                android:id="@+id/img_cross"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_cross"
+                android:visibility="@{(isdelete &amp;&amp; ticket.isNew == true )? View.VISIBLE : View.INVISIBLE}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

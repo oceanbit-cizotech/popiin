@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_reservation_list}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_whats_on_reservation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/_padding_80"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header" />
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_add_reservation"
+            android:layout_width="@dimen/civ_img_size"
+            android:layout_height="@dimen/civ_img_size"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:layout_marginBottom="@dimen/_margin"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_add"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <include
+            android:id="@+id/incl_message"
+            layout="@layout/include_no_list_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

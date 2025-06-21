@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:paddingBottom="@dimen/_padding2"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            android:animateLayoutChanges="true"
+            app:carbon_cornerRadiusTopEnd="@dimen/_corner_radius"
+            app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                android:background="@color/colorView"
+                android:layout_marginTop="@dimen/_margin_10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"/>
+
+            <TextView
+                android:id="@+id/tv_menu"
+                android:textColor="@color/colorHeaderText"
+                android:fontFamily="@font/inter_bold"
+                style="@style/text_medium"
+                android:text="@string/txt_add_booking_type"
+                android:layout_margin="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <include
+                android:layout_margin="@dimen/_margin"
+                android:id="@+id/sp_booking_option"
+                layout="@layout/row_lbl_spinner_with_icon"
+                android:layout_width="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_menu"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/abt_select_booking_option}" />
+
+            <!-- Enter Ticket Name-->
+            <include
+                android:layout_margin="@dimen/_margin"
+                android:id="@+id/edt_ticket_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sp_booking_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/row_lbl_text_with_hint"
+                bind:hint="@{@string/txt_err_enter_details}"
+                bind:title="@{@string/abt_enter_ticket_name}" />
+
+            <LinearLayout
+                android:id="@+id/ll_book_type"
+                android:layout_margin="@dimen/_margin"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_ticket_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Price -->
+                <include
+                    android:id="@+id/edt_ticket_price"
+                    layout="@layout/row_lbl_text_with_hint_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    bind:hint="@{@string/txt_enter_price_symbol}"
+                    bind:title="@{@string/abt_price}" />
+
+                <!-- Quantity -->
+                <include
+                    android:id="@+id/edt_ticket_quantity"
+                    layout="@layout/row_lbl_text_with_hint_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    bind:hint="@{@string/txt_enter_qty}"
+                    bind:title="@{@string/abt_quantity}" />
+            </LinearLayout>
+
+            <carbon.widget.TextView
+                android:id="@+id/btn_add_booking"
+                app:layout_constraintRight_toRightOf="@id/ll_book_type"
+                app:layout_constraintLeft_toLeftOf="@id/ll_book_type"
+                android:layout_marginTop="@dimen/_margin_40"
+                app:layout_constraintTop_toBottomOf="@id/ll_book_type"
+                style="@style/btn_style"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="@string/txt_add_booking"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"/>
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

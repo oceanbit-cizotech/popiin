@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.ConstraintLayout
+        app:carbon_cornerRadiusTopEnd="@dimen/_corner_radius"
+        app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/cl_main"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_main"
+            app:carbon_cornerRadiusTopEnd="@dimen/_corner_radius"
+            app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ConstraintLayout
+                android:id="@+id/cl_pass"
+                android:paddingBottom="@dimen/_padding_40"
+                android:background="@color/colorWhite"
+                app:layout_constraintTop_toTopOf="parent"
+                app:carbon_cornerRadiusTopEnd="@dimen/_corner_radius"
+                app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_view"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                    android:background="@color/colorView"
+                    android:layout_marginTop="@dimen/_margin_10"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/view_width"
+                    android:layout_height="@dimen/view_height"/>
+                <carbon.widget.FrameLayout
+                    android:id="@+id/fl_map"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:layout_marginHorizontal="@dimen/_margin_mid"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_view">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </carbon.widget.FrameLayout>
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_direction"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_margin"
+                    android:layout_weight="1"
+                    style="@style/btn_style"
+                    android:textAllCaps="false"
+                    android:drawablePadding="@dimen/_padding_half"
+                    android:gravity="center"
+                    app:layout_constraintRight_toRightOf="@id/fl_map"
+                    app:layout_constraintLeft_toLeftOf="@id/fl_map"
+                    app:layout_constraintTop_toBottomOf="@id/fl_map"
+                    android:text="@string/txt_get_directions" />
+
+            </carbon.widget.ConstraintLayout>
+
+        </carbon.widget.ConstraintLayout>
+
+
+    </carbon.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorSemiGrey">
+
+            <TextView
+                android:id="@+id/tv_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin2"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                android:text="@string/txt_menu_settings"
+                android:textColor="@color/colorHeaderText"
+                android:textSize="@dimen/large_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="@dimen/civ_img_size"
+                android:layout_height="@dimen/civ_img_size"
+                android:layout_marginTop="@dimen/_margin_20"
+                app:civ_border_color="@color/chartDemoGraphColor2"
+                app:civ_border_width="1dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_settings" />
+
+            <TextView
+                android:id="@+id/tv_profile_name"
+                style="@style/text_x_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintLeft_toLeftOf="@id/iv_profile"
+                app:layout_constraintRight_toRightOf="@id/iv_profile"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:gravity="center"
+                android:textColor="@color/colorSecondaryText"
+                app:layout_constraintLeft_toLeftOf="@id/tv_profile_name"
+                app:layout_constraintRight_toRightOf="@id/tv_profile_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_edit_profile"
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_padding_half_mid"
+                android:paddingVertical="@dimen/_padding_half"
+                android:text="@string/txt_edit_profile"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_18"
+                app:layout_constraintLeft_toLeftOf="@id/tv_address"
+                app:layout_constraintRight_toRightOf="@id/tv_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_margin_20"
+                android:background="@drawable/bg_white_with_top_round_corner"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_edit_profile">
+
+                <include
+                    android:id="@+id/incl_business"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_business}"
+                    bind:title="@{@string/txt_business}" />
+
+             <!--   <include
+                    android:id="@+id/incl_account_management"
+                    layout="@layout/include_settings_menu"
+                    android:visibility="gone"
+                    bind:image="@{@drawable/ic_setting_ac_mgmt}"
+                    bind:title="@{@string/txt_account_management}" />-->
+
+                <include
+                    android:id="@+id/incl_profile"
+                    android:visibility="gone"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_profile}"
+                    bind:title="@{@string/txt_profile}" />
+
+                <include
+                    android:id="@+id/incl_notification"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_notifications}"
+                    bind:title="@{@string/txt_notifications}" />
+
+                <include
+                    android:id="@+id/incl_my_bookings"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_my_booking}"
+                    bind:title="@{@string/txt_my_bookings}" />
+
+                <include
+                    android:visibility="gone"
+                    android:id="@+id/incl_my_whatson_bookings"
+                    layout="@layout/include_settings_menu"
+                    bind:desc="@{@string/txt_setup_business}"
+                    bind:image="@{@drawable/ic_setting_my_booking}"
+                    bind:title="@{@string/txt_my_whatson_bookings}" />
+
+                <include
+                    android:id="@+id/incl_refer_friend"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_refer_friend}"
+                    bind:title="@{@string/txt_refer_friend}" />
+
+                <include
+                    android:id="@+id/incl_get_support"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_support}"
+                    bind:title="@{@string/txt_get_support}" />
+
+                <include
+                    android:id="@+id/incl_about"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_info}"
+                    bind:title="@{@string/txt_about}" />
+
+                <include
+                    android:id="@+id/incl_sign_out"
+                    layout="@layout/include_settings_menu"
+                    bind:image="@{@drawable/ic_setting_logout}"
+                    bind:title="@{@string/txt_sign_out}" />
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

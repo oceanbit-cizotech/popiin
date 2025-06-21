@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.ConstraintLayout
+        app:carbon_cornerRadius="@dimen/_corner_radius"
+        android:background="@color/colorSemiGrey"
+        android:layout_margin="@dimen/_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_basic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                bind:desc="@{@string/txt_age}"
+                bind:img="@{@drawable/ic_venue_age}"
+                android:id="@+id/incl_age"
+                layout="@layout/incl_image_with_title_desc"/>
+
+            <include
+                android:id="@+id/incl_images"
+                bind:title="@{@string/txt_images}"
+                bind:img="@{@drawable/ic_blue_gps}"
+                layout="@layout/incl_title_with_image_rv"/>
+
+            <include
+                android:id="@+id/incl_menu_images"
+                bind:title="@{@string/txt_menu_images}"
+                bind:img="@{@drawable/ic_blue_gps}"
+                layout="@layout/incl_title_with_image_rv"/>
+
+        </LinearLayout>
+
+
+
+
+    </carbon.widget.ConstraintLayout>
+
+</layout>

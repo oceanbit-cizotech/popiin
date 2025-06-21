@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="extraText"
+            type="String" />
+        <variable
+            name="textColor"
+            type="String" />
+
+        <variable
+            name="isStripeVerified"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_account_management}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half"
+            bind:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/top_header"
+            app:layout_constraintLeft_toLeftOf="@id/top_header"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+
+            <LinearLayout
+                android:paddingBottom="@dimen/_padding_20"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <include
+                    android:id="@+id/incl_my_events"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_my_events}"
+                    bind:title="@{@string/txt_my_events_camel}" />
+
+                <include
+                    android:id="@+id/incl_my_venues"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_my_venues}"
+                    bind:title="@{@string/txt_my_venues_camel}" />
+
+                <include
+                    android:id="@+id/incl_venue_reserve"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_venue_reserve}"
+                    bind:title="@{@string/txt_venue_reservations_camel}" />
+
+                <include
+                    android:id="@+id/incl_event_book_attendees"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_setting_profile}"
+                    bind:title="@{@string/txt_event_book_attendee}" />
+
+                <include
+                    android:id="@+id/incl_venue_book_attendees"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_venue_booking_attendees}"
+                    bind:title="@{@string/txt_venue_book_attendee}" />
+
+                <include
+                    android:id="@+id/incl_whatson_book_attendees"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_venue_booking_attendees}"
+                    bind:title="@{@string/txt_whatson_book_attendee}" />
+
+                <include
+                    android:id="@+id/incl_scan_code"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_scan_code}"
+                    bind:title="@{@string/txt_scan_code_camel}" />
+
+                <include
+                    android:id="@+id/incl_trending"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_scan_code}"
+                    bind:title="@{@string/txt_trending_day}" />
+
+
+                <include
+                    android:id="@+id/incl_offers"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_offers}"
+                    bind:title="@{@string/txt_offers}" />
+
+                <include
+                    android:id="@+id/incl_whats_on"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_whats_on}"
+                    bind:title="@{@string/txt_whats_on}" />
+
+                <include
+                    android:id="@+id/incl_story"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_story}"
+                    bind:title="@{@string/txt_story}" />
+
+                <include
+                    android:id="@+id/incl_add_payment_details"
+                    layout="@layout/include_settings_icon"
+                    bind:StripeVerified="@{isStripeVerified ? @drawable/ic_verified : @drawable/ic_warning}"
+                    bind:image="@{@drawable/ic_payment_details}"
+                    bind:title="@{@string/txt_add_payment_details}" />
+
+                <include
+                    android:id="@+id/incl_withdraw"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_withdraw}"
+                    bind:title="@{@string/txt_withdraw}" />
+
+                <include
+                    android:id="@+id/incl_sales_report"
+                    layout="@layout/include_settings"
+                    bind:image="@{@drawable/ic_sales_report}"
+                    bind:title="@{@string/txt_sales_report_camel}" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

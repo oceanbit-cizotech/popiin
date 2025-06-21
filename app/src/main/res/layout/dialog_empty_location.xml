@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ImageView
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                android:background="@color/colorView"
+                android:layout_marginTop="@dimen/_margin_10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height" />
+
+            <ImageView
+                android:id="@+id/iv_empty_location"
+                app:layout_constraintBottom_toTopOf="@id/btn_retry"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                android:src="@drawable/ic_empty_location"
+                android:layout_width="@dimen/img_pass_success_size"
+                android:layout_height="@dimen/img_pass_success_size"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:textColor="@color/colorHeaderText"
+                style="@style/text_x_medium"
+                android:fontFamily="@font/inter_semi_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_empty_location"
+                android:id="@+id/tv_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:textColor="@color/colorSecondaryText"
+                style="@style/text_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_error"
+                android:id="@+id/tv_error_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <carbon.widget.TextView
+                android:id="@+id/btn_retry"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_error_desc"
+                android:layout_marginBottom="@dimen/_margin2_mid"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/_margin_double_mid"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                style="@style/btn_style"
+                android:gravity="center"
+                android:text="@string/txt_ok"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height" />
+        </carbon.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

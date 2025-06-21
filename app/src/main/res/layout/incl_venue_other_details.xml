@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_margin_20">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_padding">
+
+            <include
+                android:id="@+id/incl_venue_type"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:hint="@{@string/txt_select_type}"
+                bind:title="@{@string/txt_venue_type}" />
+
+            <include
+                android:id="@+id/incl_venue_music"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_music_camel}"
+                bind:title="@{@string/lbl_music}" />
+
+            <include
+                android:id="@+id/incl_venue_entertainment"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_entertainemnt_camel}"
+                bind:title="@{@string/txt_entertainment}" />
+
+            <include
+                android:id="@+id/incl_venue_offer"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_offer}"
+                bind:title="@{@string/txt_offers}" />
+
+            <include
+                android:id="@+id/incl_dress_code"
+                layout="@layout/row_lbl_with_multiline_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_enter_dress_code}"
+                bind:title="@{@string/txt_dress_code_camel}" />
+
+            <include
+                android:id="@+id/incl_entry_policy"
+                layout="@layout/row_lbl_with_multiline_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_enter_entry_policy}"
+                bind:title="@{@string/txt_entry_policy_camel}" />
+
+            <carbon.widget.EditText
+                android:id="@+id/edt_last_entry"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_special_request_height"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:gravity="top|left"
+                android:hint="@string/txt_enter_last_entry"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_padding"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_title"
+                tools:hint="@string/txt_write_here" />
+
+            <include
+                android:id="@+id/incl_reservation"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_reservations}"
+                bind:title="@{@string/txt_reservation}" />
+
+            <include
+                android:id="@+id/incl_outdoor_area"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_outdoor_area}"
+                bind:title="@{@string/txt_outdoor_area_camel}" />
+
+            <include
+                android:id="@+id/incl_free_wifi"
+                layout="@layout/row_edittext_with_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_select_wifi}"
+                bind:title="@{@string/txt_free_wifi}" />
+
+            <include
+                android:id="@+id/incl_venue_other"
+                layout="@layout/row_lbl_with_multiline_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_enter_here}"
+                bind:title="@{@string/txt_other_info_optional}" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_padding2"
+                android:paddingVertical="@dimen/_padding_half"
+                android:text="@string/txt_save"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_days_error" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

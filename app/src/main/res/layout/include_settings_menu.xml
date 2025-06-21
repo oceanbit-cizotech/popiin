@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="image"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="extraText"
+            type="String" />
+
+        <variable
+            name="desc"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="@dimen/img_setting_item_size"
+            android:layout_height="@dimen/img_setting_item_size"
+            android:layout_marginVertical="@dimen/_margin"
+            android:layout_marginStart="@dimen/_margin_20"
+            android:background="@color/colorSemiGrey"
+            android:padding="@dimen/_padding_10"
+            android:src="@{image}"
+            android:visibility="@{image == null ? View.GONE : View.VISIBLE ,default = visible}"
+            app:carbon_cornerRadius="@dimen/_corner_radius_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_music" />
+
+        <TextView
+            android:id="@+id/tv_setting_menu"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_margin_half_mid"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="@{title}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toTopOf="@id/tv_desc"
+            app:layout_constraintLeft_toRightOf="@id/iv_setting"
+            app:layout_constraintTop_toTopOf="@id/iv_setting"
+            tools:text="Business" />
+
+        <TextView
+            android:id="@+id/tv_setting_xtra"
+            style="@style/text_xsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_margin_half"
+            android:fontFamily="@font/inter_regular"
+            android:text="@{extraText}"
+            android:textColor="@color/colorGreenBorder"
+            android:visibility="@{extraText == null || extraText.empty ? View.GONE : View.VISIBLE ,default = gone}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_menu"
+            app:layout_constraintLeft_toRightOf="@id/tv_setting_menu"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_menu"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Business" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            style="@style/text_xsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:text="@{desc}"
+            android:textColor="@color/colorSecondaryText"
+            android:visibility="@{desc == null || desc.empty ? View.GONE : View.VISIBLE ,default = visible}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_setting"
+            app:layout_constraintLeft_toLeftOf="@id/tv_setting_menu"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_menu"
+            tools:text="Business" />
+
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_notification"
+            android:layout_marginEnd="@dimen/_margin_half_half"
+            app:layout_constraintRight_toLeftOf="@+id/iv_back_arrow"
+            app:layout_constraintTop_toTopOf="@+id/iv_back_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back_arrow"
+            app:carbon_cornerRadius="4dp"
+            android:visibility="gone"
+            android:background="@color/colorErrorText"
+            android:layout_width="8dp"
+            android:layout_height="8dp"/>
+
+        <ImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_margin_20"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_setting"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

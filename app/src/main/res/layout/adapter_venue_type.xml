@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="model"-->
+<!--            type="com.popiin.model.AmensSubModel" />-->
+<!--    </data>-->
+
+    <carbon.widget.TextView
+        android:layout_marginRight="@dimen/_margin_half"
+        android:id="@+id/tv_tag"
+        android:textColor="@color/colorBlue"
+        tools:text="text"
+        style="@style/text_xsmall"
+        app:carbon_cornerRadius="15dp"
+        android:paddingHorizontal="@dimen/_margin"
+        android:gravity="center"
+        android:background="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+</layout>

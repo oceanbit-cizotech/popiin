@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_privacy_policy}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_margin"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <include
+                        android:id="@+id/tv_policy"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_policy1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_policy_information"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_policy_information1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_use_information"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_use_information1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_share_info"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_share_info1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_exercise"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_exercise1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_account_deletion"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_account_deletion1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_notify_change"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_notify_change1"
+                        layout="@layout/row_policy_description" />
+                    <include
+                        android:id="@+id/tv_contact"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_contact1"
+                        layout="@layout/row_policy_description" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

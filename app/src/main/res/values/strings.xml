@@ -1,0 +1,1770 @@
+<resources>
+    <string name="facebook_app_id">691330444282700</string>
+    <string name="app_name">popiin</string>
+    <string name="default_notification_channel_id">popiin</string>
+    <string name="str_hello">Hi Hello</string>
+    <string name="txt_onboarding">popiin offers people an easy, relatively stress-free way to search and discover venues to go out.</string>
+    <string name="txt_get_started">Get Started</string>
+    <string name="txt_come_in">Come in</string>
+    <string name="txt_create_your_account">Create Your Account</string>
+    <string name="txt_full_name">Full Name</string>
+    <string name="txt_email_address">Email Address</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_title">Title</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_date_of_birth">Date of birth</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_confirm_password">Confirm Password</string>
+    <string name="enter_confirm_password">Confirm Password</string>
+    <string name="txt_enter_password">Enter Password</string>
+    <string name="txt_enter_full_name">Enter Full Name</string>
+    <string name="txt_enter_email">Enter Email</string>
+    <string name="txt_enter_title">Enter title</string>
+    <string name="txt_create_account">Create Account</string>
+    <string name="txt_don_t_have_an_account">Don’t have an account?</string>
+    <string name="txt_forgot_password">Forgot Password?</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_already_have_an_account">Already have an account?</string>
+    <string name="txt_submit">Submit</string>
+    <string name="txt_log_in">Log In</string>
+    <string name="txt_reset_pass_desc">A unique code was sent to your email.</string>
+    <string name="txt_reset_password">Reset Password</string>
+    <string name="txt_resend_code">Resend Code</string>
+    <string name="txt_code_not_received">Code not received?</string>
+    <string name="txt_err_enter_email">Please enter email</string>
+    <string name="txt_err_valid_email">Please enter valid email</string>
+    <string name="txt_err_enter_name">Please enter name</string>
+    <string name="txt_err_enter_first_name">Please enter first name</string>
+    <string name="txt_err_enter_last_name">Please enter last name</string>
+    <string name="txt_err_enter_password">Please enter your password.</string>
+    <string name="txt_err_enter_conf_password">Please enter Confirm password</string>
+    <string name="txt_err_match_conf_password">Passwords don\'t match. Please try again.</string>
+    <string name="txt_err_select_gender">Please select Gender</string>
+    <string name="txt_err_enter_dob">Please enter Date of Birth</string>
+    <string name="txt_err_valid_otp">Please enter valid otp</string>
+    <string name="txt_done">Done</string>
+    <string name="txt_menu_settings">Settings</string>
+    <string name="txt_menu_favourites">Favourites</string>
+    <string name="txt_menu_location">Location</string>
+    <string name="txt_menu_events">What\'s on</string>
+    <string name="txt_menu_explore">Explore</string>
+    <string name="txt_your_location">Your Location</string>
+    <string name="txt_hey">Hey,</string>
+    <string name="txt_search_nightclubs_amp_bars"><![CDATA[Search by title, music, address]]></string>
+    <string name="text_wahtson_search">Search by title</string>
+    <string name="txt_trending_stories">Trending Stories 🔥</string>
+    <string name="txt_view_all">View All</string>
+    <string name="txt_book_now">Book Now</string>
+    <string name="txt_open_now">Open</string>
+    <string name="txt_open">open</string>
+    <string name="txt_hours_may_vary">Hours may vary</string>
+    <string name="txt_temp_map_address">141 highway street, Shoreditch - London</string>
+    <string name="txt_temp_category">Bar, Restaurants, Pub, Hotel</string>
+    <string name="txt_description">Description</string>
+    <string name="txt_enter_description">Enter description</string>
+    <string name="txt_read_more">Read More</string>
+    <string name="txt_hide">Hide</string>
+    <string name="txt_amen_feature">Amenities &amp; Features</string>
+    <string name="txt_menu">Menu</string>
+    <string name="txt_reservation">Reservations</string>
+    <string name="txt_venue_reservation">Reservation</string>
+    <string name="txt_venue_reservation_title">Venue Reservation</string>
+    <string name="txt_offers">Offers</string>
+    <string name="txt_trending">Trending</string>
+    <string name="txt_trending_day">Trending Days</string>
+    <string name="txt_offers_preview">Offer Preview</string>
+    <string name="txt_whats_on">What\'s on</string>
+    <string name="txt_story">Story</string>
+    <string name="txt_whats_on_camel">What\'s On</string>
+    <string name="txt_whats_on_preview">What’s on Preview</string>
+    <string name="txt_open_close_hour">Opening &amp; closing hours</string>
+    <string name="txt_opening_hours">Opening hours</string>
+    <string name="txt_opening_hours_caps">Opening Hours</string>
+    <string name="txt_open_close_hour_camel">Opening &amp; Closing Hour</string>
+    <string name="txt_open_close_hours">Opening &amp; Closing Hours</string>
+    <string name="txt_bar_menu_img">Menu</string>
+    <string name="txt_bar_menu_pdf">Menu</string>
+    <string name="txt_table">Table</string>
+    <string name="txt_guest_list">Guest list</string>
+    <string name="txt_tickets">Tickets</string>
+    <string name="txt_queue_jump">Queue Jump</string>
+    <string name="txt_temp_offer_1">10% Off every friday night on vodkas</string>
+    <string name="txt_temp_offer_2">10% Off every monday morning on coffess</string>
+    <string name="txt_activate">Activate</string>
+    <string name="txt_temp_time">09:00am - 03:00am</string>
+    <string name="txt_monday">Monday</string>
+    <string name="txt_tuesday">Tuesday</string>
+    <string name="txt_wednesday">Wednesday</string>
+    <string name="txt_thursday">Thursday</string>
+    <string name="txt_friday">Friday</string>
+    <string name="txt_saturday">Saturday</string>
+    <string name="txt_sunday">Sunday</string>
+    <string name="txt_desc_details">Cirque Le Soir Bar is typically considered a high-end venue that offers a luxurious and high-end venue that offers Cirque Le Soir Bar is typically considered a high-end venue that offers a luxurious and high-end venue</string>
+    <string name="txt_view_more">View More</string>
+    <string name="txt_of">of</string>
+    <string name="txt_edit_reservation">Edit Reservation</string>
+    <string name="txt_venue_reserve_confirm">Venue confirmation required</string>
+    <string name="txt_venue_reserve_desc">When this is turned on, you will receive alerts to confirm bookings</string>
+    <string name="txt_booking_options">Booking options</string>
+    <string name="txt_num_tables">Number of tables available</string>
+    <string name="lbl_start_date_and_time">Start Date</string>
+    <string name="lbl_start_date">Start date</string>
+    <string name="lbl_end_date">End date</string>
+    <string name="lbl_start_time">Start time</string>
+    <string name="lbl_end_time">End time</string>
+    <string name="lbl_end_date_and_time">End Date</string>
+    <string name="txt_deposit_required">Deposit required</string>
+    <string name="txt_turn_on_payment_details">When this is turned on, you will need to add your payment details</string>
+    <string name="txt_event_info">Event Info</string>
+    <string name="txt_event_details">Event details</string>
+    <string name="txt_event_offer">10% Off every friday night on vodkas</string>
+    <string name="txt_get_directions">Directions</string>
+    <string name="txt_directions">Directions</string>
+    <string name="txt_direction">Direction</string>
+    <string name="txt_events">Events</string>
+    <string name="txt_whatson">Events</string>
+    <string name="txt_favourites">Favourites</string>
+    <string name="txt_invite_friends">Invite friends</string>
+    <string name="txt_special_request">Special Request</string>
+    <string name="txt_add_to_calendar">Add to calendar</string>
+    <string name="txt_add_special_request">Add Special Request</string>
+    <string name="txt_add_request">Add Request</string>
+    <string name="txt_category_name">Enter category name</string>
+    <string name="txt_write_here">Write here…</string>
+    <string name="txt_enter_details">Enter details</string>
+    <string name="txt_write_here_optional">Write here (Optional)</string>
+    <string name="txt_add_caption">Add Caption</string>
+    <string name="txt_password_reset">Password reset</string>
+    <string name="txt_successfully">Successfully</string>
+    <string name="txt_event_added">Event added to</string>
+    <string name="txt_event_add">Event added</string>
+    <string name="txt_event_update">Event Updated</string>
+    <string name="txt_venue_update">Venue Updated</string>
+    <string name="txt_calendat_success">Calender Successfully</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_temp_name">Barri Alex</string>
+    <string name="txt_booking_number">Booking Number</string>
+    <string name="txt_temp_booking_number">0027</string>
+    <string name="txt_event_name">Event Name</string>
+    <string name="txt_event_name_camel">Event name</string>
+    <string name="txt_ticket_name">Ticket Name</string>
+    <string name="txt_venue_name">Venue Name</string>
+    <string name="txt_venue_name_camel">Venue name</string>
+    <string name="txt_temp_event_name">Winter Lights Show</string>
+    <string name="txt_venue">Venue</string>
+    <string name="txt_temp_venue">Canary Dome</string>
+    <string name="txt_address">Address</string>
+    <string name="txt_address_details">Address Details</string>
+    <string name="txt_temp_address">Canary Wharf London</string>
+    <string name="txt_quantity">Quantity</string>
+    <string name="txt_temp_quantity">01</string>
+    <string name="txt_start_date">Start Date</string>
+    <string name="txt_temp_start_date">Fri, 26 Mar, 2023</string>
+    <string name="txt_end_date">End Date</string>
+    <string name="txt_temp_end_date">Fri, 26 Mar, 2023</string>
+    <string name="txt_start_time">Start Time</string>
+    <string name="txt_temp_start_time">10:00 PM</string>
+    <string name="txt_end_time">End Time</string>
+    <string name="txt_temp_end_time">Till Dawn</string>
+    <string name="txt_view_booking_code">View Booking Code</string>
+    <string name="txt_offer_code">Offer Code:</string>
+    <string name="txt_event_code">Event Code:</string>
+    <string name="txt_oops_error">Oops Error</string>
+    <string name="txt_no_events">No events to display</string>
+    <string name="txt_no_venues">No venues available close to you</string>
+    <string name="txt_no_venues_display">No venues to display</string>
+    <string name="txt_no_favourites">You have no favourites</string>
+    <string name="something_went_wrong_try_again">It looks like something is not working, please try later.</string>
+    <string name="noInternetConnection">Looks like your internet is not available, Kindly connect with internet.</string>
+    <string name="internal_server_error">It looks like something is not working, please try later.</string>
+    <string name="lbl_ok">Ok</string>
+    <string name="txt_firstname">First Name</string>
+    <string name="txt_temp_welcome_back">Welcome</string>
+    <string name="txt_lastname">Last Name</string>
+    <string name="txt_enter_first_name">Enter First Name</string>
+    <string name="txt_enter_last_name">Enter Last Name</string>
+    <string name="txt_terms">Be the first to hear about offers, events, news and updates.</string>
+    <string name="txt_terms_document">I am authorised to use this account to represent the venue and I can confirm the information is correct and valid.</string>
+    <string name="txt_rate_your_experience">Rate Your Experience.</string>
+    <string name="txt_map_search">Search nightclubs &amp; bars…</string>
+    <string name="txt_filter">Filter</string>
+    <string name="txt_a_z">A-Z</string>
+    <string name="txt_z_a">Z-A</string>
+    <string name="txt_bar">Bar 🍷</string>
+    <string name="txt_nightclub">Nightclub 🎶</string>
+    <string name="txt_pub">Pub 🍻</string>
+    <string name="txt_restaurant">Restaurants 🍔</string>
+    <string name="txt_cafe">Café ☕</string>
+    <string name="txt_offer">Offers 💸</string>
+    <string name="txt_trending_map">Trending ⭐</string>
+    <string name="txt_most_popular_map">Most Popular 🔥</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_open_now_new" translatable="false">Open now</string>
+
+    <!--    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDnufwy9etbE7xl0hp5tupMARfLoD16JCM</string>-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAvGpZam-Ho2T6WPHdrFOWqd3SAtJFZM-U</string>
+    <string name="txt_search_area">Search area</string>
+    <string name="txt_reset">Reset</string>
+    <string name="lbl_reset_psw">Please enter your email address to reset your password</string>
+    <string name="btn_retry">Retry</string>
+    <string name="txt_location_error">Oops Error!!!</string>
+    <string name="txt_location_error_desc">Nothing happening close to you.\nChange Location</string>
+    <string name="txt_no_img_found">No Images found</string>
+    <string name="txt_no_pdf_found">No Pdf found</string>
+    <string name="txt_price_low_high">Price low-high</string>
+    <string name="txt_price_high_low">Price high-low</string>
+    <string name="txt_this_week">This week</string>
+    <string name="txt_next_week">Next week</string>
+    <string name="txt_this_month">This month</string>
+    <string name="txt_next_month">Next month</string>
+    <string name="txt_choose_date">Choose a date</string>
+    <string name="txt_from">From</string>
+    <string name="txt_to">To</string>
+    <string name="err_from_date">Please select from date</string>
+    <string name="err_to_date">Please select to date</string>
+    <string name="txt_app_download">popiin - Download the app!</string>
+    <string name="txt_code_copied">Copied to clipboard.</string>
+    <string name="txt_code_code_copied">QR code copied to clipboard.</string>
+    <string name="txt_edit_profile">Edit Profile</string>
+    <string name="txt_business">Business account</string>
+    <string name="txt_business_settings">Business Settings</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_my_bookings">My Bookings</string>
+    <string name="txt_my_whatson_bookings">My What\'s On Bookings</string>
+    <string name="txt_notifications">Notifications</string>
+    <string name="txt_refer_friend">Refer a Friend</string>
+    <string name="txt_get_support">Get support</string>
+    <string name="txt_about">About</string>
+    <string name="txt_sign_out">Sign Out</string>
+    <string name="txt_setup_business">Setup your business</string>
+    <string name="txt_edit_profile_info">Edit your profile info</string>
+    <string name="txt_personal_details">Personal Details</string>
+    <string name="txt_city">City</string>
+    <string name="txt_city_town">City/Town</string>
+    <string name="txt_postal_code">Postal Code</string>
+    <string name="txt_post_code">Post code</string>
+    <string name="txt_enter_postal_code">Enter postal code</string>
+    <string name="txt_enter_post_code">Enter post code</string>
+    <string name="txt_enter_city">Enter city</string>
+    <string name="txt_enter_city_town">Enter city/town</string>
+    <string name="txt_enter_address">Enter Address</string>
+    <string name="txt_enter_address_camel">Enter address</string>
+    <string name="txt_update_changes">Update Changes</string>
+    <string name="txt_create_event">Create event</string>
+    <string name="txt_create_venue">Create venue</string>
+    <string name="txt_save_event">Save Event</string>
+    <string name="txt_event_time">Event Time</string>
+    <string name="txt_register_venue">Register venue</string>
+    <string name="txt_account_management">Account management</string>
+    <string name="txt_account_management_desc">Manage you account</string>
+    <string name="txt_my_events">My Events</string>
+    <string name="txt_my_events_camel">My events</string>
+    <string name="txt_my_venues">My Venues</string>
+    <string name="txt_my_venues_camel">My venues</string>
+    <string name="txt_my_venue">My Venue</string>
+    <string name="txt_venue_reservations">Venue Reservations</string>
+    <string name="txt_venue_reservations_camel">Venue reservations</string>
+    <string name="txt_event_book_attendee">Event booking attendees</string>
+    <string name="txt_book_attendee">Booking attendees</string>
+    <string name="txt_venue_book_attendee">Venue booking attendees</string>
+    <string name="txt_whatson_book_attendee">What\'s on booking attendees</string>
+    <string name="txt_my_whatson_booking">My What\'s on booking</string>
+    <string name="txt_scan_code">Scan Code</string>
+    <string name="txt_scan_code_camel">Scan code</string>
+    <string name="txt_add_payment_details">Add payment details</string>
+    <string name="txt_withdraw">Withdraw</string>
+    <string name="txt_sales_report">Sales Report</string>
+    <string name="txt_sales_report_camel">Sales report</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="txt_copy_venue_link">Copy venue link</string>
+    <string name="txt_copy_event_link">Copy event link</string>
+    <string name="txt_share_with_friends">Share with friends </string>
+    <string name="txt_share">Share</string>
+    <string name="dialog_remove_venue">Do you want to remove this venue?</string>
+    <string name="txt_search_event">Search event name</string>
+    <string name="txt_search_venue">Search venue name</string>
+    <string name="venue_link_copied">Venue link copied.</string>
+    <string name="event_link_copied">Event link copied.</string>
+    <string name="lbl_gallery">Gallery</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="lbl_venues">Venues</string>
+    <string name="lbl_whatson">What\'s On</string>
+    <string name="lbl_events">Events</string>
+    <string name="txt_yes">Yes</string>
+    <string name="txt_no">No</string>
+    <string name="txt_basic_info">Basic Info</string>
+    <string name="txt_booking_info">Booking Info</string>
+    <string name="txt_basic_info_time">Basic Info &amp; Time</string>
+    <string name="txt_other_details">Other Details</string>
+    <string name="txt_age">Age</string>
+    <string name="txt_enter_venue_name">Enter venue name</string>
+    <string name="txt_enter_event_name">Enter event name</string>
+    <string name="txt_enter_name">Enter name</string>
+    <string name="txt_enter_name_camel">Enter Name</string>
+    <string name="txt_enter_age">Enter Age</string>
+    <string name="lbl_add_images">Add Images</string>
+    <string name="lbl_add_images_camel">Add images</string>
+    <string name="lbl_add_menu_images">Add Menu / Images</string>
+    <string name="lbl_add_menu">Add Menu</string>
+    <string name="lbl_add_menu_camel">Add menu</string>
+    <string name="txt_save">Save</string>
+    <string name="venue_open_time">Opening time</string>
+    <string name="venue_close_time">Closing time</string>
+    <string name="error_venues_opening_timing_error"> Please enter opening hours.</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="txt_other_info_optional">Other information</string>
+    <string name="txt_outdoor_area">Outdoor Area</string>
+    <string name="txt_outdoor_area_camel">Outdoor area</string>
+    <string name="txt_free_wifi">Free WiFi</string>
+    <string name="txt_entry_policy">Entry Policy</string>
+    <string name="txt_entry_policy_camel">Entry policy</string>
+    <string name="txt_dress_code">Dress Code</string>
+    <string name="txt_dress_code_camel">Dress code</string>
+    <string name="txt_entertainment">Entertainment</string>
+    <string name="txt_book_options">Booking Options</string>
+    <string name="txt_venue_type">Venue type</string>
+    <string name="txt_select_type">Select venue</string>
+    <string name="txt_select_music_camel">Select music</string>
+    <string name="txt_select_entertainemnt_camel">Select entertainment</string>
+    <string name="txt_select_reservations">Select reservations</string>
+    <string name="txt_select_wifi">Select WiFi</string>
+    <string name="txt_select_outdoor_area_camel">Select outdoor area</string>
+    <string name="txt_select">Select</string>
+    <string name="txt_select_day">Select Day</string>
+    <string name="txt_select_offer">Add offers</string>
+    <string name="txt_select_trends">Trends</string>
+    <string name="txt_select_offer_new">Select offers</string>
+    <string name="txt_enter_entry_policy">Enter entry policy</string>
+    <string name="txt_enter_last_policy">Enter last entry policy</string>
+    <string name="txt_enter_last_entry">Enter last entry</string>
+    <string name="txt_enter_dress_code">Enter dress code</string>
+    <string name="txt_err_venue_name">Please enter venue name.</string>
+    <string name="txt_err_desc">Please enter description.</string>
+    <string name="txt_err_description">Please enter venue description.</string>
+    <string name="txt_err_age">Please select age.</string>
+    <string name="txt_err_enter_age">Please enter age.</string>
+    <string name="txt_err_venues_image_uploading">Please wait images uploading.</string>
+    <string name="txt_err_venues_upload_image">Please upload venue images.</string>
+    <string name="txt_err_events_upload_image">Please upload event images.</string>
+    <string name="txt_err_venues_description">Please enter venue description.</string>
+    <string name="txt_err_venues_address">Please enter venue address.</string>
+    <string name="txt_err_venues_city">Please enter city name.</string>
+    <string name="txt_err_venues_postcode">Please enter post code.</string>
+    <string name="txt_select_venue_type">Select Venue Type</string>
+    <string name="txt_err_venues_dress_code">Please enter dress code.</string>
+    <string name="txt_err_venues_entry_policy">Please enter entry policy details.</string>
+    <string name="txt_err_enter_total_capacity">Please enter total capacity.</string>
+    <string name="other_placeholder">Enter details</string>
+    <string name="txt_total_capacity">Total capacity</string>
+    <string name="txt_tags">Tags</string>
+    <string name="txt_enter_total_capacity">Enter total capacity</string>
+    <string name="txt_plain_bar">Bar</string>
+    <string name="txt_plain_pub">Pub</string>
+    <string name="txt_plain_hotel">Hotel</string>
+    <string name="txt_plain_restaurant">Restaurant</string>
+    <string name="txt_plain_nightclub">Nightclub</string>
+    <string name="txt_plain_cafe">Café</string>
+    <string name="txt_beach_club">Beach club</string>
+    <string name="txt_plain_music">Music</string>
+    <string name="txt_plain_others">Others</string>
+    <string name="txt_plain_other_details_on">Other Details</string>
+    <string name="txt_plain_other">Other</string>
+    <string name="txt_house_party">House Party</string>
+    <string name="txt_age_restrictions">Age Restrictions</string>
+    <string name="txt_webinar_seminar">Webinar/Seminars</string>
+    <string name="txt_wedd_reception">Wedding Reception</string>
+    <string name="txt_birth_reception">Birthday Reception</string>
+    <string name="txt_err_event_name">Please enter event name.</string>
+    <string name="txt_err_event_description">Please enter event description.</string>
+    <string name="txt_err_event_start_date">Please enter start date.</string>
+    <string name="txt_err_event_end_date">Please enter end date.</string>
+    <string name="txt_err_event_start_time">Please enter start time.</string>
+    <string name="txt_err_event_end_time">Please enter end time.</string>
+    <string name="txt_delete_account">Delete Account</string>
+    <string name="txt_terms_use">Terms of use</string>
+    <string name="txt_privacy_policy">Privacy policy</string>
+    <string name="txt_help">Help</string>
+    <string name="txt_partnership">Partnership</string>
+    <string name="txt_payment_info">Payment Info</string>
+    <string name="txt_venue_verification">Venue Verification</string>
+    <string name="txt_company_name">Company name</string>
+    <string name="txt_personal_doc_link">Personal Doc link</string>
+    <string name="txt_venue_doc_link">Venue Doc link</string>
+    <string name="txt_comments">Comments</string>
+    <string-array name="week_names">
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+        <item>@string/saturday</item>
+        <item>@string/sunday</item>
+    </string-array>
+
+    <string-array name="days">
+        <item>@string/txt_blank</item>
+        <item>@string/sun</item>
+        <item>@string/mon</item>
+        <item>@string/tue</item>
+        <item>@string/wed</item>
+        <item>@string/thu</item>
+        <item>@string/fri</item>
+        <item>@string/sat</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>@string/jan</item>
+        <item>@string/feb</item>
+        <item>@string/mar</item>
+        <item>@string/apr</item>
+        <item>@string/may</item>
+        <item>@string/jun</item>
+        <item>@string/jul</item>
+        <item>@string/aug</item>
+        <item>@string/sep</item>
+        <item>@string/oct</item>
+        <item>@string/nov</item>
+        <item>@string/dec</item>
+    </string-array>
+<!--1:Other, 2: Male, 3: Female-->
+    <string-array name="Gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="GenderValues">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="lbl_live_music">Live music</string>
+    <string name="lbl_pool">Pool</string>
+    <string name="lbl_table_tennis">Table tennis</string>
+    <string name="lbl_quiz">Quiz</string>
+    <string name="lbl_darts">Darts</string>
+    <string name="lbl_jukebox">Jukebox</string>
+    <string name="lbl_games">Games</string>
+    <string name="lbl_karaoke">Karaoke</string>
+
+
+    <string name="lbl_music">Music</string>
+    <string name="lbl_food">Food</string>
+    <string name="lbl_drinks">Drinks</string>
+    <string name="lbl_party">Party</string>
+    <string name="lbl_brunch">Brunch</string>
+    <string name="lbl_live_show">Live show</string>
+    <string name="lbl_daytime">Daytime</string>
+    <string name="lbl_late_night">Late night</string>
+    <string name="lbl_exclusive">Exclusive</string>
+    <string name="lbl_vIP">VIP</string>
+    <string name="lbl_birthday">Birthday</string>
+    <string name="lbl_social">Social</string>
+    <string name="lbl_comedy">Comedy</string>
+    <string name="lbl_festival">Festival</string>
+    <string name="lbl_concert">Concert</string>
+    <string name="lbl_art">Art</string>
+    <string name="lbl_cultural">Cultural</string>
+    <string name="lbl_fashion">Fashion</string>
+    <string name="lbl_beauty">Beauty</string>
+    <string name="lbl_luxury">Luxury</string>
+    <string name="lbl_immersive">Immersive</string>
+    <string name="lbl_theatre">Theatre</string>
+    <string name="lbl_pop_up">Pop up</string>
+    <string name="lbl_tradeshow">Tradeshow</string>
+    <string name="lbl_networking">Networking</string>
+    <string name="lbl_corporate">Corporate</string>
+    <string name="lbl_conference">Conference</string>
+    <string name="lbl_community">Community</string>
+    <string name="lbl_workshop">Workshop</string>
+    <string name="lbl_charity">Charity</string>
+    <string name="lbl_whisky">Whiskey</string>
+    <string name="lbl_arcade">Arcade</string>
+    <string name="lbl_theme">Theme</string>
+    <string name="lbl_champagne">Champagne</string>
+
+
+    <string-array name="type_bar">
+        <item>@string/lbl_members</item>
+        <item>@string/lbl_shisha</item>
+        <item>@string/lbl_cocktail</item>
+        <item>@string/lbl_wine</item>
+        <item>@string/lbl_karaoke</item>
+        <item>@string/lbl_sports</item>
+        <item>@string/lbl_lounge</item>
+        <item>@string/lbl_lgbtq</item>
+        <item>@string/lbl_games</item>
+        <item>@string/lbl_rooftop</item>
+        <item>@string/lbl_cigars</item>
+        <item>@string/lbl_speakeasy</item>
+        <item>@string/lbl_adult_entertainment</item>
+        <item>@string/lbl_experiential</item>
+        <item>@string/lbl_whisky</item>
+        <item>@string/lbl_arcade</item>
+        <item>@string/lbl_jazz</item>
+        <item>@string/lbl_theme</item>
+        <item>@string/lbl_beach</item>
+        <item>@string/lbl_champagne</item>
+    </string-array>
+
+    <string name="lbl_members">Members</string>
+    <string name="lbl_shisha">Shisha</string>
+    <string name="lbl_cocktail">Cocktail</string>
+    <string name="lbl_wine">Wine</string>
+    <string name="lbl_sports">Sports</string>
+    <string name="lbl_lgbtq">LGBTQ+</string>
+    <string name="lbl_cigars">Cigar</string>
+    <string name="lbl_speakeasy">Speakeasy</string>
+    <string name="lbl_adult_entertainment">Adult entertainment</string>
+    <string name="lbl_experiential">Experiential</string>
+    <string name="lbl_beach">Beach</string>
+
+    <string-array name="type_pub">
+        <item>@string/lbl_gastro</item>
+        <item>@string/lbl_irish</item>
+        <item>@string/lbl_beer_house</item>
+        <item>@string/lbl_beer_garden</item>
+        <item>@string/lbl_traditional</item>
+        <item>@string/lbl_whisky</item>
+        <item>@string/lbl_rooftop</item>
+        <item>@string/lbl_lounge</item>
+        <item>@string/lbl_theme</item>
+
+    </string-array>
+
+    <string name="lbl_gastro">Gastro</string>
+    <string name="lbl_irish">Irish</string>
+    <string name="lbl_beer_house">Beer house</string>
+    <string name="lbl_beer_garden">Beer garden</string>
+    <string name="lbl_traditional">Traditional</string>
+    <string name="lbl_bnb">Bed &amp; Breakfast (B&amp;B)</string>
+    <string name="lbl_inn">Inn</string>
+    <string name="lbl_outdoor">Outdoor</string>
+    <string name="lbl_lounge">Lounge</string>
+
+    <string-array name="type_hotel">
+        <item>@string/txt_plain_bar</item>
+        <item>@string/txt_plain_restaurant</item>
+        <item>@string/lbl_lounge</item>
+        <item>@string/lbl_rooftop</item>
+
+    </string-array>
+
+
+    <string-array name="type_restaurant">
+        <item>@string/lbl_east_african</item>
+        <item>@string/lbl_west_african</item>
+        <item>@string/lbl_north_african</item>
+        <item>@string/lbl_south_african</item>
+        <item>@string/lbl_south_american</item>
+        <item>@string/lbl_sri_lankan</item>
+        <item>@string/lbl_vegan</item>
+        <item>@string/lbl_vegetarian</item>
+        <item>@string/lbl_jamaican</item>
+        <item>@string/lbl_take_away</item>
+        <item>@string/lbl_pizza</item>
+        <item>@string/lbl_poke_bowl</item>
+        <item>@string/lbl_desserts</item>
+        <item>@string/lbl_american</item>
+        <item>@string/lbl_pan_asian</item>
+        <item>@string/lbl_middle_eastern</item>
+        <item>@string/lbl_korean</item>
+        <item>@string/lbl_british</item>
+        <item>@string/lbl_caribbean</item>
+        <item>@string/txt_plain_cafe</item>
+        <item>@string/lbl_chinese</item>
+        <item>@string/lbl_french</item>
+        <item>@string/lbl_greek</item>
+        <item>@string/lbl_grill</item>
+        <item>@string/lbl_european</item>
+        <item>@string/lbl_australian</item>
+        <item>@string/lbl_indian</item>
+        <item>@string/lbl_international</item>
+        <item>@string/lbl_italian</item>
+        <item>@string/lbl_japanese</item>
+        <item>@string/lbl_mediterranean</item>
+        <item>@string/lbl_mexican</item>
+        <item>@string/lbl_moroccan</item>
+        <item>@string/lbl_spanish</item>
+        <item>@string/lbl_thai</item>
+        <item>@string/lbl_turkish</item>
+        <item>@string/lbl_vietnamese</item>
+        <item>@string/lbl_bbq</item>
+        <item>@string/lbl_shshi</item>
+        <item>@string/lbl_fine_dining</item>
+
+    </string-array>
+    <string name="lbl_shshi">Sushi</string>
+    <string name="lbl_fine_dining">Fine dining</string>
+    <string name="lbl_east_african">East African</string>
+    <string name="lbl_south_american">South American</string>
+    <string name="lbl_african">African</string>
+    <string name="lbl_west_african">West African</string>
+    <string name="lbl_south_african">South African</string>
+    <string name="lbl_north_african">North African</string>
+    <string name="lbl_sri_lankan">Sri Lankan</string>
+    <string name="lbl_jamaican">Jamaican</string>
+    <string name="lbl_pizza">Pizza</string>
+    <string name="lbl_poke_bowl">Poke bowl</string>
+    <string name="lbl_american">American</string>
+    <string name="lbl_fusion">Fusion</string>
+    <string name="lbl_pan_asian">Pan-Asian</string>
+    <string name="lbl_middle_eastern">Middle Eastern</string>
+    <string name="lbl_korean">Korean</string>
+    <string name="lbl_british">British</string>
+    <string name="lbl_caribbean">Caribbean</string>")
+    <string name="lbl_chinese">Chinese</string>
+    <string name="lbl_french">French</string>
+    <string name="lbl_greek">Greek</string>
+    <string name="lbl_grill">Grill</string>
+    <string name="lbl_european">European</string>
+    <string name="lbl_australian">Australian</string>
+    <string name="lbl_indian">Indian</string>
+    <string name="lbl_punjab">Punjabi</string>
+    <string name="lbl_international">International</string>
+    <string name="lbl_italian">Italian</string>
+    <string name="lbl_japanese">Japanese</string>
+    <string name="lbl_mediterranean">Mediterranean</string>
+    <string name="lbl_mexican">Mexican</string>
+    <string name="lbl_moroccan">Moroccan</string>
+    <string name="lbl_spanish">Spanish</string>
+    <string name="lbl_thai">Thai</string>
+    <string name="lbl_turkish">Turkish</string>
+    <string name="lbl_vietnamese">Vietnamese</string>
+    <string name="lbl_vegan">Vegan</string>
+    <string name="lbl_labnese">Lebanese</string>
+    <string name="lbl_vegetarian">Vegetarian</string>
+    <string name="lbl_fast_food">Fast food</string>
+    <string name="lbl_take_away">Takeaway</string>
+    <string name="lbl_bbq">BBQ</string>
+
+
+    <string-array name="type_nightclub">
+        <item>@string/lbl_party_goers</item>
+        <item>@string/lbl_VIP</item>
+        <item>@string/lbl_Lounge</item>
+        <item>@string/lbl_adult_entertainment</item>
+        <item>@string/lbl_Exclusive</item>
+        <item>@string/lbl_Members</item>
+        <item>@string/lbl_Dance</item>
+        <item>@string/lbl_lgbtq</item>
+        <item>@string/lbl_Speakeasy</item>
+        <item>@string/lbl_Experiential</item>
+        <item>@string/lbl_beach</item>
+    </string-array>
+
+    <string name="lbl_party_goers">Party-goers</string>
+    <string name="lbl_VIP">VIP</string>
+    <string name="lbl_Lounge">Lounge</string>
+    <string name="lbl_Exclusive">Exclusive</string>
+    <string name="lbl_Members">Members</string>
+    <string name="lbl_Dance">Dance</string>
+    <string name="lbl_Speakeasy">Speakeasy</string>
+    <string name="lbl_Experiential">Experiential</string>
+    <string name="lbl_rooftop">Rooftop</string>
+    <string name="lbl_diy">DIY</string>
+    <string name="lbl_speciality">Speciality</string>
+    <string name="lbl_gaming">Gaming</string>
+    <string name="lbl_art_gallery">Art Gallery</string>
+    <string name="lbl_desserts">Desserts</string>
+
+    <string-array name="type_cafe">
+        <item>@string/lbl_bakery</item>
+        <item>@string/lbl_student</item>
+        <item>@string/lbl_co_working</item>
+        <item>@string/lbl_coffee_shop</item>
+        <item>@string/lbl_health</item>
+        <item>@string/lbl_grab_and_go</item>
+        <item>@string/lbl_breakfast</item>
+        <item>@string/lbl_dine_in</item>
+        <item>@string/lbl_takeway</item>
+        <item>@string/lbl_vegan</item>
+        <item>@string/lbl_vegetarian</item>
+        <item>@string/lbl_outdoor</item>
+        <item>@string/lbl_beach</item>
+        <item>@string/lbl_speciality</item>
+        <item>@string/lbl_gaming</item>
+        <item>@string/lbl_art_gallery</item>
+        <item>@string/lbl_desserts</item>
+    </string-array>
+
+    <string-array name="venue_category">
+        <item>@string/txt_plain_bar</item>
+        <item>@string/txt_plain_pub</item>
+        <item>@string/txt_plain_hotel</item>
+        <item>@string/txt_plain_restaurant</item>
+        <item>@string/txt_plain_nightclub</item>
+        <item>@string/txt_plain_cafe</item>
+        <item>@string/txt_plain_other</item>
+    </string-array>
+
+    <string-array name="venue_music">
+        <item>@string/lbl_hiphop</item>
+        <item>@string/lbl_rap</item>
+        <item>@string/lbl_jazz</item>
+        <item>@string/lbl_rock</item>
+        <item>@string/lbl_pop</item>
+        <item>@string/lbl_rb</item>
+        <item>@string/lbl_blues</item>
+        <item>@string/lbl_reggae</item>
+        <item>@string/lbl_country</item>
+        <item>@string/lbl_house</item>
+        <item>@string/lbl_techno</item>
+        <item>@string/lbl_soul</item>
+        <item>@string/lbl_religious</item>
+        <item>@string/lbl_indie</item>
+        <item>@string/lbl_opera</item>
+        <item>@string/lbl_electro</item>
+        <item>@string/lbl_disco</item>
+        <item>@string/lbl_dance</item>
+        <item>@string/lbl_classical</item>
+        <item>@string/lbl_latin</item>
+        <item>@string/lbl_dancehall</item>
+        <item>@string/lbl_folk</item>
+        <item>@string/lbl_acoustics</item>
+        <item>@string/lbl_oldies</item>
+        <item>@string/lbl_afrobeats</item>
+        <item>@string/lbl_reggaeton</item>
+        <item>@string/lbl_punjab</item>
+        <item>@string/lbl_grime</item>
+        <item>@string/lbl_drill</item>
+        <item>@string/lbl_funk</item>
+        <item>@string/lbl_samba</item>
+        <item>@string/lbl_drum_bass</item>
+        <item>@string/lbl_dub</item>
+        <item>@string/lbl_jungle</item>
+        <item>@string/lbl_amapiano</item>
+        <item>@string/lbl_gospel</item>
+        <item>@string/lbl_garage</item>
+    </string-array>
+
+
+
+    <string name="lbl_garage">Garage</string>
+    <string name="lbl_gospel">Gospel</string>
+    <string name="lbl_amapiano">Amapiano</string>
+    <string name="lbl_hiphop">Hip-Hop</string>
+    <string name="lbl_rap">Rap</string>
+    <string name="lbl_jazz">Jazz</string>
+    <string name="lbl_rock">Rock</string>
+    <string name="lbl_pop">Pop</string>
+    <string name="lbl_rb">R&amp;B</string>
+    <string name="lbl_blues">Blues</string>
+    <string name="lbl_reggae">Reggae</string>
+    <string name="lbl_country">Country</string>
+    <string name="lbl_house">House</string>
+    <string name="lbl_techno">Techno</string>
+    <string name="lbl_soul">Soul</string>
+    <string name="lbl_religious">Religious</string>
+    <string name="lbl_indie">Indie</string>
+    <string name="lbl_opera">Opera</string>
+    <string name="lbl_electro">Electro</string>
+    <string name="lbl_disco">Disco</string>
+    <string name="lbl_dance">Dance</string>
+    <string name="lbl_classical">Classical</string>
+    <string name="lbl_latin">Latin</string>
+    <string name="lbl_dancehall">Dancehall</string>
+    <string name="lbl_folk">Folk</string>
+    <string name="lbl_acoustics">Acoustics</string>
+    <string name="lbl_oldies">Oldies</string>
+    <string name="lbl_afrobeats">Afrobeats</string>
+    <string name="lbl_reggaeton">Reggaeton</string>
+    <string name="lbl_grime">Grime</string>
+    <string name="lbl_drill">Drill</string>
+    <string name="lbl_funk">Funk</string>
+    <string name="lbl_samba">Samba</string>
+    <string name="lbl_drum_bass">Drum and Bass</string>
+    <string name="lbl_dub">Dub</string>
+    <string name="lbl_jungle">Jungle</string>
+    <string name="lbl_not_avaialble">Not available</string>
+
+
+    <string name="lbl_bakery">Bakery</string>
+    <string name="lbl_student">Student</string>
+    <string name="lbl_co_working">Co-working</string>
+    <string name="lbl_coffee_shop">Coffee shop</string>
+    <string name="lbl_health">Health</string>
+    <string name="lbl_grab_and_go">Grab-and-go</string>
+    <string name="lbl_breakfast">Breakfast</string>
+    <string name="lbl_dine_in">Dine-in</string>
+    <string name="lbl_takeway">Takeaway</string>
+    <string name="txt_err_venue_type">Please select type of venue.</string>
+    <string name="txt_alert_incomplete_section">Alert, please update incomplete section.</string>
+    <string name="txt_err_select_venue_type">Please select atleast one venue type.</string>
+    <string name="txt_please_set_cateogry">Please select category.</string>
+    <string name="txt_venue_music_title">DJ, Line-up, Performer</string>
+    <string name="txt_dj_lip_up_preformes">DJ, line-up, performers</string>
+    <string name="txt_venue_music_hint">Enter dj, Line-up, Performer</string>
+    <string name="txt_err_venue_other_type">Please enter details.</string>
+    <string name="txt_select_entertainment_type">Select Entertainment Type</string>
+    <string name="txt_add_offers">Add Offers</string>
+    <string name="txt_err_select_offer">Please select atleast one offer.</string>
+    <string name="txt_select_reservation">Select Reservation</string>
+    <string name="txt_select_outdoor_area">Select Outdoor Area</string>
+    <string name="txt_private">Private</string>
+    <string name="txt_event_type">Event Type</string>
+    <string name="txt_select_event_type">Enter Event Type</string>
+    <string name="txt_max_100_people">Max 100,000</string>
+    <string name="txt_err_start_date">Start date must be less than End Date.</string>
+    <string name="txt_err_end_date">End date must be greater than Start Date.</string>
+    <string name="txt_select_entertainment">Select Entertainment</string>
+    <string name="txt_err_event_enter_music_other">Please enter music details.</string>
+    <string name="txt_venue_summary">Venue Summary</string>
+    <string name="txt_event_summary">Event Summary</string>
+    <string name="txt_images">Images</string>
+    <string name="txt_menu_images">Menu</string>
+    <string name="txt_temp_venue_address">20 Inverness Street</string>
+    <string name="txt_temp_venue_time">8:00PM - 11 PM</string>
+    <string name="txt_temp_city">London</string>
+    <string name="txt_temp_post_code">NW1 7HJ</string>
+    <string name="txt_djs">DJ`S</string>
+    <string name="txt_bazza">Bazza</string>
+    <string name="txt_other_info">Other Info</string>
+    <string name="txt_other_information_plain">Other Information</string>
+    <string name="txt_other_information_camel">Other information</string>
+    <string name="txt_temp_other">Couples please</string>
+    <string name="txt_edit">Edit</string>
+    <string name="txt_update_venue">Update Venue</string>
+    <string name="txt_submit_venue">Submit Venue</string>
+    <string name="txt_update_event">Update Event</string>
+    <string name="txt_submit_event">Submit Event</string>
+    <string name="txt_venue_added">Venue Added</string>
+    <string name="txt_edit_event">Edit Event</string>
+    <string name="txt_summ_start_date">April 5, 2023</string>
+    <string name="txt_summ_end_date">April 6, 2023</string>
+    <string name="txt_summ_start_time">09:18 PM</string>
+    <string name="txt_summ_end_time">11:24 PM</string>
+    <string name="txt_temp_music">Electro, Soul, Jazz, Opera </string>
+    <string name="txt_temp_bazza">DJ, Line-up, Performer </string>
+    <string name="txt_temp_games">T or D, Arcade, Swimming </string>
+    <string name="txt_temp_djs">DJ Spinall, DJ Neptune</string>
+    <string name="txt_event_desc">This event is Barri’s onboarding party to the team. We’re glad to invite y’all to feast with us. Welcome!!!</string>
+    <string name="txt_booking_type">Booking Type</string>
+    <string name="txt_price">Price</string>
+    <string name="txt_qty">Qty</string>
+    <string name="txt_temp_price">$0</string>
+    <string name="txt_temp_qty">20</string>
+    <string name="txt_temp_age">18+</string>
+    <string name="txt_temp_dress_code">Trendy</string>
+    <string name="txt_onboarding_title"><![CDATA[<font color=#000000>Your one stop shop for</font> <font color=#F7732D> going out.</font>]]></string>
+    <string name="no_information_to_display">No information to display.</string>
+    <string name="no_notification_to_display">No notifications to display.</string>
+    <string name="no_booking_to_display">No booking to display.</string>
+    <string name="txt_copy_link">Copy Link</string>
+    <string name="txt_refer_title">Create more memories, share with friends</string>
+
+    <!-- TODO: Terms of Use Screen -->
+    <string name="lbl_terms_condition">Terms of use</string>
+    <string name="lbl_general">General</string>
+    <string name="terms1">
+        Our privacy policy outlines the information we collect and process to support and provide popiin app, website, features and other products and services offered by popiin ™.
+\nPlease note that by using our services, you agree to be bound by these terms and conditions. Our aim is to provide you with personalised content, services, information, ads, and suggestions to help you make decisions relevant to your own interests and preferences. You agree that we can show you personalised content, services, information, ads, and suggestions that we think will be relevant to you and your interests. We use your personal data to help determine which personalised content, services, information, ads, and suggestions to show you and in some cases - age requirements may apply. We will work with businesses, venues, promoters, users, companies, and organisations to provide and show you content, services, information, ads and suggestions for the app and website features, operations, and functionalities. These businesses, venues, promoters, users, companies, and organisations may incur a payment fee to broadcast on our app and services. However, in some instances, using popiin ™ app and services may not incur a fee and will be shown free of charge to use and access. Our services will provide businesses, venues, promoters, companies, and organisations with reports about the services we provide to help them understand how users use and interact with their content.</string>
+
+    <string name="lbl_data_policy">Data policy</string>
+
+    <string name="dataPolicy1">
+        To provide popiin ™ app and website services, we must collect and process information about you.
+
+\nYou have the right to remove and delete your personal information. By registering, submitting any information in any way we will ask you to expressively agree to the terms and conditions. You must be at least sixteen [16] years of age to use the app; by agreeing to these terms and conditions, you represent to us that you are at least sixteen [16] years of age. The type of information that we collect, and process depends on how you use our services. We collect your personal information, the content, and any other data you provide when you use our app and services, including when you register for an account, login, browse, use, create, invite, or share content all designed for your user experience.
+
+\nSee our data and privacy policy to read more about how we use your data.
+    </string>
+
+    <string name="lbl_service">Our services</string>
+
+    <string name="service1">
+  The services and content shown in the app will be wholly managed by popiin.
+\nWe work with third-party services to provide content and users can upload content to promote their own services thus in some cases the content on display is not owned by popiin ™. This content is the sole responsibility of the user that makes it available in our app. We may review content to determine whether it is illegal or violates our policies, approve and decline, and remove or refuse to display content that we reasonably believe violates our policies or the law. All data, information, documents, files, reports, materials, images, designs, text, logos, forms, pages, screens, buttons and thereof, including your personal information are provided to give you the best user experience and to show you relevant content for your own interests and preferences. We don\'t sell your personal data to businesses, venues, promoters, users, companies and organisations and we don\'t share information – for example your name, email address or other contact information with any businesses, venues, promoters, users, companies and organisations unless you give us specific permission to do so. We ask you for marketing permissions in order to communicate some app and services that we think could be of interests to you and to show you personalised content that could be helpful and exclusive to your interests and preferences.
+\nIn these terms and conditions, \"your content\" is referred to all data, documents and materials that you submit for publication on or processing by the app. You grant to us a worldwide, irrevocable, non-exclusive, royalty-free license to access, rights to sub-license, use, reproduce, store, adapt, publish, translate, transmit, modify, distribute and create derivative works based on your content in any existing or future media or reproduce, store and publish your content on and in relation to popiin ™ and any successor app or reproduce, store and, with your specific consent, publish your content on and in relation to popiin ™.
+\nYou hereby waive all your moral rights in your content to the maximum extent permitted by applicable law and you warrant and represent that all other moral rights in your content have been waived to the maximum extent permitted by applicable law. You may edit your content to the extent permitted using the editing functionality made available on the app.  </string>
+
+    <string name="lbl_condition">Conditions of use</string>
+
+    <string name="condition1">
+
+</string>
+
+
+    <string name="lbl_cookie">Cookie policy</string>
+
+    <string name="cookie1">
+      To help personalise content, tailor offers and measure content and provide a better and safer experience we may use cookies on our website for these purposes.
+ \nBy accessing our website or agreeing to these terms and conditions, you consent to allow us to collect information through our use of cookies.
+ \nCookies are used to store and receive identifiers and other information on computers, phones and other devices. The data we store on your web browser or device, identifiers associated with your device, and other software are used for similar purposes.
+ \nCookies enable popiin ™ to offer you and to understand the information we receive about you, including information about your use of our website, other websites and apps, including third-party services and whether or not you are registered or logged in.
+ \nCookies help us provide, protect and improve popiin ™ services, such as by personalising content, tailoring offers, providing insights and measuring ads, and providing the best experience possible as well as making our app safe to use. We use cookies to better understand how you use popiin ™ products and services so that we can improve them.
+    </string>
+
+    <string name="lbl_registration">Registration and accounts</string>
+
+    <string name="registration1">
+        You may register for an account to use our services by creating an account, submitting personal details, and following the account and venue verification process provided to verify and validate your account.\n
+        If you do not verify and validate your account and/or your venue, we reserve the right to suspend, cancel, block, or delete your account, and you will no longer have access to our services. You may be asked to present your ID for age verification and must comply with the content rules set out in the app and/or website. You must not use your account for, or in connection with, the impersonation of any person.\n
+        You must not allow any other person to use your account to access the app and/or website services. Similarly, you must not use another person\'s account to access the app and/or website unless you have that person\'s express permission and authority to do so.\n
+        To protect and secure your account, you must keep your password confidential. We will never ask you to share your password. You are responsible for the activity that occurs on and through your account and may be held liable for any losses arising from failure to secure your account. You must notify and contact us immediately if you become aware of any unauthorised use of your account.
+    </string>
+
+    <string name="lbl_cancellation">Cancellation and suspension of account</string>
+
+    <string name="cancellation1">
+      We may suspend, block, delete, or cancel your account, edit your account details, and stop any activities or permanently prohibit your access at any time, at our sole discretion, without notice or explanation.
+ \nIf we suspend, cancel, prohibit, delete, or block your access to our services, you must not take any action to circumvent such suspension, prohibition, cancellation, deletion, or blocking, such as creating or using a different account.
+    </string>
+
+    <string name="lbl_warranties">Limited warranties</string>
+
+    <string name="warranties1">
+       We do not warrant or represent the completeness or accuracy of the information published on our website or app or that the content on the app is up to date, or any service on the website or app will remain available.
+ \nWe reserve the right to discontinue or alter any or all of our website or app services, and to stop publishing our website or app, at any time in our sole discretion without notice or explanation and save to the extent expressly provided otherwise in these terms and conditions, you will not be entitled to any compensation or payment upon the discontinuance or alteration of any of our website or app services, or if we stop publishing the website or app.
+    </string>
+
+    <string name="lbl_payment">Bookings and payments</string>
+
+    <string name="payment1">
+        We accept Visa, MasterCard, American Express, and other credit and debit cards to process transactions and payments securely through our third-party integration. You agree to pay for all services you authorise and accept that you will be charged using your payment method for any amounts accrued by or in connection with your account.
+ \nWe use third-party services and integrations for enhanced security and protection, which means processing fees, service fees, usage fees, and transaction fees may be applied to your bookings, refunds, and payment withdrawals. Such fees are subject to change to secure, protect, develop, and provide our users with the best products, features, and services. Our third-party providers maintain security, technical, and administrative measures designed to protect your personal data against unauthorised access, destruction, loss, alteration, or misuse. Therefore, we may update our booking and payment processes, fees, and prices periodically to ensure we can operate and deliver services safely and securely to all users. Moreover, we may restrict bookings and quantities at any time to ensure fair and legitimate usage, as well as for validity and compliance with third-party services, companies, promoters, partners, venues, and organisations. You must complete the payment set up process in the active session to securely activate and protect your account with our third-party service. Otherwise, you will have to go through the full payment set up and authentication process again.
+ \nYour personal data is accessible only to a limited number of personnel who require it to perform their duties, and authorisation measures are in place for accessing such data. While no data transmission or storage system can be guaranteed to be 100% secure, we apply strict measures to ensure good security and protection. We also perform regular maintenance and testing to maintain high security standards and procedures to safeguard your data. In the event of fraudulent or suspicious activities, we aim to process your request in a timely and orderly manner, carrying out further checks for verification purposes to resolve any issues. We believe this approach ensures your data is adequately managed, and reasonable efforts are made to provide security appropriate to the risks associated with data processing. For bookings and cancellations: if an event you have booked is cancelled, we will honour refunds, though fees may be non-refundable. Refunds will be assessed on a case- by-case basis because, each time a transaction is processed, fees are mandatory to facilitate payment and operate our services. We will do our best to honour users wishes for continuing to use and support our products and services.
+    </string>
+
+    <string name="lbl_limitation">Limitations and exclusions of liability</string>
+
+    <string name="limitation1">
+        popiin ™ and its subsidiaries, third parties and affiliates shall not be liable (whether under contract, tort (including negligence) or otherwise) for:\n
+        Any loss or damage caused wholly or mainly by your breach of these terms and conditions.\n
+        Any losses that were not caused by our breach of these terms and conditions.\n
+        Any loss or damage that was not, at the time this agreement with you was formed, a reasonably foreseeable consequence of popiin ™ breaching these terms and conditions.\n
+        Any losses or damages relating to any businesses, loss of profits, revenue, use, contracts, goodwill or loss of opportunity.\n
+        Any or corruption of any data, database or software or inability to access data.\n
+        To the extent that our app and the information and services on our app are provided free of charge, we will not be liable for any loss or damage of any nature. We will not be liable to you in respect of any losses arising out of any event or events beyond our reasonable control.\n
+        We will not be liable to you in respect of any special, indirect or consequential loss or damage.\n
+        You accept that we have an interest in limiting the personal liability of our staff and employees and, having regard to that interest, you acknowledge that we are a limited liability company which means you agree that you will not bring any claim personally against our staff or employees in respect of any losses you suffer in connection with the app or these terms and conditions. However, this will not, of course, limit or exclude the liability of the limited liability entity itself for the acts and omissions of our staff and employees.\n
+        Nothing in these terms and conditions are intended to exclude or limit popiin ™\'s liability for death or personal injury; fraud; fraudulent misrepresentation; any implied terms as to title which cannot be excluded or limited by law; or any liability that cannot be excluded or limited by law.\n
+    </string>
+    <string name="lbl_assignment">Assignment</string>
+
+    <style name="assignment1">
+        You hereby agree that we may assign, transfer, sub-contract or otherwise deal with our rights and/or obligations under these terms and conditions.
+ \n You may not without our prior written consent assign, transfer, sub-contract or otherwise deal with any of your rights and/or obligations under these terms and conditions.
+    </style>
+
+    <string name="lbl_third_party">Third-party rights</string>
+
+    <string name="third_party1">
+        A contract under these terms and conditions is for our benefit and your benefit, and is not intended to benefit, and is not subject to the consent of any third party or be enforceable by any third party.
+    </string>
+
+    <string name="lbl_severability">Severability</string>
+
+    <string name="severability1">
+       If a provision of these terms and conditions is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect. If any unlawful and/or unenforceable provision of these terms and conditions would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect.
+    </string>
+
+    <string name="lbl_variation">Variation</string>
+
+    <string name="variation1">
+       We may update and revise these terms and conditions from time to time. The updated and revised terms and conditions shall apply to the use of our services from the date of publication of the revised terms and conditions, and you hereby waive any right you may otherwise have to be notified of, or to consent to, revisions of these terms and conditions. If you do not agree to the revised terms and conditions, you must delete your account and stop using our services.
+    </string>
+
+    <string name="lbl_jurisdiction">Law and jurisdiction</string>
+
+    <string name="jurisdiction1">
+        These terms and conditions shall be governed by and construed in accordance with English law. Any disputes relating to these terms and conditions shall be subject to the jurisdiction of the courts of England in the United Kingdom.
+
+
+    </string>
+
+    <string name="lbl_disclosures">Statutory and regulatory disclosures</string>
+
+    <string name="disclosures1">
+        popiin ™ app and website is owned and operated by POPIIN LTD. Company and trade mark is registered in England and Wales under registration number 13972771.
+    </string>
+
+
+    <!-- TODO: Privacy Policy Screen -->
+    <string name="privacy_policy">Our privacy policy outlines the information we collect and process to support and provide popiin app, website, features and other products and services offered by popiin. This policy applies to you once you agree to use our services and the type of information that we collect and process is based on your use of the popiin app, website, its features, functionalities, content, products, and services. We collect, process, use and share data as necessary to comply with our legal obligations and to protect your personal information and vital interests, or those of others relating to our services; including our mission in providing an innovative, personalised, safe, secure app and website for you and others to use, as well as third party services, promoters, companies, organisations, businesses, venues, and partners.</string>
+    <string name="lbl_collect_info">How we collect your information?</string>
+    <string name="collect_info1">We collect your personal information – such as your name, date of birth,
+        email address, phone number and transaction information, such as booking information, dates and time,
+        the services you purchased, its price, your method of payment and your payment details.
+        However, your payment details are only used to process your transaction, we do not keep
+        and store this information. We use a third-party system to capture and process your
+        payment with added security and protection to ensure your transaction information is safe and secure.
+        \nWe collect your consent to receive marketing communications so we can send you communications
+        about our products and services. You can choose to opt-out from receiving marketing communications
+        and you have the right to remove and delete your personal information from our app.
+        \nWe collect information about how you use our app, such as the types of content that you search,
+        view, or engage with, data from your device settings (eg. location), the features you use,
+        the actions you take, frequency and duration of your activities.
+        For example, we log your recent activities - when you sign in, what features you view and engage with.
+        \nWe collect the information and any data you provide, including when you sign up, register, search, invite,
+        create, or share content and when others share or invite you to use and access our services. </string>
+
+    <string name="lbl_use_info">How we use your information?</string>
+
+    <string name="use_info1">Our services automatically process content and data that you and others provide
+        to analyse usage and features all designed for your user experience. \nWe use the information we have collected to
+        deliver our products and services and to personalise features and content and make suggestions
+        for you - such as events you may be interested in and your location to help you connect to our
+        services nearest to you. To create personalised content that are unique and relevant to you,
+        we use your personal information, your location, your usage, your recent activities, your preferences,
+        interests and activities based on the data that we collect and capture from you and
+        others - including any data from inviting and sharing content, how you use our services,
+        connect and interact with our services, and the people, places,
+        events, venues, locations or features that you`re connected to and interested in.
+        \nWe use location-related information – such as your current location, the places and venues you like, and
+        the services available to you – to provide, personalise and improve our services.
+        \nWe use the information we have to develop, test and improve our services,
+        including diagnosing problems, fixing bugs, testing and troubleshooting issues and features.
+        \n\nWe use the information we have about you – including information about your interests
+        and usage to select and personalise the services and content you see and other services and content
+        that we show you. We use the information that we have including your recent activities to help business account users,
+        promoters and other partners measure the effectiveness and engagement of their offers and services,
+        and understand the types of users who are interested and how users interact with their offers and services.
+        \nWe use the information that we have to verify accounts and activity,
+        detect and prevent spam, suspicious activities, breach of our terms and conditions and other
+        bad experiences in order to maintain the security and integrity of our services.
+        \nWe use your information to send you marketing communications, communicate with you about our
+        services and to let you know about our policies and terms.
+        We also use your information to respond to you when you contact us.
+        \nWhen you share, invite, or communicate using our services, you choose the friends and/or people
+        that you want to share the content with. \nWhen you choose to sign in or pay using third-party services,
+        they will receive information about you for data processing purposes.
+        Information collected by these third-party services is subject to their own terms and policies.
+    </string>
+
+    <string name="lbl_sharing">Sharing with third-party partners</string>
+
+    <string name="sharing_info1">
+        We work with third-party services and partners who help us provide and enhance our
+        services so we can provide better user experiences and a more personalised experience
+        for you. We don`t sell any of your information to anyone and we never will however
+        if the ownership or control of all or part of our services change, we may transfer
+        your information to the new owner. \nWe may share information about you with third
+        party partners that can predict and summarise data for analytical purposes, reports,
+        and insights to help us understand the effectiveness of our services and features
+        so we can improve and enhance our services. \nWe provide analytics, reports and
+        insights that help users, promoters and partners understand how users are interacting
+        and engaging with their content and our services. \nWe may provide promoters and/or
+        advertisers with reports about the users viewing and/or seeing their offers and ads,
+        and how their offers and ads are performing to help them better understand the users most
+        interested in their offers and ads, but we don`t share personal information about users, for
+        instance - your name or email address that can be used to identify and/or contact you unless
+        you give us permission to do so or in the event, it is crucial to do so. \nWe share information
+        globally, both internally to use our services and externally with our partners and with
+        those you connect and share content within accordance with this policy for the benefit of
+        operating and providing our services to you and other users. \nWe provide information and content
+        to partners and suppliers for the benefit of providing our services to you and other users,
+        such as operational and technical services, analysing how our services are used and shared,
+        processing payments and innovation that supports our mission as well as any other technical
+        or information technology support where necessary to deliver our services correctly and to
+        enhance discovery for ways to implement new content and features. We share information with
+        law enforcement or in response to legal requests in the event it is necessary and critical
+        to comply with laws and regulations. It is necessary to detect, prevent and address fraud,
+        unauthorised use of our services, breaches of our terms and policies or other harmful or
+        illegal activity, to protect ourselves including our rights and our services, you or other
+        users, including as part of investigations or regulatory enquiries; or to prevent death or
+        imminent bodily harm. \nInformation we receive about you can be accessed and preserved for an extended period
+        when it is the subject of a legal request or obligation, governmental investigation or investigations of
+        possible violations of our terms or policies, or otherwise to prevent harm. We also retain information from
+        users accounts for violations of our policies and/or term breaches to prevent repeat abuse or
+        other violations and/or term breaches.
+    </string>
+
+    <string name="lbl_exercise">How can you exercise your rights provided under the GDPR?</string>
+
+    <string name="exercise1">
+        Under the General Data Protection Regulation, you have the right to access,
+        rectify, amend, and erase your data. You also have the right to object to and
+        restrict certain processing of your data. The right to object to our processing of your data
+        for direct marketing, which you can exercise by clicking "unsubscribe" in
+        marketing communications, and the right to object to our processing of your data where
+        we are performing a task in the public interest or pursuing our legitimate interestsor those of a third party.
+    </string>
+
+    <string name="lbl_account_deletion">Data and account deletion</string>
+
+    <string name="account_deletion1">
+        We store data until it is no longer necessary to provide our services
+        or until your account is deleted. When you delete your account,
+        we delete your personal information and other data about you
+        therefore you won`t be able to recover this information after it has been deleted.
+        Information that others have shared with you isn\'t part of your account and won`t be deleted.
+        To delete your profile or account at any time, go to the app settings,
+        select profile, and follow the instructions to delete your account.
+
+    </string>
+
+    <string name="lbl_notify_change">How will we notify you of changes to this policy?</string>
+
+    <string name="notify_change1">
+        We may review and update this policy from time to time and any changes
+        will be communicated to you via email or posting an update in the app.
+        We’re committed to maintaining your trust and confidence.
+    </string>
+
+    <string name="lbl_contact">Contact us</string>
+
+    <string name="contact1">
+        The owner and operator responsible for your information is popiin.
+        If you have any questions or queries relating to this policy, you can contact us.
+    </string>
+
+    <string name="txt_partnership_enquiry">Partnership enquiry</string>
+    <string name="txt_err_enter_title">Please enter title.</string>
+    <string name="txt_start_date_time">Start date and time</string>
+    <string name="txt_date">Date</string>
+    <string name="txt_end_date_time">End date and time</string>
+    <string name="lbl_remaining_capacity">Remaining capacity</string>
+
+    <string name="abt_add_booking_type">Add booking type</string>
+    <string name="abt_update_booking_type">Edit booking type</string>
+    <string name="abt_select_booking_option">Select Booking Option</string>
+    <string name="abt_enter_ticket_name">Enter ticket name</string>
+    <string name="abt_price">Price</string>
+    <string name="abt_quantity">Quantity</string>
+    <string name="abt_booking_type">Booking type</string>
+    <string name="abt_add">Add</string>
+    <string name="edt_error_add_ticket_name">Add ticket name.</string>
+    <string name="edt_error_add_price">Add price.</string>
+    <string name="edt_error_add_quantity">Add quantity.</string>
+    <string name="txt_add_booking_type">Add booking type</string>
+    <string name="txt_add_booking">Add Booking</string>
+    <string name="txt_choose">Choose</string>
+    <string name="lbl_update">Update</string>
+    <string name="txt_dialog_venue_capacity">Please enter venue capacity.</string>
+    <string name="txt_dialog_ticket_booking">Are you sure you want to delete this booking type?</string>
+    <string name="txt_want_to_delete_booking_type">you want to delete this booking type?</string>
+    <string name="txt_entry_type">Entry Type</string>
+    <string name="txt_err_entry_type">Please select entry type.</string>
+    <string name="txt_enter_qty">Enter quantity</string>
+    <string name="txt_enter_price_symbol">£</string>
+    <string name="txt_dress_code_info">Please detail whether there is a dress code for you event</string>
+    <string name="txt_entry_policy_info">Please detail whether there is a entry policy for you event</string>
+    <string name="txt_dress_code_info_venue">Please detail whether there is a dress code for you venue</string>
+    <string name="txt_entry_policy_info_venue">Please detail whether there is a entry policy for you venue</string>
+    <string name="txt_entry_type_info">Please select the entry type available at your event</string>
+    <string name="txt_tags_info">Enter keywords that will make it easier to find your event. For example - Music, Party, Food, Sports</string>
+
+    <string name="txt_sun">Sun</string>
+    <string name="txt_mon">Mon</string>
+    <string name="txt_tue">Tue</string>
+    <string name="txt_wed">Wed</string>
+    <string name="txt_thu">Thu</string>
+    <string name="txt_fri">Fri</string>
+    <string name="txt_sat">Sat</string>
+    <string name="txt_time">Time</string>
+    <string name="txt_select_date">Select Date</string>
+    <string name="txt_err_enter_event_address">Please enter event address.</string>
+    <string name="txt_err_enter_city_name">Please enter city name.</string>
+    <string name="txt_err_enter_correct_post_code">Please enter correct post code.</string>
+    <string name="txt_event_saved">Your event has been saved.</string>
+    <string name="txt_event_saved_after_3_days">This event will be discarded after 3 days.</string>
+    <string name="txt_venue_saved_after_3_days">This venue will be discarded after 3 days.</string>
+    <string name="txt_select_one_music_type">Please select atleast one music type.</string>
+    <string name="txt_err_enter_details">Please enter details.</string>
+    <string name="txt_music_saved">Music saved</string>
+    <string name="txt_entertainment_saved">Entertainment saved</string>
+    <string name="txt_thank_you">Thank you.</string>
+    <string name="txt_trends_added">Trends Added</string>
+    <string name="txt_trends_updated">Trends Updated</string>
+    <string name="txt_saved_event">Saved event</string>
+    <string name="txt_saved_venue">Saved venue</string>
+    <string name="txt_select_time">Select Time</string>
+    <string name="txt_bar_saved">Bar Saved</string>
+    <string name="txt_pub_saved">Pub Saved</string>
+    <string name="txt_hotel_saved">Hotel Saved</string>
+    <string name="txt_restaurant_saved">Restaurant Saved</string>
+    <string name="txt_night_club_saved">Nightclub Saved</string>
+    <string name="txt_cafe_saved">Café Saved</string>
+    <string name="txt_other_saved">Other Saved</string>
+    <string name="txt_hint_enter_offer">Enter offer</string>
+    <string name="txt_plus_add_offer">+ Add Offer</string>
+    <string name="txt_err_open_close_hours">Please select valid opening and closing hours</string>
+    <string name="txt_venue_create_msg">Your venue has been saved. This venue will be discarded after 3 days.</string>
+    <string name="txt_review_setup_venue">We will review and setup your venue.</string>
+    <string name="txt_published">Published</string>
+    <string name="txt_do_you_want_to">Do you want to</string>
+    <string name="txt_remove_venue">Remove this venue?</string>
+    <string name="txt_remove_event">Remove this event?</string>
+    <string name="txt_yes_remove">Yes, Remove</string>
+    <string name="txt_yes_cancel">Yes, Cancel</string>
+    <string name="txt_event_removed">Event removed</string>
+    <string name="txt_event_has_deleteed">This Event has been deleted.</string>
+    <string name="txt_venue_removed">Venue removed</string>
+    <string name="txt_venue_has_deleteed">This Venue has been deleted.</string>
+    <string name="lbl_open_mic">Open mic</string>
+    <string name="lbl_cooking">Cooking</string>
+    <string name="lbl_cocktail_making">Cocktail Making</string>
+    <string name="lbl_wine_testing">Wine Tasting</string>
+    <string name="lbl_movies">Movies</string>
+    <string name="lbl_magician">Magician</string>
+    <string name="lbl_fireworks">Fireworks</string>
+    <string name="lbl_lights_show">Lights Show</string>
+    <string name="lbl_live_performance">Live Performance</string>
+    <string name="lbl_thertre">Theatre</string>
+    <string name="lbl_circus">Circus</string>
+    <string name="lbl_banquets">Banquets</string>
+    <string name="lbl_immersive_exp">Immersive Experience</string>
+    <string name="lbl_rooptop_views">Rooftop views</string>
+    <string name="lbl_fairs">Fairs</string>
+    <string name="lbl_performance">Live Performance</string>
+
+    <string-array name="entertainment">
+        <item>@string/lbl_live_music</item>
+        <item>@string/lbl_pool</item>
+        <item>@string/lbl_table_tennis</item>
+        <item>@string/lbl_rooptop_views</item>
+        <item>@string/lbl_quiz</item>
+        <item>@string/lbl_darts</item>
+        <item>@string/lbl_jukebox</item>
+        <item>@string/lbl_games</item>
+        <item>@string/lbl_karaoke</item>
+        <item>@string/lbl_arcade</item>
+        <item>@string/lbl_shisha</item>
+        <item>@string/lbl_sports</item>
+        <item>@string/lbl_comedy</item>
+        <item>@string/lbl_open_mic</item>
+        <item>@string/lbl_cooking</item>
+        <item>@string/lbl_cocktail_making</item>
+        <item>@string/lbl_wine_testing</item>
+        <item>@string/lbl_fairs</item>
+        <item>@string/lbl_movies</item>
+        <item>@string/lbl_magician</item>
+        <item>@string/lbl_fireworks</item>
+        <item>@string/lbl_lights_show</item>
+        <item>@string/lbl_performance</item>
+        <item>@string/lbl_festival</item>
+        <item>@string/lbl_theatre</item>
+        <item>@string/lbl_circus</item>
+        <item>@string/lbl_banquets</item>
+        <item>@string/lbl_dance</item>
+        <item>@string/lbl_immersive_exp</item>
+    </string-array>
+
+    <string-array name="tags">
+        <item>@string/lbl_music</item>
+        <item>@string/lbl_food</item>
+        <item>@string/lbl_drinks</item>
+        <item>@string/lbl_party</item>
+        <item>@string/lbl_brunch</item>
+        <item>@string/lbl_live_show</item>
+        <item>@string/lbl_daytime</item>
+        <item>@string/lbl_late_night</item>
+        <item>@string/lbl_exclusive</item>
+        <item>@string/lbl_vIP</item>
+        <item>@string/lbl_birthday</item>
+        <item>@string/lbl_social</item>
+        <item>@string/lbl_dance</item>
+        <item>@string/lbl_comedy</item>
+        <item>@string/lbl_festival</item>
+        <item>@string/lbl_concert</item>
+        <item>@string/lbl_sports</item>
+        <item>@string/lbl_art</item>
+        <item>@string/lbl_cultural</item>
+        <item>@string/lbl_fashion</item>
+        <item>@string/lbl_beauty</item>
+        <item>@string/lbl_luxury</item>
+        <item>@string/lbl_immersive</item>
+        <item>@string/lbl_theatre</item>
+        <item>@string/lbl_pop_up</item>
+        <item>@string/lbl_tradeshow</item>
+        <item>@string/lbl_networking</item>
+        <item>@string/lbl_corporate</item>
+        <item>@string/lbl_conference</item>
+        <item>@string/lbl_community</item>
+        <item>@string/lbl_workshop</item>
+        <item>@string/lbl_charity</item>
+        <item>@string/txt_plain_other</item>
+    </string-array>
+
+
+    <string name="lbl_firstname">First name</string>
+    <string name="lbl_lastname">Last name</string>
+    <string name="lbl_date_of_birth">Date of birth</string>
+    <string name="lbl_city">City</string>
+    <string name="lbl_address">Address</string>
+    <string name="lbl_post_code">Post code</string>
+    <string name="btn_event_save">Save</string>
+
+    <!--TODO: ADD PAYMENT METHOD-->
+    <string name="apm_email_address">Email address</string>
+    <string name="apm_bank_details">Bank details</string>
+    <string name="apm_account_name">Account name</string>
+    <string name="apm_account_sort_code">Sort code</string>
+    <string name="apm_account_number">Account number</string>
+    <string name="apm_city">@string/lbl_city</string>
+    <string name="apm_address">@string/lbl_address</string>
+    <string name="apm_postcode">@string/lbl_post_code</string>
+    <string name="apm_security_message">We will protect and secure your payment details.</string>
+    <string name="apm_payment_info">Your payment details are saved.</string>
+
+    <string name="apm_error_account_name">Please enter account name</string>
+    <string name="apm_error_sort_code">Please enter sort code.</string>
+    <string name="apm_error_number">Please enter account number</string>
+    <string name="error_msg_firstname">Please enter your first name.</string>
+    <string name="error_msg_lastname">Please enter your last name.</string>
+    <string name="error_msg_dob">Please select your date of birth.</string>
+    <string name="apm_error_city">Please enter city.</string>
+    <string name="apm_error_address">Please enter your address.</string>
+    <string name="apm_error_email">Please enter email address.</string>
+    <string name="apm_error_postcode">Please enter postcode.</string>
+    <string name="lbl_total_bookings">Total bookings</string>
+    <string name="lbl_total_cancelled">Total cancelled</string>
+    <string name="lbl_total_revenue">Total Revenue</string>
+    <string name="lbl_total_deposit">Total deposit</string>
+    <string name="lbl_choose_venue">Choose Venue</string>
+    <string name="lbl_number_of_people">Number of People</string>
+    <string name="lbl_amount">Amount</string>
+    <string name="lbl_platform_fees">Platform fees</string>
+    <string name="txt_saved_offers">Saved offers</string>
+    <string name="txt_saved_trend">Saved Trends</string>
+    <string name="txt_available_offers">Available offers</string>
+    <string name="lbl_choose">Choose</string>
+    <string name="txt_select_venue">Select Venue</string>
+    <string name="txt_select_whatson">Select What\'s on</string>
+    <string name="txt_select_event">Select Event</string>
+    <string name="txt_preview">Preview</string>
+    <string name="txt_edit_offer">Edit Offer</string>
+    <string name="txt_offer_details">Offer details</string>
+    <string name="txt_offer_stars">Offer starts</string>
+    <string name="txt_offer_ends">Offer ends</string>
+    <string name="txt_offer_day">Day</string>
+    <string name="txt_offer_status">Status</string>
+    <string name="txt_close_now">Closed</string>
+    <string name="txt_add_details">Add details</string>
+    <string name="txt_enter_offer_details">Enter offer details</string>
+    <string name="txt_redeem_offer">Redeem offer</string>
+    <string name="txt_add_offer">Add Offer</string>
+    <string name="txt_err_enter_offer_details">Please enter offer details.</string>
+    <string name="txt_err_offer_day">Please select offer day.</string>
+    <string name="txt_err_offer_start_time">Please enter offer start time.</string>
+    <string name="txt_err_offer_end_time">Please enter offer end time.</string>
+    <string name="txt_err_select_option">Please select an option.</string>
+    <string name="txt_err_select_booking_option">Please select booking option.</string>
+    <string name="txt_update">UPDATE</string>
+    <string name="txt_update_camel">Update</string>
+    <string name="txt_offer_added">Offer Added</string>
+    <string name="txt_update_offer">Update Offer</string>
+    <string name="txt_update_details">Update details</string>
+    <string name="txt_err_min_time">minimum time should be 5 minutes.</string>
+    <string name="txt_no_saved_offers_found">No Saved offers found.</string>
+    <string name="txt_delete_offer_message">Are you sure you want to delete?</string>
+    <string name="txt_delete_trending_message">you want to delete this trending?</string>
+    <string name="txt_sure_to_delete">Are you sure</string>
+    <string name="txt_you_want_to_delete">you want to delete?</string>
+    <string name="txt_you_want_to_exit">you want to exit?</string>
+    <string name="txt_you_want_to_delete_story">you want to delete this story?</string>
+    <string name="txt_you_want_to_delete_account">you want to delete your account?</string>
+    <string name="txt_you_want_to_delete_notification">you want to delete this notification?</string>
+    <string name="txt_you_want_to_cancel_booking">you want to cancel this booking?</string>
+    <string name="txt_you_want_to_decline_booking">you want to decline this booking?</string>
+    <string name="txt_you_want_to_accept_booking">you want to accept this booking?</string>
+    <string name="txt_default_distance">(0.0 mile)</string>
+    <string name="txt_activate_offer">activate this offer?</string>
+    <string name="txt_yes_activate">Yes, Activate</string>
+    <string name="txt_offer_activated">Offer Activated</string>
+    <string name="txt_add_offer_venue">Please add offer in the venue.</string>
+    <string name="txt_select_quantity">Select quantity</string>
+    <string name="txt_allow_max_10">Allow max 10</string>
+    <string name="txt_entry">Entry</string>
+    <string name="lbl_your_order_details">Your order details</string>
+    <string name="lbl_price_colon">Price:</string>
+    <string name="lbl_booking_fee_colon">Booking fee:</string>
+    <string name="lbl_process_fee_colon">Processing fee:</string>
+    <string name="lbl_service_fee_colon">Service charge:</string>
+    <string name="lbl_total_colan">Total:</string>
+    <string name="lbl_discount_colan">Discount:</string>
+    <string name="book_terms_condition">Only 1 entry is valid per user. Check my bookings to invite friends to join your group. For more information, please see our <ul>terms and conditions</ul>.</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="add_promo_code">Add promo code</string>
+    <string name="enter_your_code_here">Enter your code here</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_apply">Apply</string>
+    <string name="lbl_name_on_card">Name on Card</string>
+    <string name="lbl_card_number">Card number</string>
+    <string name="hint_card_number">xxxx xxxx xxxx xxxx</string>
+    <string name="lbl_expiry_date">Expiry date</string>
+    <string name="hint_expiry_date">MM/YYYY</string>
+    <string name="lbl_cvv">CVV</string>
+    <string name="hint_cvv">xxxx</string>
+    <string name="your_cvv_will_not_be_saved">Your CVV will not be saved</string>
+    <string name="txt_apply">Apply</string>
+    <string name="txt_enter_your_code_here">Enter your code here</string>
+    <!--    <string name="book_term_condition_cdata"><![CDATA[<font color="#767676">Check my bookings to invite friends to join your group. For more information, please see our</font> <font color="#061AEE"><a href="termsandcondition://">terms and conditions</a></font>.]]></string>-->
+    <string name="book_term_condition_cdata">By selection Book Now, I agree to the Terms of Use. We process your data in accordance with our Privacy Policy.</string>
+    <string name="book_term_condition_cdata1">When you tap the \"Pay now\" button, the transaction is final and cannot be changed. Your booking will be processed in accordance with our Privacy Policy"</string>
+    <string name="popup_booking_runout">Your booking time has expired</string>
+    <string name="txt_default_book_time">00:00</string>
+    <string name="txt_sold_out">Sold out</string>
+    <string name="txt_default_ticket_quantity">1</string>
+    <string name="err_credit_card_holder_name_contain_only_alphabet">Please enter name on your card</string>
+    <string name="err_credit_card_number">Please enter your card number</string>
+    <string name="err_credit_card_expiry_date">Please enter valid expiry date</string>
+    <string name="err_credit_card_cvv_number">Please enter card CVV number</string>
+    <string name="please_enter_valid_cvv">Please enter valid CVV.</string>
+    <string name="err_address">Please enter billing address</string>
+    <string name="err_post_code">Please enter correct post code</string>
+    <string name="lbl_pay_now">Pay Now</string>
+    <string name="txt_booking_summary">Booking Summary</string>
+    <string name="txt_discount">Discount</string>
+    <string name="txt_payment_method">Payment method</string>
+    <string name="txt_booking_date">Booking date</string>
+    <string name="txt_booking_time">Booking time</string>
+    <string name="popup_age">You are below age of event requirement.</string>
+    <string name="txt_err_promo_code">Please enter promocode.</string>
+    <string name="txt_ticket_sell_fast">Tickets selling fast</string>
+    <string name="txt_last_entry">Last entry</string>
+    <string name="txt_last_entry_policy">Last entry policy</string>
+    <string name="txt_last_entry_policy_text">Last Entry Policy</string>
+    <string name="txt_category">Category</string>
+    <string name="ba_name">Name</string>
+    <string name="ba_booking_id">Booking Number</string>
+    <string name="ba_quantity">Quantity</string>
+    <string name="ba_booking_type">Booking Type</string>
+    <string name="ba_price">Price</string>
+    <string name="ba_booking_date">Booking Date</string>
+    <string name="ba_booking_time">Booking Time</string>
+    <string name="ba_status">Status</string>
+    <string name="ba_scan_code">Scan Code</string>
+    <string name="ba_event">Event</string>
+    <string name="ba_special_request">Special Request</string>
+    <string name="ba_status_confirm">Confirmed</string>
+    <string name="ba_status_entry_accepted">Entry accepted</string>
+    <string name="txt_err_enter_start_date">Please enter start date.</string>
+    <string name="txt_err_enter_end_date">Please enter end date.</string>
+    <string name="txt_err_enter_start_time">Please enter start time.</string>
+    <string name="txt_err_enter_end_time">Please enter end time.</string>
+    <string name="txt_not_available">N/A</string>
+    <string name="txt_activate_whats_on">Do you want to \nactivate this What\'s On?</string>
+    <string name="txt_whats_on_acticvate">activate this What\'s On?</string>
+    <string name="txt_whats_on_activated">What\'s On Activated.</string>
+    <string name="txt_whats_on_updated">What\'s On Updated.</string>
+    <string name="txt_event_private_info">Activate if you\'re having a private event. Manage and share your event to invite your guests.</string>
+    <string name="txt_all_events">All Events</string>
+    <string name="txt_all_venues">All Venues</string>
+    <string name="txt_all_whatson_on">All What\'s on(Coming soon)</string>
+    <string name="txt_sales_summary">Sales Summary</string>
+    <string name="txt_sales_booking">Bookings</string>
+    <string name="txt_sales_revenue">Revenue</string>
+    <string name="txt_total_revenue">Total Revenue</string>
+    <string name="txt_downlaod_caps">DOWNLOAD</string>
+    <string name="txt_demographics">Demographics</string>
+    <string name="txt_age_group">Age group</string>
+    <string name="select_all">Select all</string>
+    <string name="txt_title_calc">Calc.%</string>
+    <string name="txt_title_sold">Sold</string>
+    <string name="txt_title_revenue">Revenue</string>
+    <string name="txt_num_of_bookings">Number of bookings</string>
+    <string name="txt_num_of_people">Number of people</string>
+    <string name="txt_total">Total</string>
+    <string name="txt_not_verified">Not Verified</string>
+    <string name="txt_select_option">Select option</string>
+    <string name="txt_oops_no_data">Oops No Data</string>
+    <string name="txt_reload">Reload</string>
+    <string name="txt_no_events_found">No Events</string>
+    <string name="txt_deposit_amount">Deposit Amount</string>
+    <string name="pound_sign">£</string>
+    <string name="txt_err_enter_num_of_tables">Please enter number of tables available.</string>
+    <string name="txt_err_enter_start_date_time">Please enter start date and time</string>
+    <string name="txt_err_enter_end_date_time">Please enter end date and time</string>
+    <string name="txt_err_deposit_amount_required">Please enter required deposit amount.</string>
+    <string name="txt_payment_desc">In order to collect the deposit you have to add payment information first.</string>
+    <string name="txt_no_cancel">No, Cancel</string>
+    <string name="txt_yes_add">Yes, Add</string>
+    <string name="txt_yes_delete">Yes, Delete</string>
+    <string name="txt_add_to_calender">Add to Calendar</string>
+    <string name="txt_calender_add_desc">Regret will added to the calendar on your device.</string>
+    <string name="txt_50_off">50% OFF</string>
+    <string name="txt_default_music_type">House,Pop</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_time">Time</string>
+    <string name="lbl_until">Until</string>
+    <string name="error_venue_booking_type">Please select booking type.</string>
+    <string name="error_event_end_time">Please select until time.</string>
+    <string name="error_ener_num_of_people">Please enter number of people.</string>
+    <string name="error_select_num_of_people">Please select number of people.</string>
+    <string name="txt_error_until_time_ends_same_day">Until time ends same day.</string>
+    <string name="ba_special_requests">Special requests</string>
+    <string name="txt_booking_successful">Booking successful</string>
+    <string name="status_pending">Confirmation pending</string>
+    <string name="status_confirm">Confirm</string>
+    <string name="status_accepted">Accepted</string>
+    <string name="status_declined">Declined</string>
+    <string name="status_cancelled">Cancelled</string>
+    <string name="txt_err_direction_url">Unable to build a suitable URL for API request</string>
+    <string name="txt_add">ADD</string>
+    <string name="txt_add_camel">Add</string>
+    <string name="txt_err_special_requirement">Please enter special requirement.</string>
+    <string name="txt_copy_code">Copy Code</string>
+    <string name="txt_download_image">Download Image</string>
+    <string name="txt_select_dob">Select DOB</string>
+    <!--    <string name="txt_join_terms"><![CDATA[<font color="#767676">By joining popiin you agree to our</font> <font color="#061AEE"><a href="termsandcondition://">terms and conditions</a></font><font color="#767676"> of service and </font><font color="#061AEE"><a href="privacypolicy://">privacy policy.</a></font>]]></string>-->
+    <string name="txt_join_terms">By creating an account you agree to our Terms of Use and Privacy Policy.</string>
+    <string name="txt_default_ratings">4.8</string>
+    <string name="txt_failed">Failed</string>
+    <string name="txt_booking_time_run_out">The booking time has run out.</string>
+    <string name="txt_add_card">Add Card</string>
+    <string name="txt_to_date">To date</string>
+    <string name="txt_from_date">From date</string>
+    <string name="txt_err_expiry_date">Please enter valid expiry date</string>
+    <string name="txt_award_winner">Award Winner</string>
+    <string name="txt_happy_hours">Happy Hours</string>
+    <string name="txt_no_events_to_display">No events to display</string>
+    <string name="txt_do_you_want_to_exit">Do you want to exit?</string>
+    <string name="txt_select_music">Select Music</string>
+    <string name="txt_search_explore">Search venue, vibe, music</string>
+    <string name="txt_no_account_verify">Your account has not been verified yet.</string>
+    <string name="txt_err_select_closing_hours">Please select closing hours.</string>
+    <string name="txt_err_select_opening_hours">Please select opening hours.</string>
+    <string name="txt_saved_payment_details_message">Thank you. We will protect and secure your payment details and will never share your personal information without your consent.</string>
+    <string name="txt_saved_payment_saved_details_message">Thank you. Your payment details have been saved.</string>
+    <string name="txt_save_payment_for_future_events">Your payment is saved for future events.Please see payment terms.</string>
+    <string name="lbl_am_verified">Verified</string>
+    <string name="withdraw_payment_not_added_message">It looks like we don’t have your payment details. To withdraw, please update your details.</string>
+    <string name="txt_use_scan_code_menu">Use scan code menu option to scan the other codes.</string>
+    <string name="txt_check_inbox_password">Please check your inbox to reset your password</string>
+    <string name="txt_select_age">Select age</string>
+    <string name="txt_sixteen">16+</string>
+    <string name="txt_eighteen">18+</string>
+    <string name="txt_twety_one">21+</string>
+    <string name="txt_no_age_restriction">No age restriction</string>
+    <string name="txt_one">01</string>
+    <string name="txt_two">02</string>
+    <string name="txt_three">03</string>
+    <string name="txt_four">04</string>
+    <string name="txt_five">05</string>
+    <string name="txt_six">06</string>
+    <string name="txt_seven">07</string>
+    <string name="txt_eight">08</string>
+    <string name="txt_nine">09</string>
+    <string name="txt_ten">10</string>
+    <string name="txt_eleven">11</string>
+    <string name="txt_twelve">12</string>
+    <string name="txt_fifteen">15</string>
+    <string name="txt_thirty">30</string>
+    <string name="txt_four_five">45</string>
+    <string name="txt_double_zero">00</string>
+    <string name="txt_am">AM</string>
+    <string name="txt_pm">PM</string>
+    <string name="txt_insufficient_storage">Due to insufficient storage memory could not upload the image.</string>
+    <string name="txt_at_least_one_day_time">Please select at least one day time.</string>
+    <string name="txt_free">Free</string>
+    <string name="txt_male">Male</string>
+    <string name="txt_female">Female</string>
+    <string name="txt_16_20">16-20</string>
+    <string name="txt_21_25">21-25</string>
+    <string name="txt_26_30">26-30</string>
+    <string name="txt_31_35">31-35</string>
+    <string name="txt_36_40">36-40</string>
+    <string name="txt_41">41+</string>
+    <string name="txt_update_offers">Update Offers</string>
+    <string name="txt_15_min">15 min</string>
+    <string name="txt_5_min">5 min</string>
+    <string name="txt_open_now_plain">Open Now</string>
+    <string name="txt_jazz_blue">Jazz Blue</string>
+    <string name="txt_barts_bar">Barts Bar</string>
+    <string name="txt_quilox">Quilox</string>
+    <string name="txt_hustle_b"><![CDATA[Hustle & B]]></string>
+    <string name="txt_phonox">Phonox</string>
+    <string name="txt_julis_cruise">Julius Cruise</string>
+    <string name="txt_blank">\"\"</string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="jan">Jan</string>
+    <string name="feb">Feb</string>
+    <string name="mar">Mar</string>
+    <string name="apr">Apr</string>
+    <string name="may">May</string>
+    <string name="jun">Jun</string>
+    <string name="jul">Jul</string>
+    <string name="aug">Aug</string>
+    <string name="sep">Sep</string>
+    <string name="oct">Oct</string>
+    <string name="nov">Nov</string>
+    <string name="dec">Dec</string>
+    <string name="txt_gps_seems_disabled">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="txt_permission_required">Permissions required</string>
+    <string name="txt_forcefully_permission_required">You have forcefully denied some of the required permissions for this action. Please open settings, go to permissions and allow them.</string>
+    <string name="txt_cancelled">Cancelled</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_close_in">(Closing in ####)</string>
+    <string name="txt_ticket">Ticket</string>
+    <string name="txt_whats_on_reservation">What\'s on reservation</string>
+    <string name="txt_add_reservation">Add Reservation</string>
+    <string name="txt_whatson_reserve_created">What\'s reservation created.</string>
+    <string name="txt_whatson_reserve_updated">What\'s reservation updated.</string>
+    <string name="ba_guests">Guests</string>
+    <string name="txt_deposit">Deposit</string>
+    <string name="txt_until">Until</string>
+    <string name="txt_what_s_on_time">What\'s on time</string>
+    <string name="txt_book_successful">Booking Successful</string>
+    <string name="txt_reservation_list">Reservation list</string>
+    <string name="txt_update_reservation">Update Reservation</string>
+    <string name="txt_remove_reservation">Remove this reservation?</string>
+    <string name="txt_reservation_removed">Reservation removed</string>
+    <string name="txt_no_story_available">No story available for selected venue.</string>
+    <string name="txt_add_story">Add Story</string>
+    <string name="txt_story_uploaded">Story uploaded.</string>
+    <string name="txt_no_information_display">No information to display</string>
+    <string name="txt_event_please_add_basic_info_section" translatable="false">Please add basic info first.</string>
+    <string name="txt_event_address_section" translatable="false">Please add address.</string>
+    <string name="txt_event_date_time_section" translatable="false">Please add date &amp; time for event time section</string>
+    <string name="txt_event_please_add_basic_info" translatable="false">Please add all required information for basic info section</string>
+    <string name="txt_event_address_info" translatable="false">Please add address for address section</string>
+    <string name="txt_yes_exit" translatable="false">Yes, Exit</string>
+    <string name="txt_info_hide" translatable="false">****</string>
+    <string name="txt_transaction_summary" translatable="false">Transaction summary</string>
+    <string name="txt_select_tags">Select Tags</string>
+    <string name="txt_select_one_tag">Please select atleast one tag.</string>
+    <string name="txt_no_image_to_display">No image to display</string>
+    <string name="txt_venue_booking_terms">Venue booking terms</string>
+    <string name="txt_whats_on_booking_cancel">What\'s On booking cancelled</string>
+    <string name="txt_venue_booking_cancel">Venue booking cancelled</string>
+    <string name="txt_conformation_pending">Confirmation pending</string>
+    <string name="txt_decline">Decline</string>
+    <string name="txt_accept">Accept</string>
+    <string name="txt_guests">Guests</string>
+    <string name="txt_declined">Declined</string>
+    <string name="txt_yes_accept">Yes, Accept</string>
+    <string name="txt_yes_decline">Yes, Decline</string>
+    <string name="txt_countinue">Continue</string>
+    <string name="txt_basic_info_saved">Basic info saved</string>
+    <string name="txt_address_saved">Address info saved</string>
+    <string name="txt_opening_hours_saved">Opening hours saved</string>
+    <string name="txt_other_details_saved">Other details saved</string>
+    <string name="txt_enter_here">Enter here</string>
+    <string name="txt_oops">Oops!</string>
+    <string name="txt_ok">OK</string>
+    <string name="txt_sorry">Sorry!</string>
+    <string name="txt_success">Success</string>
+    <string name="txt_login_details_incorrect">Login details are incorrect.</string>
+    <string name="txt_enter_email_to_reset_password">Please enter email address to reset your password</string>
+    <string name="txt_alert">Alert!</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_plese_select_opening_hours">Please select opening hours</string>
+    <string name="txt_no_locate_address">We can\'t locate your address</string>
+    <string name="txt_will_add_to_calendar">will be added to your calendar</string>
+    <string name="txt_verify_you_account">Verify your account</string>
+    <string name="txt_verify_code_info">A code has been sent to your email, check your inbox or spam folder. Verify now</string>
+    <string name="txt_verify_account">Verify account</string>
+    <string name="txt_resend">Resend</string>
+    <string name="txt_code_hint">XXXX</string>
+    <string name="txt_please_enter_verify_code">Please enter verification code.</string>
+    <string name="txt_verify">Verify now</string>
+    <string name="txt_enter_verification_code">Enter verification code:</string>
+    <string name="txt_please_add_opening_hours">Please add opening hours.</string>
+    <string name="txt_add_update_personal_doc_link">Add/Update Personal Doc link</string>
+    <string name="txt_add_update_venue_doc_link">Add/Update Venue Doc link</string>
+    <string name="txt_enter_email_address">Enter email address</string>
+    <string name="txt_enter_phone_number">Enter phone number</string>
+    <string name="txt_add_first_name">Enter first name</string>
+    <string name="txt_add_last_name">Enter last name</string>
+    <string name="txt_enter_company_name">Enter company name</string>
+    <string name="txt_document_verification">Document verification</string>
+    <string name="txt_err_venue_verify_email">Please enter email address.</string>
+    <string name="txt_err_phone_number">Please enter a valid mobile number.</string>
+    <string name="txt_err_enter_company_name">Please enter company name</string>
+    <string name="txt_err_enter_address">Please enter address</string>
+    <string name="txt_doc_pending">(Pending)</string>
+    <string name="txt_doc_accepted">(Accepted)</string>
+    <string name="txt_doc_rejected">(Rejected)</string>
+    <string name="txt_please_upload_personal_document">Please upload personal document</string>
+    <string name="txt_please_upload_venue_document">Please upload venue document</string>
+    <string name="txt_copy_venue">Copy venue</string>
+    <string name="txt_copy_event">Copy event</string>
+    <string name="txt_search_location">Search location</string>
+    <string name="verify_your_venue">Verify your venue</string>
+    <string name="kindly_submit_your_business_documents">Kindly submit your business documents</string>
+    <string name="lbl_withdrawals">Withdrawals</string>
+    <string name="lbl_withdraw_des">Please ensure that your payment and withdrawal details are accurate to facilitate successful payments to your account.\nIf the details are incorrect, your payment may be cancelled, or you may be required to verify that the account details belong to you and that you are authorised to access the account. We aim to process all withdrawal requests within 14 days. Withdrawals are subject to a 2.5% processing fee, provided that all bookings and payments have been successfully cleared and securely verified. However, withdrawal requests cannot be made until the event(s) associated with your account have concluded, and all bookings have been validated. If any booking or transaction is flagged as suspicious or fraudulent, funds may be held indefinitely pending an investigation. Please note that there is no fixed timeframe for resolving withdrawal disputes, as these are managed by our third-party provider, and while we will help and support, we do not handle payment processing directly.</string>
+    <string name="lbl_assignment_new">Assignment</string>
+    <string name="lbl_assignment_new1">You hereby agree that we may assign, transfer, sub-contract or otherwise deal with our rights and/or obligations under these terms and conditions.\n \nYou may not without our prior written consent assign, transfer, sub-contract or otherwise deal with any of your rights and/or obligations under these terms and conditions.</string>
+    <string name="lbl_not_now">Not now</string>
+    <string name="msg_stripe">Our partner Stripe will collect your information so we can issue payment for your bookings.</string>
+    <string name="phone_number">Phone number</string>
+    <string name="msg_please_agree">Please agree venue information is correct.</string>
+
+
+    <string-array name="table_type">
+        <item>@string/txt_select_option</item>
+        <item>@string/txt_table</item>
+        <item>@string/txt_guestlist</item>
+    </string-array>
+
+<string name="txt_guestlist">Guest list</string>
+    <string-array name="age">
+        <item>@string/txt_select_age</item>
+        <item>@string/txt_sixteen</item>
+        <item>@string/txt_eighteen</item>
+        <item>@string/txt_twety_one</item>
+        <item>@string/txt_no_age_restriction</item>
+        <item>@string/txt_plain_other</item>
+    </string-array>
+
+
+    <string-array name="hour">
+        <item>@string/txt_one</item>
+        <item>@string/txt_two</item>
+        <item>@string/txt_three</item>
+        <item>@string/txt_four</item>
+        <item>@string/txt_five</item>
+        <item>@string/txt_six</item>
+        <item>@string/txt_seven</item>
+        <item>@string/txt_eight</item>
+        <item>@string/txt_nine</item>
+        <item>@string/txt_ten</item>
+        <item>@string/txt_eleven</item>
+        <item>@string/txt_twelve</item>
+    </string-array>
+
+    <string-array name="minutes">
+        <item>@string/txt_double_zero</item>
+        <item>@string/txt_fifteen</item>
+        <item>@string/txt_thirty</item>
+        <item>@string/txt_four_five</item>
+    </string-array>
+
+    <string-array name="am_pm">
+        <item>@string/txt_am</item>
+        <item>@string/txt_pm</item>
+    </string-array>
+
+    <string-array name="ticketType">
+        <item>@string/txt_ticket</item>
+        <item>@string/txt_guest_list</item>
+        <item>@string/txt_queue_jump</item>
+        <item>@string/txt_table</item>
+    </string-array>
+
+    <string-array name="whatsTicketType">
+        <item>@string/txt_select</item>
+        <item>@string/txt_ticket</item>
+        <item>@string/txt_guest_list</item>
+        <item>@string/txt_queue_jump</item>
+        <item>@string/txt_table</item>
+    </string-array>
+<string name="lbl_venue_share" translatable="false">Venue :</string>
+<string name="lbl_event_share" translatable="false">Event :</string>
+    <string name="please_select_trends">Please select trends</string>
+    <string name="strtrending">Trending</string>
+    <string name="str_most_popular">Most Popular</string>
+</resources>

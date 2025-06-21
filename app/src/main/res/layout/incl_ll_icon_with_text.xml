@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="image"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@{image}"
+            android:id="@+id/iv_venue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_copy_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@{title}"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:fontFamily="@font/inter_medium"
+            style="@style/text_small"
+            android:textColor="@color/colorSecondaryText"
+            tools:text="Copy this link"
+            app:layout_constraintBottom_toBottomOf="@id/iv_venue"
+            app:layout_constraintTop_toTopOf="@id/iv_venue"
+            app:layout_constraintLeft_toRightOf="@id/iv_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

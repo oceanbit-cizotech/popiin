@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/_padding"
+        android:layout_margin="@dimen/_margin_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_date"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_start_date_time"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/txt_start_date_time}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_calender}"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_date"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_end_date_time"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_end_date_time}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_calender}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+
+        </LinearLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_save"
+            android:layout_width="@dimen/explore_btn_width"
+            android:layout_height="@dimen/explore_btn_height"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@drawable/bg_black_btn_with_round_corner"
+            android:gravity="center"
+            android:text="@string/txt_save"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_time" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

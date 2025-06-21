@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.res.EventListRes.Event" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="isFavorite"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_padding">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:layout_marginHorizontal="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_default"
+                android:minHeight="200dp"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@+id/rv_event_images"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_event_images"
+                app:layout_constraintLeft_toLeftOf="@+id/rv_event_images"
+                app:layout_constraintRight_toRightOf="@+id/rv_event_images"
+                android:layout_width="match_parent"
+                android:src="@drawable/default_image"
+                android:layout_height="wrap_content"/>
+
+            <com.arindicatorview.ARIndicatorView
+                android:id="@+id/ar_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_margin_half"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:animate_indicator_scrubbing="true"
+                app:indicator_color="@color/colorSecondaryText"
+                app:indicator_scrubbing="true"
+                app:indicator_size="20"
+                app:layout_constraintBottom_toBottomOf="@id/rv_event_images"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:number_of_indicators="5"
+                app:selected_color="@color/colorGreenBorder" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_margin_half_mid"
+                style="@style/text_xsmall"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorWhite"
+                android:drawablePadding="@dimen/_padding_half"
+                android:fontFamily="@font/inter_semi_bold"
+                android:paddingHorizontal="@dimen/_padding_half"
+                android:paddingVertical="@dimen/_padding_half_half"
+                android:textColor="@color/colorBlue"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+                tools:text=""
+                app:layout_constraintTop_toTopOf="@id/rv_event_images"
+                app:layout_constraintLeft_toLeftOf="@id/rv_event_images" />
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:layout_marginEnd="@dimen/_margin_half"
+                android:background="@color/colorTransparent30"
+                android:padding="@dimen/_padding_half"
+                android:src="@drawable/ic_share"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                app:layout_constraintRight_toLeftOf="@id/cb_like"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorWhite" />
+
+            <carbon.widget.CheckBox
+                android:id="@+id/cb_like"
+                android:layout_width="@dimen/venue_detail_item_heart_size"
+                android:layout_height="@dimen/venue_detail_item_heart_size"
+                android:layout_margin="@dimen/_margin_half"
+                android:background="@drawable/venue_detail_heart_selector"
+                android:button="@null"
+                android:checked="@{isFavorite == 1 ? true : false}"
+                app:layout_constraintRight_toRightOf="@id/rv_event_images"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_event_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_margin_half"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:fontFamily="@font/inter_semi_bold"
+                android:textColor="@color/colorWhatsOn"
+                android:textSize="@dimen/medium_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_event_images"
+                tools:text="Events name" />
+
+            <TextView
+                android:id="@+id/tv_event_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:layout_marginEnd="@dimen/_margin"
+                style="@style/text_xsmall"
+                android:drawableLeft="@drawable/ic_location_white"
+                android:drawablePadding="@dimen/_padding_half_half"
+                android:textColor="@color/colorSecondaryText"
+                app:drawableTint="@color/colorBlue"
+                app:layout_constraintRight_toLeftOf="@id/tv_ratings"
+                app:layout_constraintLeft_toLeftOf="@id/tv_event_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_event_name"
+                tools:text="Canary Wharf London" />
+
+            <LinearLayout
+                android:id="@+id/ll_event_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:layout_marginEnd="@dimen/_margin"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="@id/tv_event_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_event_location">
+
+                <ImageView
+                    android:id="@+id/iv_event_music"
+                    style="@style/text_xsmall"
+                    android:layout_width="@dimen/venue_check_size"
+                    android:layout_height="@dimen/venue_check_size"
+                    android:src="@drawable/ic_music"
+                    android:textColor="@color/colorSecondaryText"
+                    app:tint="@color/colorBlue" />
+
+                <TextView
+                    android:id="@+id/tv_event_music"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Canary Wharf London" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_entertainment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:layout_marginEnd="@dimen/_margin"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="@id/ll_event_music"
+                app:layout_constraintTop_toBottomOf="@id/ll_event_music">
+
+                <ImageView
+                    android:id="@+id/iv_event_entertainment"
+                    style="@style/text_xsmall"
+                    android:layout_width="@dimen/venue_check_size"
+                    android:layout_height="@dimen/venue_check_size"
+                    android:src="@drawable/ic_entertainment_venue"
+                    android:textColor="@color/colorSecondaryText"
+                    app:tint="@color/colorBlue" />
+
+                <TextView
+                    android:id="@+id/tv_event_entertainment"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Canary Wharf London" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_xsmall"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:drawableLeft="@drawable/ic_blue_calendar"
+                android:drawablePadding="@dimen/_padding_half_half"
+                android:textColor="@color/colorSecondaryText"
+                app:layout_constraintLeft_toLeftOf="@id/ll_entertainment"
+                app:layout_constraintTop_toBottomOf="@id/ll_entertainment"
+                tools:ignore="RtlHardcoded,UseCompatTextViewDrawableXml" />
+
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginStart="@dimen/_margin_half"
+                android:src="@drawable/ic_round_dot"
+                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                app:layout_constraintLeft_toRightOf="@id/tv_date"
+                app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+            <TextView
+                android:id="@+id/tv_calender_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginStart="@dimen/_margin_half"
+                style="@style/text_xsmall"
+                android:drawablePadding="@dimen/_padding_half"
+                android:textColor="@color/colorSecondaryText"
+                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                app:layout_constraintLeft_toRightOf="@id/iv_dot"
+                app:layout_constraintTop_toTopOf="@id/tv_date"
+                tools:text="9 PM" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_margin_half"
+                style="@style/text_xsmall"
+                android:id="@+id/tv_ratings"
+                android:drawableStart="@drawable/ic_yellow_star"
+                android:drawablePadding="@dimen/_padding_half_half"
+                android:layout_marginTop="-4dp"
+                android:fontFamily="@font/inter_medium"
+                android:visibility="gone"
+                android:textColor="@color/colorEvents"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/txt_ticket_sell_fast"
+                app:layout_constraintBottom_toBottomOf="@id/tv_event_location"
+                app:layout_constraintTop_toTopOf="@id/tv_event_location" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMyBookMain"
+                android:layout_marginEnd="@dimen/_margin_half"
+                android:paddingHorizontal="@dimen/_padding_half"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half"
+                style="@style/text_medium"
+                android:textColor="@color/colorBlue"
+                android:fontFamily="@font/inter_semi_bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_calender_time"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_calender_time"
+                tools:text="$50" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view_item"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cl_main"
+            app:layout_constraintLeft_toLeftOf="@id/cl_main"
+            app:layout_constraintRight_toRightOf="@id/cl_main"
+            app:layout_constraintTop_toTopOf="@id/cl_main" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

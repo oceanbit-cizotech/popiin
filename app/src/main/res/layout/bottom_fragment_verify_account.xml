@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            android:paddingBottom="@dimen/_padding2_mid"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_add_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_margin_20"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/txt_verify_account"
+                android:textColor="@color/colorHeaderText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+            <TextView
+                android:id="@+id/tv_enter_verify_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_20"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/txt_enter_verification_code"
+                app:layout_constraintLeft_toLeftOf="@id/tv_add_request"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_request" />
+
+            <carbon.widget.EditText
+                android:id="@+id/edt_verification_code"
+                style="@style/edt_signup"
+                android:layout_width="@dimen/edt_special_request_height"
+                android:layout_marginLeft="@dimen/_margin"
+                android:layout_marginRight="@dimen/_margin_20"
+                android:gravity="center"
+                android:hint="@string/txt_code_hint"
+                android:inputType="number"
+                android:padding="@dimen/_padding_half"
+                app:layout_constraintBottom_toBottomOf="@id/tv_enter_verify_code"
+                app:layout_constraintLeft_toRightOf="@id/tv_enter_verify_code"
+                app:layout_constraintTop_toTopOf="@id/tv_enter_verify_code" />
+
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/tv_enter_verify_code"
+                app:layout_constraintTop_toBottomOf="@id/edt_verification_code" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:layout_marginHorizontal="@dimen/_margin_half_mid"
+                android:layout_marginTop="@dimen/_margin_mid"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/tv_error">
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_reset"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:layout_marginRight="@dimen/_margin_half_half"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:drawablePadding="@dimen/_padding_half"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:text="@string/txt_resend"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorHeaderText"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_22_5"
+                    app:carbon_stroke="@color/colorHeaderText"
+                    app:carbon_strokeWidth="1dp" />
+
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_margin_half_half"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_black_btn_with_round_corner"
+                    android:drawablePadding="@dimen/_padding_half"
+                    android:gravity="center"
+                    android:text="@string/txt_submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_22_5" />
+
+            </LinearLayout>
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

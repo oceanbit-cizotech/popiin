@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_margin="@dimen/_margin_20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:paddingBottom="@dimen/_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/incl_music"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                bind:title="@{@string/txt_plain_music}"
+                bind:hint="@{@string/txt_select}"
+                layout="@layout/row_edittext_with_dropdown"/>
+
+            <include
+                android:id="@+id/incl_event_entertainment"
+                android:layout_marginTop="@dimen/_margin"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/txt_entertainment}"
+                bind:hint="@{@string/txt_select}"
+                android:layout_width="match_parent"
+                layout="@layout/row_edittext_with_dropdown"/>
+
+
+            <include
+                android:id="@+id/incl_dress_code"
+                layout="@layout/row_lbl_with_multiline_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                bind:hint="@{@string/txt_enter_dress_code}"
+                bind:title="@{@string/txt_dress_code}" />
+
+            <include
+                android:id="@+id/incl_entry_policy"
+                android:layout_marginTop="@dimen/_margin"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                bind:title="@{@string/txt_entry_policy}"
+                bind:hint="@{@string/txt_enter_entry_policy}"
+                layout="@layout/row_lbl_with_multiline_text"/>
+
+
+            <include
+                android:id="@+id/incl_other_information"
+                android:layout_marginTop="@dimen/_margin"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                bind:title="@{@string/txt_other_information_plain}"
+                bind:hint="@{@string/txt_enter_details}"
+                layout="@layout/row_lbl_with_multiline_text"/>
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_save"
+                android:layout_gravity="right"
+                android:layout_width="@dimen/explore_btn_width"
+                android:layout_height="@dimen/explore_btn_height"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:text="@string/txt_save"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

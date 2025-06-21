@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.model.WhatsOnDialogDetailModel" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_explore"
+            android:layout_marginHorizontal="@dimen/_margin_half"
+            android:layout_marginTop="@dimen/_margin"
+            android:scaleType="centerCrop"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.LinearLayout
+            android:paddingHorizontal="@dimen/_padding_half"
+            android:paddingVertical="@dimen/_padding_half_half"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin_half_mid"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+            app:layout_constraintLeft_toLeftOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="@id/iv_image">
+
+            <TextView
+                android:id="@+id/tv_whats_on_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_calender_whats_on"
+                android:drawablePadding="@dimen/_padding_half"
+                android:fontFamily="@font/inter_bold"
+                android:text="@{common.convertDateInFormat(model.date,`dd MMM, yyyy hh:mm`,`dd MMM yyyy`)}"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/xxsmall_text"
+                tools:text="06 Jun 2023" />
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_dot"
+                android:layout_gravity="right|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_half_half"
+                android:src="@drawable/ic_round_dot"
+                app:carbon_tint="@color/colorBlue"
+                app:layout_constraintBottom_toBottomOf="@id/tv_whats_on_date"
+                app:layout_constraintRight_toRightOf="@id/tv_whats_on_date"
+                app:layout_constraintTop_toTopOf="@id/tv_whats_on_date" />
+
+            <TextView
+                android:id="@+id/tv_calender_time"
+                android:layout_width="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_half_half"
+                android:drawablePadding="@dimen/_padding_half"
+                android:fontFamily="@font/inter_bold"
+                android:text="@{common.convertDateInFormat(model.date,`dd MMM, yyyy hh:mm`,`hh a`)}"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/xxsmall_text"
+                app:layout_constraintBottom_toBottomOf="@id/tv_whats_on_date"
+                app:layout_constraintLeft_toRightOf="@id/iv_dot"
+                app:layout_constraintTop_toTopOf="@id/tv_whats_on_date"
+                tools:text="9 PM" />
+
+        </carbon.widget.LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_marginRight="@dimen/_margin_half_half"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_share"
+            app:layout_constraintRight_toLeftOf="@id/iv_favorites"
+            app:layout_constraintTop_toTopOf="@id/iv_image" />
+
+        <ImageView
+            android:id="@+id/iv_favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintRight_toRightOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="@id/iv_image" />
+
+
+        <TextView
+            android:id="@+id/tv_venue_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_half_mid"
+            android:layout_marginBottom="@dimen/_margin_half_mid"
+            android:drawablePadding="@dimen/_padding_half_half"
+            android:fontFamily="@font/inter_bold"
+            android:text="@{model.whatsOnName}"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/large_text"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            app:layout_constraintLeft_toLeftOf="@id/iv_image"
+            tools:text="Cirque Le Soir" />
+
+
+        <TextView
+            android:id="@+id/tv_music_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            android:drawableLeft="@drawable/ic_music"
+            android:drawablePadding="@dimen/_padding_half"
+            android:text="@{model.musicType}"
+            app:layout_constraintLeft_toLeftOf="@id/iv_image"
+            app:layout_constraintRight_toRightOf="@id/iv_image"
+            app:layout_constraintTop_toBottomOf="@id/iv_image"
+            tools:text="Afrobeat, Jazz, Classicals, hiphop, R&amp;B, Pop, Opera, Afro Rave, Amapiano" />
+
+        <TextView
+            android:id="@+id/tv_activity_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:drawableLeft="@drawable/ic_emoji"
+            android:drawablePadding="@dimen/_padding_half"
+            android:paddingBottom="@dimen/_padding2"
+            android:text="@{model.activityType}"
+            app:layout_constraintLeft_toLeftOf="@id/iv_image"
+            app:layout_constraintRight_toLeftOf="@id/btn_book_now"
+            app:layout_constraintTop_toBottomOf="@id/tv_music_type"
+            tools:text="Lounge, Games, Bowling, Karaoke" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_book_now"
+            android:layout_width="@dimen/explore_btn_width"
+            android:layout_height="@dimen/explore_btn_height"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:background="@drawable/bg_black_btn_with_round_corner"
+            android:gravity="center"
+            android:text="@string/txt_view_more"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintLeft_toRightOf="@id/tv_activity_type"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_music_type" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSecondaryText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+<androidx.core.widget.NestedScrollView
+    android:background="@color/colorTransparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTransparent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintBottom_toTopOf="@id/ll_card_book"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <carbon.widget.LinearLayout
+            android:id="@+id/ll_card_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorWhite"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_padding"
+            android:paddingBottom="@dimen/_padding2"
+            app:carbon_cornerRadiusTopEnd="@dimen/_corner_radius"
+            app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+            app:carbon_elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/txt_add_card"
+                android:textColor="@color/colorHeaderText" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/lbl_name_on_card"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_card_name"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:hint="@string/txt_enter_name_camel"
+                android:inputType="text"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/tv_error_card_name"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_credit_card_holder_name_contain_only_alphabet"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="We collect this information in case we need to contact you about your booking"
+                android:textColor="@color/colorAccent85" />
+            <!--Email-->
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/txt_email"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_email"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:hint="@string/txt_enter_email"
+                android:inputType="text"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/tv_error_email"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="Please enter email address"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <!--Phone Number-->
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="Phone number"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_phone"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:hint="Enter phone number"
+                android:inputType="text"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/tv_error_phone"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="Please enter mobile number"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/lbl_card_number"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_card_number"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:digits="0123456789- "
+                android:hint="@string/hint_card_number"
+                android:drawableRight="@drawable/ic_card_number"
+                android:inputType="phone"
+                android:maxLength="19"
+                android:textSize="@dimen/small_text" />
+
+
+            <TextView
+                android:id="@+id/tv_error_card_number"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_credit_card_number"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <include
+                    android:id="@+id/et_card_expire_date"
+                    layout="@layout/row_lbl_edittext_with_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    bind:hint="@{@string/hint_expiry_date}"
+                    bind:image="@{@drawable/ic_calender}"
+                    bind:title="@{@string/lbl_expiry_date}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/colorSecondaryText"
+                        android:text="@string/lbl_cvv"
+                        style="@style/text_xsmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <carbon.widget.EditText
+                        android:id="@+id/et_card_cvv"
+                        style="@style/edt_signup"
+                        android:inputType="number"
+                        android:drawableRight="@drawable/ic_card_cvv"
+                        android:maxLength="4"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:hint="@string/hint_cvv"
+                        android:textSize="@dimen/small_text" />
+
+
+                    <TextView
+                        android:id="@+id/tv_error_cvv_number"
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_padding_half_half"
+                        android:text="@string/err_credit_card_cvv_number"
+                        android:textColor="@color/colorErrorText"
+                        android:visibility="gone"
+                        tools:visibility="gone" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:drawablePadding="@dimen/_padding_half_half"
+                android:drawableLeft="@drawable/ic_card_cvv"
+                android:gravity="center_vertical"
+                android:text="@string/your_cvv_will_not_be_saved" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/lbl_address"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_address"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:hint="@string/txt_enter_address_camel"
+                android:maxLines="2"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/tv_error_adress"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_address"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:id="@+id/tv_post_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/lbl_post_code"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/et_postcode"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:hint="@string/txt_enter_post_code"
+                android:maxLines="2"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/tv_error_post_code"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_post_code"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginVertical="@dimen/_common_margin"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:background="@color/colorSemiGrey"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:text="@string/lbl_cancel"
+                    android:textColor="@color/colorBlack"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_pay_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_black_btn_with_round_corner"
+                    android:gravity="center"
+                    android:text="@string/lbl_pay_now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="210dp"/>
+
+        </carbon.widget.LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+</layout>

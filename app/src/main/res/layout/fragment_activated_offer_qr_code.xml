@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/img_back_size"
+            android:layout_height="@dimen/img_back_size"
+            android:layout_marginStart="@dimen/_margin"
+            android:layout_marginTop="@dimen/_margin2"
+            android:background="@color/colorSemiGrey"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_left_arrow"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_offer_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_margin"
+            android:layout_marginBottom="@dimen/_margin_half"
+            app:cardCornerRadius="@dimen/_corner_radius_13"
+            app:cardElevation="8dp"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_padding">
+
+                <TextView
+                    android:id="@+id/tv_offer_name"
+                    style="@style/text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:textColor="@color/colorWhatsOn"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Cirque Le Soir dfdkfdfn fdfkdfndk fdkfdf  fdnfkd" />
+
+
+                <TextView
+                    android:id="@+id/tv_offer_time"
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/_margin_half_half"
+                    android:drawablePadding="@dimen/_padding_half_half"
+                    android:textColor="@color/colorSecondaryText"
+                    app:drawableStartCompat="@drawable/ic_blue_calendar"
+                    app:drawableTint="@color/colorBlue"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_offer_name"
+                    tools:text="Canary Wharf London" />
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <carbon.widget.ImageView
+
+            android:id="@+id/iv_qr_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_margin"
+            android:paddingHorizontal="@dimen/_padding_half"
+            app:carbon_stroke="@color/colorValue"
+            app:carbon_strokeWidth="4dp"
+            app:layout_constraintDimensionRatio="h,2:2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_offer_details" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

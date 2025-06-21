@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            android:paddingBottom="@dimen/_padding2"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_margin_20"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/txt_booking_type"
+                android:textColor="@color/colorHeaderText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+
+            <carbon.widget.RecyclerView
+                android:id="@+id/rv_book_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@color/colorSemiGrey"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:carbon_stroke="@color/colorDialogBorder"
+                app:carbon_strokeWidth="1dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

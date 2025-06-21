@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/btn_preview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingBottom="@dimen/_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/top_header"
+                    layout="@layout/incl_header_with_back"
+                    bind:isHide="@{true}"
+                    bind:title="@{@string/txt_offers}" />
+
+                <include
+                    android:id="@+id/incl_choose_venue"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_header"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/lbl_choose_venue}" />
+
+                <include
+                    android:id="@+id/incl_select_offer"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_choose_venue"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/txt_select_offer_new}" />
+
+
+                <TextView
+                    android:id="@+id/tv_add_images"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:text="@string/lbl_add_menu_images"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_select_offer"
+                    app:layout_constraintTop_toBottomOf="@id/incl_select_offer" />
+
+                <LinearLayout
+                    android:id="@+id/ll_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin_20"
+                    android:layout_marginRight="@dimen/_margin_20"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add_images">
+                    <ImageView
+                        android:id="@+id/img_add_image"
+                        android:layout_width="@dimen/venue_add_img_size"
+                        android:layout_height="@dimen/venue_add_img_size"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:src="@drawable/ic_add_image" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_margin">
+
+                        <LinearLayout
+                            android:id="@+id/ll_event_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_saved_offers"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:text="@string/txt_saved_offers"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/ll_images"
+                    app:layout_constraintTop_toBottomOf="@id/ll_images" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_saved_offers"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginVertical="@dimen/_margin_half"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_saved_offers" />
+
+                <TextView
+                    android:id="@+id/tv_no_offers"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin2"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_no_saved_offers_found"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/rv_saved_offers"
+                    app:layout_constraintRight_toRightOf="@id/rv_saved_offers"
+                    app:layout_constraintTop_toBottomOf="@id/rv_saved_offers"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_preview"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin_mid"
+            android:gravity="center"
+            android:text="@string/txt_preview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

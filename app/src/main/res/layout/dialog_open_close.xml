@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:paddingBottom="@dimen/_padding2"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                android:background="@color/colorView"
+                android:layout_marginTop="@dimen/_margin_10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"/>
+
+            <TextView
+                android:id="@+id/tv_open_close"
+                android:textColor="@color/colorHeaderText"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/txt_opening_hours_caps"
+                android:layout_margin="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_grey_open_close"
+                android:alpha="0.5"
+                android:layout_marginVertical="@dimen/_margin"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_open_close"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <carbon.widget.RecyclerView
+                android:background="@color/colorSemiGrey"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:carbon_stroke="@color/colorMenuView"
+                app:carbon_strokeWidth="1dp"
+                android:id="@+id/rv_open_close"
+                app:layout_constraintRight_toRightOf="@id/iv_grey_open_close"
+                app:layout_constraintLeft_toLeftOf="@id/iv_grey_open_close"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/iv_grey_open_close"
+                android:layout_width="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_grey_open_close" />
+     </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

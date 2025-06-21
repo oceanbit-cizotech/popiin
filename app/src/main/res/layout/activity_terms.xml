@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_terms_use}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <include
+                        android:id="@+id/tv_terms"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_terms1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_data_policy"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_data_policy1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_service"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_service1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_condition"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_condition1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_cookie"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_cookie1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_registration"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_registration1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_limitations"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_limitations1"
+                        layout="@layout/row_policy_description" />
+
+
+                    <include
+                        android:id="@+id/tv_cancellation"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_cancellation1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_warranties"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_warranties1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_payment"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_payment1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_withdraw"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_withdraw_des"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_assignment"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_assignment_des"
+                        layout="@layout/row_policy_description" />
+
+
+                    <include
+                        android:id="@+id/tv_third_party"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_third_party1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_severability"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_severability1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_variation"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_variation1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_jurisdiction"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_jurisdiction1"
+                        layout="@layout/row_policy_description" />
+
+                    <include
+                        android:id="@+id/tv_disclosures"
+                        layout="@layout/row_policy_header" />
+
+                    <include
+                        android:id="@+id/tv_disclosures1"
+                        layout="@layout/row_policy_description" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

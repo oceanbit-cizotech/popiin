@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_whats_on_reservation}" />
+
+
+        <include
+            android:id="@+id/sp_booking_option"
+            layout="@layout/row_lbl_spinner_with_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            bind:title="@{@string/abt_select_booking_option}" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_book_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin_20"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sp_booking_option">
+
+            <!-- Price -->
+            <include
+                android:id="@+id/edt_ticket_price"
+                layout="@layout/row_lbl_text_with_hint_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                bind:hint="@{@string/txt_enter_price_symbol}"
+                bind:title="@{@string/abt_price}" />
+
+            <!-- Quantity -->
+            <include
+                android:id="@+id/edt_ticket_quantity"
+                layout="@layout/row_lbl_text_with_hint_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:layout_weight="1"
+                bind:hint="@{@string/txt_enter_qty}"
+                bind:title="@{@string/abt_quantity}" />
+        </LinearLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_add_reservation"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginBottom="@dimen/_margin"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:text="@string/txt_add_reservation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ll_book_type"
+            app:layout_constraintRight_toRightOf="@id/ll_book_type" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

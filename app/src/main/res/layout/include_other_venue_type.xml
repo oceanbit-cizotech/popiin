@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_width="match_parent"
+            android:animateLayoutChanges="true"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:paddingVertical="@dimen/_padding_half_mid"
+                android:id="@+id/fl_venue_type"
+                app:layout_constraintBottom_toTopOf="@id/tegview"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <carbon.widget.TextView
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_filter"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="left|center"
+                    android:text="@{title}"
+                    android:textColor="@color/colorHeaderText"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    tools:text="Title"
+                    tools:textColor="@color/colorBlack" />
+
+                <com.suke.widget.SwitchButton
+                    android:layout_gravity="right"
+                    android:layout_width="@dimen/switch_width"
+                    android:layout_height="@dimen/switch_height"
+                    android:id="@+id/switch_venue_confirm"
+                    app:sb_checked_color="@color/colorSwitch"
+                    app:sb_background="@color/colorSwitchUncheck"
+                    app:sb_show_indicator="false"
+                    tools:visibility="visible" />
+
+            </FrameLayout>
+
+
+            <com.popiin.flowlayout.TagFlowLayout
+                android:layout_marginTop="@dimen/_margin"
+                android:id="@+id/tegview"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/_padding_half_mid"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="@dimen/_margin_half"
+                app:layout_constraintTop_toBottomOf="@id/fl_venue_type"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tegview"
+                android:id="@+id/tv_error_tags"
+                style="@style/text_small"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_margin_half"
+                android:textColor="@color/colorErrorText"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <include
+                android:id="@+id/incl_other"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_error_tags"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/txt_plain_other}"
+                bind:hint="@{@string/txt_enter_here}"
+                layout="@layout/row_lbl_with_multiline_text"/>
+
+            <carbon.widget.TextView
+                android:layout_marginBottom="@dimen/_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/incl_other"
+                android:id="@+id/tv_save"
+                android:visibility="gone"
+                android:layout_gravity="right"
+                android:layout_width="@dimen/explore_btn_width"
+                android:layout_height="@dimen/explore_btn_height"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:text="@string/txt_save"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20" />
+
+            <View
+                android:id="@+id/view_bottom"
+                android:background="@color/colorSecondaryText50"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</layout>

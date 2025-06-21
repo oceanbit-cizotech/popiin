@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lbl_title"
+            style="@style/text_xsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            tools:text="Title"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.FrameLayout
+            android:id="@+id/edt_name"
+            style="@style/edt_signup"
+            android:paddingHorizontal="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title" >
+            <Spinner
+                android:id="@+id/spinner_booking_type"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:layout_marginRight="@dimen/_margin_half"
+                android:id="@+id/img_down_arrow"
+                android:src="@drawable/ic_drop_down"
+                android:layout_width="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_height="wrap_content"/>
+        </carbon.widget.FrameLayout>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/edt_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_error"
+            style="@style/text_small"
+            android:visibility="gone"
+            android:textColor="@color/colorErrorText"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

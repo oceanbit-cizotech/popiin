@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.popiin.res.VenueListRes.Offerslive" />
+    </data>
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        app:carbon_strokeWidth="1dp"
+        android:paddingVertical="@dimen/_padding"
+        android:layout_marginVertical="@dimen/_margin_6"
+        app:carbon_stroke="@color/colorDialogBorder"
+        app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            tools:text="Saved Offers"
+            android:id="@+id/tv_offer_title"
+            android:layout_marginTop="-4dp"
+            android:text="@{model.title}"
+            android:layout_marginLeft="@dimen/_margin_half_mid"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/colorHeaderText"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="Sunday"
+            style="@style/text_small"
+            android:text="@{model.working_day}"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="@id/tv_offer_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_offer_title"
+            android:id="@+id/tv_week_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/colorBlue"
+            style="@style/text_small"
+            android:layout_marginLeft="@dimen/_margin"
+            app:layout_constraintLeft_toRightOf="@id/tv_week_day"
+            app:layout_constraintBottom_toBottomOf="@id/tv_week_day"
+            app:layout_constraintTop_toTopOf="@id/tv_week_day"
+            tools:text="01:00AM - 01:15AM"
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="Usage Count : 0"
+            style="@style/text_small"
+            android:text="@{`Usage Count : `+model.total_scanned}"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="@id/tv_week_day"
+            app:layout_constraintTop_toBottomOf="@id/tv_week_day"
+            android:id="@+id/tv_usage_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_delete_offers"
+            android:layout_marginRight="@dimen/_margin_half_mid"
+            app:layout_constraintBottom_toBottomOf="@id/tv_offer_title"
+            app:layout_constraintTop_toTopOf="@id/tv_offer_title"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_edit_offer"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            app:layout_constraintRight_toRightOf="@id/iv_delete_offers"
+            app:layout_constraintLeft_toLeftOf="@id/iv_delete_offers"
+            app:layout_constraintTop_toBottomOf="@id/iv_delete_offers"
+            android:src="@drawable/ic_right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </carbon.widget.ConstraintLayout>
+
+</layout>

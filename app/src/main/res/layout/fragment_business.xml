@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_business_settings}" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_margin"
+            android:orientation="vertical"
+            bind:layout_constraintRight_toRightOf="@id/top_header"
+            bind:layout_constraintLeft_toLeftOf="@id/top_header"
+            bind:layout_constraintTop_toBottomOf="@id/top_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_create_event"
+                layout="@layout/include_settings"
+                bind:image="@{@drawable/ic_my_events}"
+                bind:title="@{@string/txt_create_event}" />
+
+            <include
+                android:id="@+id/incl_register_venue"
+                layout="@layout/include_settings"
+                bind:image="@{@drawable/ic_my_venues}"
+                bind:title="@{@string/txt_register_venue}" />
+
+            <include
+                android:id="@+id/incl_account_management"
+                layout="@layout/include_settings"
+                bind:image="@{@drawable/ic_setting_ac_mgmt}"
+                bind:title="@{@string/txt_account_management}" />
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

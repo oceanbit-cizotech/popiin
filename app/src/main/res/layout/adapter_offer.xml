@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="offer"
+            type="com.popiin.model.VenueOffer" />
+
+        <import type="android.view.View"/>
+
+        <import
+            alias="bc"
+            type="com.popiin.util.Common" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="@dimen/_margin_half"
+        android:orientation="vertical">
+
+        <carbon.widget.EditText
+            android:id="@+id/edt_name"
+            style="@style/edt_signup"
+            android:layout_height="@dimen/view_width"
+            android:layout_marginRight="@dimen/_margin"
+            android:textSize="@dimen/medium_text"
+            android:hint="@string/txt_hint_enter_offer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/iv_close"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            app:tint="@color/colorBlue"
+            app:layout_constraintBottom_toBottomOf="@id/edt_name"
+            app:layout_constraintTop_toTopOf="@id/edt_name"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_close_offer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

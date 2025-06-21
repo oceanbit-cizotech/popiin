@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.popiin.res.WhatsonEarningRes.Data" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingVertical="@dimen/_padding"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:background="@drawable/bg_rv_item"
+        android:layout_marginHorizontal="@dimen/_margin_20"
+        android:layout_marginVertical="@dimen/_margin_half_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_earning"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_whatson_date"
+            android:src="@drawable/ic_venue_item"
+            android:padding="@dimen/_padding_half"
+            app:carbon_tint="@color/colorWhite"
+            android:background="@color/colorSwitch"
+            android:layout_width="@dimen/img_setting_item_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_height="@dimen/img_setting_item_size"
+            app:carbon_cornerRadius="@dimen/_corner_radius_18" />
+
+        <carbon.widget.TextView
+            android:id="@+id/title"
+            style="@style/text_medium"
+            tools:text="Hello"
+            android:text="@{data.Whatson.title}"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:fontFamily="@font/inter_semi_bold"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_earning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_venue_name"
+            style="@style/text_xsmall"
+            tools:text="Hello"
+            android:text="@{data.venue.venueName}"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintLeft_toRightOf="@id/iv_earning"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_whatson_date"
+            style="@style/text_small"
+            tools:text="Hello"
+            android:text="@{common.convertDateInFormat(data.whatson.whatDatetime,`yyyy-MM-dd HH:mm:ss`,`EEE, dd MMM yyyy`)+` - `+common.convertDateInFormat(data.whatson.endTime,`yyyy-MM-dd HH:mm:ss`,`EEE, dd MMM yyyy`)}"
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:layout_constraintLeft_toRightOf="@id/iv_earning"
+            app:layout_constraintTop_toBottomOf="@id/tv_venue_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_line"
+            android:layout_marginHorizontal="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintTop_toBottomOf="@+id/tv_whatson_date"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+        <carbon.widget.ImageView
+            android:layout_marginTop="@dimen/_margin_half"
+            app:layout_constraintTop_toBottomOf="@+id/iv_line"
+            android:id="@+id/iv_total_revenue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_profile_user_new"
+            android:padding="@dimen/_padding_half"
+            android:background="@color/white"
+            app:carbon_cornerRadius="15dp"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_width="@dimen/medium_img_size"
+            android:layout_height="@dimen/medium_img_size"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/lbl_total_revenue"
+            style="@style/text_small"
+            android:text="@string/lbl_number_of_people"
+            android:layout_marginLeft="@dimen/_margin"
+            app:layout_constraintLeft_toRightOf="@id/iv_total_revenue"
+            app:layout_constraintTop_toTopOf="@id/iv_total_revenue"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_total_revenue"
+            style="@style/text_medium"
+            android:layout_marginRight="@dimen/_margin"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/colorHeaderText"
+            android:text="@{``+data.quantity}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_total_revenue"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <carbon.widget.ImageView
+            android:layout_marginTop="@dimen/_margin_half"
+            app:layout_constraintTop_toBottomOf="@id/iv_total_revenue"
+            android:id="@+id/iv_total_booking"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_money_send"
+            android:padding="@dimen/_padding_half"
+            android:background="@color/white"
+            app:carbon_cornerRadius="15dp"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_width="@dimen/medium_img_size"
+            android:layout_height="@dimen/medium_img_size"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/lbl_total_booking"
+            style="@style/text_small"
+            android:text="@string/lbl_amount"
+            android:layout_marginLeft="@dimen/_margin"
+            app:layout_constraintLeft_toRightOf="@id/iv_total_booking"
+            app:layout_constraintTop_toTopOf="@id/iv_total_booking"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_total_booking"
+            style="@style/text_medium"
+            android:text="@{`£`+common.getDecimalFormatValue(data.price)}"
+            android:layout_marginRight="@dimen/_margin"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_total_booking"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_total_cancelled"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:fontFamily="@font/inter_medium"
+            android:text="@{`£`+common.getDecimalFormatValue(data.platformFees)}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_cancelled"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_total_cancelled" />
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_total_cancelled"
+            android:layout_width="@dimen/medium_img_size"
+            android:layout_height="@dimen/medium_img_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:background="@color/white"
+            android:padding="@dimen/_padding_half_half_6"
+            android:src="@drawable/ic_money_send"
+            app:carbon_cornerRadius="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_total_booking" />
+
+        <carbon.widget.TextView
+            android:id="@+id/lbl_total_cancelled"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin"
+            android:text="@string/lbl_platform_fees"
+            app:layout_constraintBottom_toBottomOf="@id/iv_total_cancelled"
+            app:layout_constraintLeft_toRightOf="@id/iv_total_cancelled"
+            app:layout_constraintTop_toTopOf="@id/iv_total_cancelled" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

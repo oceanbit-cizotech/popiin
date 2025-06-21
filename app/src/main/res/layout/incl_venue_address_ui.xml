@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/_padding"
+        android:layout_margin="@dimen/_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            bind:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/incl_venue_address"
+            layout="@layout/row_lbl_text_with_hint"
+            bind:title="@{@string/txt_address}"
+            bind:hint="@{@string/txt_enter_address_camel}" />
+
+        <LinearLayout
+            android:id="@+id/ll_address"
+            android:layout_marginTop="@dimen/_margin_20"
+            bind:layout_constraintTop_toBottomOf="@id/incl_venue_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/incl_venue_city"
+                layout="@layout/row_lbl_text_with_hint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                bind:hint="@{@string/txt_enter_city_town}"
+                bind:title="@{@string/txt_city_town}" />
+
+            <include
+                android:id="@+id/incl_venue_pincode"
+                layout="@layout/row_lbl_text_with_hint"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:layout_weight="1"
+                bind:hint="@{@string/txt_enter_post_code}"
+                bind:title="@{@string/txt_post_code}" />
+        </LinearLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_padding2"
+            android:paddingVertical="@dimen/_padding_half"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@drawable/bg_black_btn_with_round_corner"
+            android:gravity="center"
+            android:text="@string/txt_save"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_address" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

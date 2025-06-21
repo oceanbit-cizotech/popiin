@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_margin_20"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/_padding">
+
+            <TextView
+                android:id="@+id/tv_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/txt_private"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimaryTextWithoutTrans"
+                style="@style/text_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:padding="@dimen/_padding_half_half"
+                android:visibility="gone"
+                android:src="@drawable/ic_venue_info"
+                app:layout_constraintBottom_toBottomOf="@id/tv_private"
+                app:layout_constraintLeft_toRightOf="@id/tv_private"
+                app:layout_constraintTop_toTopOf="@id/tv_private" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_event_confirm"
+                android:layout_width="@dimen/switch_width"
+                android:layout_height="@dimen/switch_height"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:sb_background="@color/colorSwitchUncheck"
+                app:sb_checked_color="@color/colorSwitch"
+                app:sb_show_indicator="false"
+                tools:visibility="gone" />
+
+            <include
+                android:id="@+id/incl_event_name"
+                layout="@layout/row_lbl_text_with_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintTop_toBottomOf="@id/switch_event_confirm"
+                bind:hint="@{@string/txt_enter_event_name}"
+                bind:title="@{@string/txt_event_name_camel}" />
+
+            <include
+                android:id="@+id/incl_venue_name"
+                layout="@layout/row_lbl_text_with_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintTop_toBottomOf="@id/incl_event_name"
+                bind:hint="@{@string/txt_enter_venue_name}"
+                bind:title="@{@string/txt_venue_name_camel}" />
+
+            <include
+                android:id="@+id/incl_event_type"
+                layout="@layout/row_lbl_text_with_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/incl_venue_name"
+                bind:hint="@{@string/txt_select_event_type}"
+                bind:title="@{@string/txt_event_type}" />
+
+            <include
+                android:id="@+id/incl_age"
+                layout="@layout/row_lbl_spinner_with_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintTop_toBottomOf="@id/incl_event_type"
+                bind:title="@{@string/txt_age}" />
+
+            <include
+                android:id="@+id/event_age_other"
+                layout="@layout/row_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/incl_age" />
+
+            <include
+                android:id="@+id/incl_description"
+                layout="@layout/row_lbl_with_multiline_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintTop_toBottomOf="@id/event_age_other"
+                bind:hint="@{@string/txt_enter_description}"
+                bind:title="@{@string/txt_description}" />
+
+            <TextView
+                android:id="@+id/tv_add_images"
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:text="@string/lbl_add_images"
+                android:textColor="@color/colorSecondaryText"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/incl_description" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_images">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_event_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:id="@+id/img_add_image"
+                    android:layout_width="@dimen/civ_img_size"
+                    android:layout_height="@dimen/civ_img_size"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:src="@drawable/ic_add_image" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_image_error"
+                style="@style/text_small"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:textColor="@color/colorErrorText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_images" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_save"
+                android:layout_width="@dimen/explore_btn_width"
+                android:layout_height="@dimen/explore_btn_height"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:text="@string/txt_save"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_image_error" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

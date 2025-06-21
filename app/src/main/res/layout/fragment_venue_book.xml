@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bc"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="venue"
+            type="com.popiin.res.VenueListRes.Venue" />
+
+        <variable
+            name="model"
+            type="com.popiin.res.FavouriteVenueRes.Venue" />
+
+        <variable
+            name="isAddPromoCode"
+            type="Boolean" />
+
+        <variable
+            name="ticketName"
+            type="String" />
+
+        <variable
+            name="ticketQuantity"
+            type="String" />
+
+        <variable
+            name="username"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".activity.SplashActivity">
+
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{``}" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_margin"
+                android:paddingRight="@dimen/_margin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/iv_venue"
+                        android:layout_width="@dimen/img_setting_item_size"
+                        android:layout_height="@dimen/img_setting_item_size"
+                        android:background="@color/colorBlue"
+                        android:padding="@dimen/_padding_half"
+                        android:src="@drawable/ic_venue_item"
+                        app:carbon_cornerRadius="@dimen/_corner_radius_18"
+                        app:carbon_tint="@color/colorWhite"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_my_favourite"
+                        style="@style/text_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin_half_mid"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@{username}"
+                        android:textColor="@color/colorHeaderText"
+                        app:layout_constraintBottom_toTopOf="@id/tv_address"
+                        app:layout_constraintLeft_toRightOf="@id/iv_venue"
+                        app:layout_constraintRight_toLeftOf="@id/csb_timer"
+                        app:layout_constraintTop_toTopOf="@id/iv_venue"
+                        tools:text="Venue Name" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/text_small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model == null ? venue.venue_address+`, `+venue.venue_city+`, `+venue.venue_postal_code : model.venue_address+`, `+model.venue_city+`, `+model.venue_postal_code}"
+                        android:textColor="@color/colorSecondaryText"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_venue"
+                        app:layout_constraintRight_toRightOf="@id/tv_my_favourite"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_my_favourite"
+                        app:layout_constraintTop_toBottomOf="@id/tv_my_favourite"
+                        tools:text="Surat" />
+
+
+                    <me.tankery.lib.circularseekbar.CircularSeekBar
+                        android:id="@+id/csb_timer"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        app:cs_circle_color="@color/colorSemiGrey"
+                        app:cs_circle_progress_color="@color/colorBlue"
+                        app:cs_circle_stroke_width="5dp"
+                        app:cs_circle_style="square"
+                        app:cs_disable_pointer="true"
+                        app:cs_disable_progress_glow="true"
+                        app:cs_lock_enabled="true"
+                        app:cs_max="600000"
+                        app:cs_negative_enabled="false"
+                        app:cs_progress="600000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        style="@style/text_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="10:00"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintBottom_toBottomOf="@+id/csb_timer"
+                        app:layout_constraintLeft_toLeftOf="@+id/csb_timer"
+                        app:layout_constraintRight_toRightOf="@+id/csb_timer"
+                        app:layout_constraintTop_toTopOf="@+id/csb_timer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Event Detail-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/_margin"
+                        android:paddingRight="@dimen/_margin">
+
+                        <View
+                            style="@style/line_light"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:visibility="gone" />
+
+                        <include
+                            android:id="@+id/venue_book_type"
+                            layout="@layout/row_edittext_with_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            bind:hint="@{@string/txt_select}"
+                            bind:title="@{@string/abt_booking_type}" />
+
+                        <include
+                            android:id="@+id/venue_num_people"
+                            layout="@layout/row_edittext_with_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            bind:hint="@{@string/txt_select}"
+                            bind:title="@{@string/txt_num_of_people}" />
+
+                       <!-- <include
+                            android:id="@+id/venue_num_people_other"
+                            layout="@layout/row_lbl_text_with_hint_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:visibility="gone"
+                            bind:hint="@{@string/txt_num_of_people}"
+                            bind:title="@{``}" />-->
+
+                        <include
+                            android:id="@+id/venue_start_date"
+                            layout="@layout/row_lbl_edittext_with_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin_half_mid"
+                            android:layout_weight="1"
+                            bind:hint="@{@string/txt_select}"
+                            bind:image="@{@drawable/ic_calender}"
+                            bind:title="@{@string/txt_date}" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:orientation="horizontal">
+
+                            <include
+                                android:id="@+id/venue_start_time"
+                                layout="@layout/row_lbl_edittext_with_icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_margin_half"
+                                android:layout_weight="1"
+                                bind:hint="@{@string/txt_select}"
+                                bind:image="@{@drawable/ic_time}"
+                                bind:title="@{@string/lbl_time}" />
+
+                            <include
+                                android:id="@+id/venue_end_time"
+                                layout="@layout/row_lbl_edittext_with_icon"
+                                android:layout_width="match_parent"
+                                android:clickable="false"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_margin_half"
+                                android:layout_weight="1"
+                                bind:hint="@{@string/txt_select}"
+                                bind:image="@{@drawable/ic_time}"
+                                bind:title="@{@string/lbl_until}" />
+
+                        </LinearLayout>
+
+                        <include
+                            android:id="@+id/venue_special_requests"
+                            layout="@layout/row_lbl_with_multiline_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            bind:title="@{@string/ba_special_requests}" />
+
+                        <TextView
+                            android:id="@+id/tv_terms"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="@color/colorGrey"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/ll_deposit_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imd_deposit"
+                            android:layout_width="@dimen/close_icon_size"
+                            android:layout_height="@dimen/close_icon_size"
+                            android:src="@drawable/ic_wallet"
+                            app:tint="@color/colorBlue" />
+
+                        <TextView
+                            android:id="@+id/tv_deposit_amount"
+                            style="@style/text_x_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_padding_half"
+                            android:textColor="@color/colorHeaderText"
+                            tools:text="$25.00" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_booking_text"
+                        style="@style/text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half_half"
+                        tools:text="testing required text" />
+
+                    <TextView
+                        android:id="@+id/txt_booking_message"
+                        style="@style/text_small"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textColor="@color/colorThemeRed"
+                        android:text="At the moment, there’s no availability. Choose another time."
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        tools:text="At the moment, there’s no availability. Choose another time." />
+
+
+                    <carbon.widget.TextView
+                        android:id="@+id/btn_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginRight="@dimen/_margin"
+                        android:layout_marginBottom="@dimen/_common_margin"
+                        android:background="@drawable/bg_black_btn_with_round_corner"
+                        android:gravity="center"
+                        android:text="@string/txt_book_now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

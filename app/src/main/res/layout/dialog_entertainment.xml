@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransparent">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_margin"
+                android:src="@drawable/ic_close_dialog"
+                app:layout_constraintBottom_toTopOf="@id/cl_pass"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <carbon.widget.ConstraintLayout
+                android:id="@+id/cl_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorWhite"
+                android:paddingBottom="@dimen/_padding_40"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_view"
+                    android:layout_width="@dimen/view_width"
+                    android:layout_height="@dimen/view_height"
+                    android:layout_marginTop="@dimen/_margin_10"
+                    android:background="@color/colorView"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_20"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@string/txt_select_entertainment"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/nsv_venue_type"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_filter"
+                        android:layout_width="match_parent"
+                        android:animateLayoutChanges="true"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/incl_event_entertainment"
+                            bind:title="@{@string/txt_entertainment}"
+                            layout="@layout/include_other_venue_type" />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginHorizontal="@dimen/_margin_20"
+                            android:id="@+id/tv_error"
+                            style="@style/text_small"
+                            tools:text="Please error"
+                            android:textColor="@color/colorErrorText"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+                <View
+                    android:id="@+id/view_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginTop="@dimen/_margin_mid"
+                    android:background="@color/colorSecondaryText50"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nsv_venue_type" />
+
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_done"
+                    style="@style/btn_style"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:layout_marginBottom="@dimen/_margin"
+                    android:gravity="center"
+                    android:text="@string/txt_done"
+                    android:fontFamily="@font/inter_regular"
+                    app:layout_constraintTop_toBottomOf="@id/view_bottom"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+            </carbon.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

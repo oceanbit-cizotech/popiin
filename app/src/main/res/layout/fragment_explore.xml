@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_your_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_20"
+            android:layout_marginTop="@dimen/_margin2"
+            android:gravity="center"
+            android:text="@string/txt_hey"
+            style="@style/text_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/colorHeaderText"
+            style="@style/text_medium"
+            app:layout_constraintLeft_toLeftOf="@id/tv_your_location"
+            app:layout_constraintTop_toBottomOf="@id/tv_your_location"
+            tools:text="LONDON" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_margin_half"
+            android:visibility="gone"
+            android:src="@drawable/ic_drop_down"
+            app:layout_constraintBottom_toBottomOf="@id/tv_user_name"
+            app:layout_constraintLeft_toRightOf="@id/tv_user_name"
+            app:layout_constraintTop_toTopOf="@id/tv_user_name" />
+
+        <ImageView
+            android:id="@+id/iv_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_margin_half"
+            android:background="@drawable/ic_alert"
+            app:layout_constraintBottom_toBottomOf="@id/civ_profile"
+            app:layout_constraintRight_toLeftOf="@id/civ_profile"
+            app:layout_constraintTop_toTopOf="@id/civ_profile" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_profile"
+            android:layout_width="@dimen/img_venue_fav_size"
+            android:layout_height="@dimen/img_venue_fav_size"
+            android:layout_marginTop="@dimen/_margin2"
+            android:layout_marginEnd="@dimen/_margin_20"
+            android:src="@drawable/ic_temp_profile"
+            app:carbon_cornerRadius="@dimen/_civ_corner_radius"
+            app:civ_border_color="@color/chartDemoGraphColor2"
+            app:civ_border_width="1dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.EditText
+            android:id="@+id/edt_search_explore"
+            style="@style/edt_signup"
+            android:imeOptions="actionSearch"
+            android:layout_marginStart="@dimen/_margin_20"
+            android:textSize="@dimen/xsmall_text"
+            android:layout_marginTop="@dimen/_margin"
+            android:layout_marginEnd="@dimen/_margin_10"
+            android:focusable="false"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:background="@color/colorSemiGrey"
+            android:drawableLeft="@drawable/ic_explore_search"
+            android:drawablePadding="@dimen/_padding_10"
+            android:hint="@string/txt_search_explore"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/iv_filter"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_name" />
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_margin_half"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_search_close"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search_explore"
+            app:layout_constraintRight_toRightOf="@id/edt_search_explore"
+            app:layout_constraintTop_toTopOf="@id/edt_search_explore" />
+
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_margin_20"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search_explore"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edt_search_explore" />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/edt_search_explore"
+            app:layout_constraintTop_toBottomOf="@id/edt_search_explore">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_padding">
+
+                <TextView
+                    android:id="@+id/tv_trending_stories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin_20"
+                    style="@style/text_small"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@string/txt_trending_stories"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_view_all"
+                    android:layout_width="wrap_content"
+                    style="@style/text_xsmall"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_margin_mid"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_view_all"
+                    android:textColor="@color/colorBlue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_trending_stories"
+                    app:layout_constraintTop_toTopOf="@id/tv_trending_stories" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_trend_stories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:scrollbars="none"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin_half_half"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_trend_stories" />
+
+
+                <carbon.widget.ConstraintLayout
+                    android:id="@+id/cl_verify"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="#F8F8F8"
+                    android:paddingBottom="@dimen/_padding_half_mid"
+                    android:visibility="gone"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+                    app:carbon_stroke="#E5E5E5"
+                    app:carbon_strokeWidth="1dp"
+                    app:layout_constraintLeft_toLeftOf="@id/rv_tags"
+                    app:layout_constraintRight_toRightOf="@id/rv_tags"
+                    app:layout_constraintTop_toBottomOf="@id/rv_tags">
+
+                    <TextView
+                        android:id="@+id/tv_verify_title"
+                        style="@style/text_x_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_margin"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/txt_verify_you_account"
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_verify_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginEnd="@dimen/_margin_half"
+                        android:text="@string/txt_verify_code_info"
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_verify_title"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_verify_title" />
+
+                    <TextView
+                        android:id="@+id/tv_verify"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_verify"
+                        android:visibility="gone"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_verify_desc"
+                        app:layout_constraintTop_toBottomOf="@id/tv_verify_desc" />
+
+                </carbon.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_account_not_verified"
+                    style="@style/text_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="#FD9D60"
+                    android:visibility="gone"
+                    android:drawableLeft="@drawable/ic_warning_sign"
+                    android:drawablePadding="@dimen/_padding_half_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:paddingHorizontal="@dimen/_padding_mid"
+                    android:paddingVertical="@dimen/_padding_half_mid"
+                    android:text="@string/txt_no_account_verify"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_tags" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/nsv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:fillViewport="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_verify">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_explore"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/_margin_half"
+                            android:overScrollMode="never"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tv_no_venue_data"
+                            style="@style/text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorSecondaryText"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:background="@color/colorWhite"
+            android:elevation="2dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/edt_search_explore"
+            app:layout_constraintRight_toRightOf="@id/edt_search_explore"
+            app:layout_constraintTop_toBottomOf="@id/edt_search_explore" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

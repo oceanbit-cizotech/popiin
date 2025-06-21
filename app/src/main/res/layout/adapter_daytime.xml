@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="days"
+            type="com.popiin.model.TimingModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/_margin"
+            android:id="@+id/lbl_title"
+            style="@style/text_xsmall"
+            android:fontFamily="@font/inter_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{days.day}"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/lin_time_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <carbon.widget.TextView
+                android:id="@+id/edt_open_time"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/small_text"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/ic_time"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="@dimen/_margin_half_mid"
+                android:text="@{days.open_time}"
+                android:hint="@string/venue_open_time"
+                android:layout_weight="0.6"
+                />
+            <carbon.widget.TextView
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:id="@+id/edt_close_time"
+                android:layout_width="match_parent"
+                style="@style/edt_signup"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/ic_time"
+                android:layout_marginTop="0dp"
+                android:textSize="@dimen/small_text"
+                android:text="@{days.close_time}"
+                android:hint="@string/venue_close_time"
+                android:layout_weight="0.6" />
+
+            <carbon.widget.ImageView
+                android:background="@color/colorBlue"
+                android:layout_width="20dp"
+                android:id="@+id/imgClose"
+                android:layout_weight="0"
+                android:layout_marginLeft="@dimen/_margin_half_half"
+                app:carbon_tint="@color/white"
+                android:layout_height="20dp"
+                android:padding="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_close_offer"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_mid" />
+
+        </LinearLayout>
+
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/lin_time_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_error"
+            android:visibility="gone"
+            style="@style/text_small"
+            android:textColor="@color/colorErrorText"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

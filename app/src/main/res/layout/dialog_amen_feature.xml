@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_padding2"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/tv_amen"
+                android:textColor="@color/colorHeaderText"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/txt_amen_feature"
+                app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_margin"
+                android:layout_marginBottom="@dimen/_margin"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:fillViewport="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_amen"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <carbon.widget.ConstraintLayout
+                    android:id="@+id/cl_amenties"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSemiGrey"
+                    android:paddingBottom="@dimen/_padding2"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:carbon_stroke="@color/colorMenuView"
+                    app:carbon_strokeWidth="1dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_amentites"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/amenties_view"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:background="@color/colorMenuView"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_amentites" />
+
+                    <TextView
+                        android:id="@+id/tv_venue_offers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_offers"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/amenties_view" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_offers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin_half"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venue_offers" />
+
+                    <View
+                        android:id="@+id/offer_view"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:background="@color/colorMenuView"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_offers" />
+
+                    <TextView
+                        android:id="@+id/tv_venue_entertainment"
+                        style="@style/text_x_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_entertainment"
+                        android:visibility="gone"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/offer_view" />
+
+                    <include
+                        android:id="@+id/incl_dress_code"
+                        layout="@layout/incl_title_desc_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/offer_view"
+                        bind:title="@{@string/txt_dress_code}" />
+
+                    <include
+                        android:id="@+id/incl_entry_policy"
+                        layout="@layout/incl_title_desc_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:visibility="gone"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/incl_dress_code"
+                        bind:title="@{@string/txt_entry_policy_camel}" />
+
+                    <include
+                        android:id="@+id/incl_last_entry_policy"
+                        layout="@layout/incl_title_desc_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/incl_entry_policy"
+                        bind:title="@{@string/txt_last_entry_policy}" />
+
+                    <include
+                        android:id="@+id/incl_other_info"
+                        layout="@layout/incl_title_desc_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/incl_last_entry_policy"
+                        bind:title="@{@string/txt_other_information_plain}" />
+
+
+                </carbon.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

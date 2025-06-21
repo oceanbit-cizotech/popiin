@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_margin_20"
+            android:layout_marginTop="@dimen/_margin2"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/txt_whats_on"
+            android:textColor="@color/colorHeaderText"
+            android:textSize="@dimen/large_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.EditText
+            android:id="@+id/edt_search_events"
+            style="@style/edt_signup"
+            android:textSize="@dimen/xsmall_text"
+            app:layout_constraintRight_toLeftOf="@id/iv_filter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_events"
+            android:layout_marginStart="@dimen/_margin_20"
+            android:layout_marginEnd="@dimen/_margin_10"
+            android:background="@color/colorSemiGrey"
+            android:drawableLeft="@drawable/ic_explore_search"
+            android:drawablePadding="@dimen/_padding_10"
+            android:hint="@string/text_wahtson_search"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_marginEnd="@dimen/_margin_half"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_search_close"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="@id/edt_search_events"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search_events"
+            app:layout_constraintTop_toTopOf="@id/edt_search_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_margin_20"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search_events"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edt_search_events" />
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_search_events">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                   />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_events"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:overScrollMode="never"
+                    android:paddingBottom="@dimen/_padding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_tags" />
+
+                <include
+                    android:id="@+id/incl_message"
+                    layout="@layout/include_no_list_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:background="@color/colorWhite"
+            android:elevation="2dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/edt_search_events"
+            app:layout_constraintRight_toRightOf="@id/edt_search_events"
+            app:layout_constraintTop_toBottomOf="@id/edt_search_events" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

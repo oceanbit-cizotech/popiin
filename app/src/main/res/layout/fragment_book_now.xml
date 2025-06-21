@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.Html" />
+
+
+        <variable
+            name="event"
+            type="com.popiin.res.EventListRes.Event" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="eventFavourite"
+            type="com.popiin.res.FavouriteEventsRes.Event" />
+
+        <variable
+            name="isAddPromoCode"
+            type="Boolean" />
+
+        <variable
+            name="ticketName"
+            type="String" />
+
+        <variable
+            name="ticketQuantity"
+            type="String" />
+
+        <variable
+            name="ticketPrice"
+            type="Double" />
+
+        <variable
+            name="totalPrice"
+            type="Double" />
+
+        <variable
+            name="bookingFee"
+            type="Double" />
+
+        <variable
+            name="discount"
+            type="Double" />
+
+        <variable
+            name="username"
+            type="String" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/tv_terms_condition"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="@dimen/img_back_size"
+                    android:layout_height="@dimen/img_back_size"
+                    android:layout_marginStart="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin2"
+                    android:background="@color/colorSemiGrey"
+                    android:padding="@dimen/_padding_half"
+                    android:src="@drawable/ic_left_arrow"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_my_events"
+                    android:layout_width="@dimen/map_list_item_heart_size"
+                    android:layout_height="@dimen/map_list_item_heart_size"
+                    android:layout_marginStart="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="@color/colorBlue"
+                    android:padding="@dimen/_padding_half"
+                    android:src="@drawable/ic_venue_item"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:carbon_tint="@color/colorWhite"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+                <TextView
+                    android:id="@+id/tv_event_title"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{eventFavourite == null ? event.name : eventFavourite.name}"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_desc"
+                    app:layout_constraintLeft_toRightOf="@id/iv_my_events"
+                    app:layout_constraintTop_toTopOf="@id/iv_my_events"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/tv_title_desc"
+                    style="@style/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{eventFavourite == null ? event.venue : eventFavourite.venue}"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_my_events"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_event_title"
+                    app:layout_constraintTop_toBottomOf="@id/tv_event_title"
+                    tools:text="Title Desc" />
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar
+                    android:id="@+id/csb_timer"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:layout_marginBottom="@dimen/_margin_half"
+                    app:cs_circle_color="@color/colorTimerOut"
+                    android:layout_marginEnd="@dimen/_margin_20"
+                    app:cs_circle_progress_color="@color/colorBlue"
+                    app:cs_circle_stroke_width="5dp"
+                    app:cs_circle_style="square"
+                    app:cs_disable_pointer="true"
+                    app:cs_disable_progress_glow="true"
+                    app:cs_lock_enabled="true"
+                    app:cs_max="600000"
+                    app:cs_negative_enabled="false"
+                    app:cs_progress="600000"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_title_desc"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_event_title" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    style="@style/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="10:00"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toBottomOf="@+id/csb_timer"
+                    app:layout_constraintLeft_toLeftOf="@+id/csb_timer"
+                    app:layout_constraintRight_toRightOf="@+id/csb_timer"
+                    app:layout_constraintTop_toTopOf="@+id/csb_timer" />
+
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="@{eventFavourite == null ? event.address+`, `+event.city+` - `+event.postal_code : eventFavourite.address+`, `+eventFavourite.city+` - `+eventFavourite.postal_code}"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_my_events"
+                    app:layout_constraintTop_toBottomOf="@id/iv_my_events"
+                    tools:text="Surat ,Surat 395004" />
+
+                <TextView
+                    android:id="@+id/tv_event_time"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@string/txt_event_time"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_address"
+                    app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+                <carbon.widget.LinearLayout
+                    android:id="@+id/ll_basic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:paddingHorizontal="@dimen/_padding_half"
+                    android:background="@color/colorSemiGrey"
+                    android:orientation="vertical"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_event_time">
+
+                    <include
+                        android:id="@+id/incl_start_date"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_event_time}"
+                        bind:time="@{eventFavourite == null ? common.convertDateInFormat(event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) : common.convertDateInFormat(eventFavourite.start_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) }"
+                        bind:title="@{@string/lbl_start_date}" />
+
+                    <include
+                        android:id="@+id/incl_end_date"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_event_time}"
+                        bind:time="@{eventFavourite == null ? common.convertDateInFormat(event.end_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) : common.convertDateInFormat(eventFavourite.end_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) }"
+                        bind:title="@{@string/lbl_end_date}" />
+
+                    <include
+                        android:id="@+id/incl_start_time"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_clock}"
+                        bind:time="@{eventFavourite == null ? common.convertDateInFormat(event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) : common.convertDateInFormat(eventFavourite.start_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) }"
+                        bind:title="@{@string/lbl_start_time}" />
+
+                    <include
+                        android:id="@+id/incl_end_time"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_clock}"
+                        bind:time="@{eventFavourite == null ? common.convertDateInFormat(event.end_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) : common.convertDateInFormat(eventFavourite.end_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) }"
+                        bind:title="@{@string/lbl_end_time}" />
+
+                </carbon.widget.LinearLayout>
+
+                <!--Entry Parent-->
+                <LinearLayout
+                    android:id="@+id/ll_entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="@drawable/gredient_bg_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_padding"
+                    app:layout_constraintTop_toBottomOf="@id/ll_basic">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_margin_half"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/text_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_entry"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorWhite" />
+
+                        <TextView
+                            style="@style/text_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:text="@{ticketName != null ? ticketName : `-`}"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorWhite"
+                            tools:text="Entry Policy" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_margin_half"
+                        android:layout_weight="1.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/text_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_select_quantity"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorWhite" />
+
+
+                        <TextView
+                            android:id="@+id/tv_quantity"
+                            style="@style/text_medium"
+                            android:drawablePadding="@dimen/_padding_half_half"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:text="@{ticketQuantity}"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorWhite"
+                            app:drawableStartCompat="@drawable/ic_drop_down"
+                            app:drawableTint="@color/colorWhite"
+                            tools:text="Sold out" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Amount Detail-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_padding_20"
+                    android:paddingRight="@dimen/_padding_20"
+                    app:layout_constraintTop_toBottomOf="@id/ll_entry">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/adapter_booking_ticket" />
+
+                    <TextView
+                        style="@style/text_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:text="@string/lbl_your_order_details"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half">
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            style="@style/text_large"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/lbl_price_colon"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/tv_price_value"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_price_value"
+                            style="@style/text_large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@{`£ `+common.getDecimalFormatValue(ticketPrice)}"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="£40.00" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half_half">
+
+                        <TextView
+                            android:id="@+id/tv_booking_fee"
+                            style="@style/text_medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lbl_process_fee_colon"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorSecondaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/tv_booking_fee_value"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_booking_fee_value"
+                            style="@style/text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{`£ `+common.getDecimalFormatValue(bookingFee)}"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="£0.50" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half_half"
+                        android:visibility="@{discount == 0 ? View.GONE : View.VISIBLE , default = gone}"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_discount"
+                            style="@style/text_medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lbl_service_fee_colon"
+                            android:textColor="@color/colorSecondaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/tv_discount_value"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_discount_value"
+                            style="@style/text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/colorHeaderText"
+                            android:text="@{`£ `+discount}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="-£0.50" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <CheckBox
+                        android:id="@+id/cb_add_promo_code"
+                        style="@style/text_small"
+                        android:fontFamily="@font/inter_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:button="@null"
+                        android:checked="@={isAddPromoCode}"
+                        android:enabled="@{discount == 0 &amp;&amp; !isAddPromoCode}"
+                        android:text="@string/add_promo_code"
+                        android:textColor="@color/colorBlue" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{isAddPromoCode ? View.VISIBLE : View.GONE, default = gone}"
+                        tools:visibility="visible">
+
+                        <carbon.widget.EditText
+                            android:id="@+id/et_promo_code"
+                            style="@style/edt_signup"
+                            android:layout_marginEnd="@dimen/_margin"
+                            android:enabled="@{discount == 0}"
+                            android:hint="@string/txt_enter_your_code_here"
+                            android:textSize="@dimen/small_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/btn_delete_code"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <CheckBox
+                            android:id="@+id/btn_cancel"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:checked="@={isAddPromoCode}"
+                            android:text="@string/lbl_cancel"
+                            android:textColor="@color/colorBlack"
+                            app:layout_constraintBottom_toBottomOf="@+id/et_promo_code"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/et_promo_code" />
+
+                        <TextView
+                            android:id="@+id/btn_apply_code"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_margin"
+                            android:padding="@dimen/_padding_half"
+                            android:text="@string/txt_apply"
+                            android:textColor="@color/colorBlack"
+                            android:visibility="@{discount == 0 ? View.VISIBLE : View.GONE , default = visible}"
+                            app:layout_constraintBottom_toBottomOf="@+id/et_promo_code"
+                            app:layout_constraintRight_toLeftOf="@+id/btn_cancel"
+                            app:layout_constraintTop_toTopOf="@+id/et_promo_code"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/btn_delete_code"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_margin"
+                            android:textColor="@color/colorBlack"
+                            android:visibility="@{discount == 0 ? View.GONE : View.VISIBLE , default = gone}"
+                            app:layout_constraintBottom_toBottomOf="@+id/et_promo_code"
+                            app:layout_constraintRight_toLeftOf="@+id/btn_apply_code"
+                            app:layout_constraintTop_toTopOf="@+id/et_promo_code"
+                            tools:visibility="visible" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--Total Price-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half">
+
+                        <TextView
+                            android:id="@+id/tv_total"
+                            style="@style/text_large"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/lbl_total_colan"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/tv_total_value"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_total_value"
+                            style="@style/text_large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@{`£`+common.getDecimalFormatValue(totalPrice)}"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="£44.50" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        style="@style/line_light"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_margin" />
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_terms_condition"
+            style="@style/text_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/btn_book_now"
+            android:textColorLink="@color/colorPrimary" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_book_now"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin_mid"
+            android:gravity="center"
+            android:text="@string/txt_book_now"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

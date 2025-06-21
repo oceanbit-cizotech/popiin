@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="report"
+            type="com.popiin.res.SalesReportRes" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_sales_report}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_padding2">
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/incl_all_events"
+                        layout="@layout/row_edittext_with_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_margin_half"
+                        android:layout_weight="1"
+                        bind:hint="@{@string/txt_select}"
+                        bind:title="@{@string/txt_all_events}" />
+
+                    <include
+                        android:id="@+id/incl_all_venues"
+                        layout="@layout/row_edittext_with_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin_half"
+                        android:clickable="false"
+                        android:layout_weight="1"
+                        bind:hint="@{@string/txt_select}"
+                        bind:title="@{@string/txt_all_whatson_on}" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_screen_shot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <View
+                        android:id="@+id/ll_view_header"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:background="@color/colorRVBorder"
+                        app:layout_constraintLeft_toLeftOf="@id/ll_header"
+                        app:layout_constraintRight_toRightOf="@id/ll_header"
+                        app:layout_constraintTop_toBottomOf="@id/ll_header" />
+
+                    <TextView
+                        android:id="@+id/tv_sales_report_date"
+                        style="@style/text_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/colorStoryText"
+                        app:layout_constraintLeft_toLeftOf="@id/ll_view_header"
+                        app:layout_constraintTop_toBottomOf="@id/ll_view_header"
+                        tools:text="20 Jan" />
+
+                    <TextView
+                        android:id="@+id/tv_sales_summary"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_sales_summary"
+                        android:textColor="@color/colorSalesSummText"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_sales_report_date"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sales_report_date" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_sales_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sales_summary">
+
+                        <include
+                            layout="@layout/incl_sales_summary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:bgColor="@{@color/colorSalesSummBook}"
+                            bind:image="@{@drawable/ic_sales_report_book}"
+                            bind:title="@{@string/txt_sales_booking}"
+                            bind:value="@{``+report.summary.sales_Summary.get(0).bookings}" />
+
+                        <include
+                            layout="@layout/incl_sales_summary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:bgColor="@{@color/colorSalesSummRevenue}"
+                            bind:image="@{@drawable/ic_sales_report_revenue}"
+                            bind:title="@{@string/txt_sales_revenue}"
+                            bind:value="@{`£` + common.getDecimalFormatValue(report.summary.sales_Summary.get(0).income)}" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_sales_summary"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:background="@color/colorRVBorder"
+                        app:layout_constraintLeft_toLeftOf="@id/ll_sales_summary"
+                        app:layout_constraintRight_toRightOf="@id/ll_sales_summary"
+                        app:layout_constraintTop_toBottomOf="@id/ll_sales_summary" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="@id/view_sales_summary"
+                        app:layout_constraintTop_toBottomOf="@id/view_sales_summary">
+
+                        <TextView
+                            android:id="@+id/tv_total_revenue"
+                            style="@style/text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:paddingVertical="@dimen/_padding_half_half"
+                            android:text="@string/txt_total_revenue"
+                            android:textColor="@color/colorHeaderText"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <carbon.widget.TextView
+                            android:id="@+id/tv_duration"
+                            style="@style/text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal|right"
+                            android:background="@color/colorSemiGrey"
+                            android:drawableRight="@drawable/ic_drop_down"
+                            android:drawablePadding="@dimen/_padding_half_half"
+                            android:paddingHorizontal="@dimen/_padding_half_mid"
+                            android:paddingVertical="@dimen/_padding_half_half"
+                            android:textColor="@color/colorHeaderText"
+                            app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="One Week" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/fr_total_revenue"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:paddingLeft="@dimen/_padding_half"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_total_revenue">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/chart_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_no_info_month_chart"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/no_information_to_display"
+                            android:textColor="@color/colorBlack" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_booking_summary"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_booking_summary"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.PieChartView
+                            android:id="@+id/pie_chart_booking"
+                            android:layout_width="@dimen/pie_chart_size"
+                            android:layout_height="@dimen/pie_chart_size"
+                            android:layout_gravity="center" />
+
+                        <carbon.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorSemiGrey"
+                            android:paddingBottom="@dimen/_padding"
+                            app:carbon_cornerRadius="@dimen/_corner_radius">
+
+                            <ImageView
+                                android:id="@+id/iv_summ_report"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_margin_20"
+                                android:src="@drawable/ic_summary_report"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_booking_revenue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_margin_half"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:textColor="@color/colorHeaderText"
+                                app:layout_constraintLeft_toRightOf="@id/iv_summ_report"
+                                app:layout_constraintTop_toTopOf="@id/iv_summ_report" />
+
+                            <TextView
+                                android:id="@+id/tv_total_book_revenue"
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_total_revenue"
+                                android:textColor="@color/colorSalesSummDesc"
+                                app:layout_constraintBottom_toBottomOf="@id/iv_summ_report"
+                                app:layout_constraintLeft_toLeftOf="@id/tv_booking_revenue"
+                                app:layout_constraintTop_toBottomOf="@id/tv_booking_revenue" />
+
+                            <View
+                                android:id="@+id/view_book_summ"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_margin_20"
+                                android:background="@color/colorRVBorder"
+                                app:layout_constraintTop_toBottomOf="@id/iv_summ_report" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_booking_summary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_margin"
+                                app:layout_constraintTop_toBottomOf="@id/view_book_summ"
+                                tools:itemCount="2" />
+
+                        </carbon.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/line_light"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:layout_marginBottom="@dimen/_margin" />
+
+                    <TextView
+                        android:id="@+id/tv_demographics"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_demographics"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.PieChartView
+                            android:id="@+id/pie_chart_demographic"
+                            android:layout_width="@dimen/pie_chart_size"
+                            android:layout_height="@dimen/pie_chart_size"
+                            android:layout_gravity="center" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_demo_male"
+                                android:drawablePadding="@dimen/_padding_half"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/txt_male"
+                                android:textColor="@color/colorHeaderText" />
+
+                            <TextView
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_padding2"
+                                android:drawableStart="@drawable/ic_demo_female"
+                                android:drawablePadding="@dimen/_padding_half"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/txt_female"
+                                android:textColor="@color/colorHeaderText" />
+
+                            <TextView
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_demo_other"
+                                android:drawablePadding="@dimen/_padding_half"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/txt_plain_other"
+                                android:textColor="@color/colorHeaderText" />
+
+                        </LinearLayout>
+
+                        <carbon.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:background="@color/colorSemiGrey"
+                            android:paddingBottom="@dimen/_padding"
+                            app:carbon_cornerRadius="@dimen/_corner_radius">
+
+                            <ImageView
+                                android:id="@+id/iv_summ_demo_report"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_margin_20"
+                                android:src="@drawable/ic_summary_report"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_booking_demograph_revenue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_margin_half"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:textColor="@color/colorHeaderText"
+                                app:layout_constraintLeft_toRightOf="@id/iv_summ_demo_report"
+                                app:layout_constraintTop_toTopOf="@id/iv_summ_demo_report" />
+
+                            <TextView
+                                android:id="@+id/tv_total_book_demograph_revenue"
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_total_revenue"
+                                android:textColor="@color/colorSalesSummDesc"
+                                app:layout_constraintBottom_toBottomOf="@id/iv_summ_demo_report"
+                                app:layout_constraintLeft_toLeftOf="@id/tv_booking_demograph_revenue"
+                                app:layout_constraintTop_toBottomOf="@id/tv_booking_demograph_revenue" />
+
+                            <View
+                                android:id="@+id/view_book_demograph_summ"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_margin_20"
+                                android:background="@color/colorRVBorder"
+                                app:layout_constraintTop_toBottomOf="@id/iv_summ_demo_report" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_demographic_summary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_margin_10"
+                                app:layout_constraintTop_toBottomOf="@id/view_book_demograph_summ"
+                                tools:itemCount="3" />
+
+                        </carbon.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/line_light"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:layout_marginBottom="@dimen/_margin" />
+
+                    <TextView
+                        android:id="@+id/tv_age_group"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/txt_age_group"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        <RadioGroup
+                            android:id="@+id/rg_age_chart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_margin"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_age_16_20"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_16_20" />
+
+                            <RadioButton
+                                android:id="@+id/rb_age_21_25"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_21_25" />
+
+                            <RadioButton
+                                android:id="@+id/rb_age_26_30"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_26_30" />
+
+                            <RadioButton
+                                android:id="@+id/rb_age_31_35"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_31_35" />
+
+                            <RadioButton
+                                android:id="@+id/rb_age_36_40"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_36_40"
+                                tools:checked="true" />
+
+                            <RadioButton
+                                android:id="@+id/rb_age_41_up"
+                                style="@style/radio_button_age"
+                                android:text="@string/txt_41" />
+
+                        </RadioGroup>
+
+                    </HorizontalScrollView>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="@dimen/_margin_half">
+
+                        <lecho.lib.hellocharts.view.ColumnChartView
+                            android:id="@+id/bar_chart_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_margin"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_no_info_age_chart"
+                            style="@style/text_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/no_information_to_display"
+                            android:textColor="@color/colorBlack" />
+
+                    </FrameLayout>
+
+                    <carbon.widget.TextView
+                        android:id="@+id/btn_download"
+                        style="@style/btn_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_marginTop="@dimen/_margin_40"
+                        android:gravity="center"
+                        android:text="@string/txt_downlaod_caps"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

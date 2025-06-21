@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:TagsEditText="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="hints"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="0dp"
+            style="@style/text_xsmall"
+            android:textColor="@color/colorSecondaryText"
+            android:fontFamily="@font/inter_medium"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            tools:text="Title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_info"
+            android:layout_marginLeft="@dimen/_margin_half_half"
+            app:layout_constraintBottom_toBottomOf="@id/lbl_title"
+            app:layout_constraintTop_toTopOf="@id/lbl_title"
+            app:layout_constraintLeft_toRightOf="@id/lbl_title"
+            android:src="@drawable/ic_venue_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:id="@+id/fl_tegs"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            style="@style/edt_signup"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title">
+            <mabbas007.tagsedittext.TagsEditText
+                android:id="@+id/tags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:allowSpaceInTag="false"
+                android:gravity="top"
+                android:paddingTop="@dimen/_padding_half"
+                style="@style/text_small"
+                android:hint="@{hints}"
+                android:background="@null"
+                TagsEditText:tagsTextSize="@dimen/small_text"
+                app:tagsBackground="@drawable/btn_leftright_gradient" />
+        </FrameLayout>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/fl_tegs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_error"
+            style="@style/text_small"
+            android:visibility="invisible"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

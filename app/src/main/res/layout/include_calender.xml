@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_month_year"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/_margin_half_mid"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="January 2024" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:src="@drawable/ic_calender_right"
+            app:layout_constraintBottom_toBottomOf="@id/tv_month_year"
+            app:layout_constraintLeft_toRightOf="@id/tv_month_year"
+            app:layout_constraintTop_toTopOf="@id/tv_month_year" />
+
+
+        <ImageView
+            android:id="@+id/iv_cal_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:src="@drawable/ic_calender_left"
+            app:layout_constraintBottom_toBottomOf="@id/tv_month_year"
+            app:layout_constraintRight_toLeftOf="@id/iv_cal_right"
+            app:layout_constraintTop_toTopOf="@id/tv_month_year" />
+
+
+        <ImageView
+            android:id="@+id/iv_cal_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:src="@drawable/ic_calender_right"
+            app:layout_constraintBottom_toBottomOf="@id/tv_month_year"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_month_year" />
+
+        <LinearLayout
+            android:id="@+id/ll_weeks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_month_year">
+
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_sun}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_mon}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_tue}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_wed}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_thu}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_fri}" />
+
+            <include
+                layout="@layout/calendar_week_day_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                bind:title="@{@string/txt_sat}" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_weeks">
+
+            <com.kizitonwose.calendar.view.CalendarView
+                android:id="@+id/calender_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_padding_half"
+                app:cv_dayViewResource="@layout/calendar_day_layout"
+                app:cv_scrollPaged="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.res.PlaceSearchRes.Results" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_current_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin">
+
+        <TextView
+            android:id="@+id/tv_curent_place"
+            style="@style/text_x_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:text="@{model.name}"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintBottom_toTopOf="@id/tv_current_address"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Starbucks Windward St." />
+
+        <TextView
+            android:id="@+id/tv_current_address"
+            style="@style/text_small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{model.formatted_address}"
+            app:layout_constraintBottom_toTopOf="@id/view_place"
+            app:layout_constraintLeft_toLeftOf="@id/tv_curent_place"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_curent_place"
+            tools:text="Redbloc Blvd. St. 43 32" />
+
+        <View
+            android:id="@+id/view_place"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_current_address"
+            app:layout_constraintRight_toRightOf="@id/tv_current_address"
+            app:layout_constraintTop_toBottomOf="@id/tv_current_address" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

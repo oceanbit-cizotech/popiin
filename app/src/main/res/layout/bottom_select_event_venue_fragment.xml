@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:paddingBottom="@dimen/_padding2"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                android:background="@color/colorView"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:layout_marginBottom="@dimen/_margin_20"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:textColor="@color/colorHeaderText"
+                android:fontFamily="@font/inter_bold"
+                android:layout_margin="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/nsv_venue_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_select_status"
+                style="@style/text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginRight="@dimen/_margin"
+                android:gravity="center_vertical"
+                android:text="Select All"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                app:layout_constraintTop_toTopOf="@id/tv_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="Select All" />
+
+            <CheckBox
+                android:id="@+id/cb_item"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:layout_marginRight="@dimen/_margin_half"
+                tools:text=" "
+                tools:checked="true"
+                android:button="@null"
+                app:layout_constraintRight_toLeftOf="@id/tv_select_status"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                app:layout_constraintTop_toTopOf="@id/tv_title"
+                android:background="@drawable/reserve_selector"
+                />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsv_venue_list"
+                app:layout_constraintBottom_toTopOf="@+id/btn_select_venue"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_marginBottom="@dimen/_margin"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <carbon.widget.RecyclerView
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/rv_venue_list"
+                        android:layout_width="0dp"
+                        app:carbon_cornerRadius="@dimen/_corner_radius"
+                        android:background="@color/colorSemiGrey"
+                        app:carbon_stroke="@color/colorDialogBorder"
+                        app:carbon_strokeWidth="1dp"
+                        tools:itemCount="100"
+                        android:layout_height="match_parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+            <carbon.widget.TextView
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/btn_select_venue"
+                android:layout_marginBottom="@dimen/_margin"
+                style="@style/btn_style"
+                android:gravity="center"
+                android:text="@string/lbl_choose"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"/>
+
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

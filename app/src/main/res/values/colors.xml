@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryLight">#90F97925</color>
+    <color name="colorPrimarySelected">#FFFDF2EC</color>
+    <color name="transparent_light">#01ffffff</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite35">#59FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorDialogBg">@color/colorWhite</color>
+    <color name="colorDialogTittle">@color/colorPrimaryText</color>
+    <color name="colorDialogMessage">@color/colorPrimaryText</color>
+    <color name="colorDialogPositive">#00000000</color>
+    <color name="colorDialogNagetive">#00000000</color>
+    <color name="colorDialogLine">@color/colorEvents</color>
+
+    <color name="colorPrimary">@color/colorWhite</color>
+    <color name="colorPrimaryDark">#D91B202A</color>
+    <color name="colorAccent">#232323</color>
+    <color name="colorAccent85">#D9232323</color>
+    <color name="colorPrimaryText">#373832</color>
+    <color name="colorHeaderText">#292D32</color>
+    <color name="colorSecondaryText">#767676</color>
+    <color name="colorSecondaryText50">#80E5E5E5</color>
+    <color name="colorSecondaryText35">#59FFFFFF</color>
+    <color name="colorGrey">#656565</color>
+    <color name="colorBlue">#061AEE</color>
+    <color name="colorLightGrey">#F0F0F0</color>
+    <color name="colorSemiGrey">#F8F8F8</color>
+    <color name="colorErrorText">#FF2600</color>
+    <color name="colorView">#C2C2C2</color>
+    <!--    <color name="colorTransparent">#d1080808</color>-->
+    <color name="colorTransparent">#801E1E1E</color>
+    <color name="colorGreenBorder">#57f6b4</color>
+    <color name="colorStoryText">#3E3E3E</color>
+    <color name="colorExploreText">#C4C4C4</color>
+    <color name="colorAwardTagText">#6DFFC2</color>
+    <color name="colorTransparent30">#4D000000</color>
+    <color name="colorSwitch">#1DCD70</color>
+    <color name="colorMenuView">#E2E2E2</color>
+    <color name="colorWhatsOn">#373832</color>
+    <color name="colorMenuBack">#1AF8F8F8</color>
+    <color name="colorEvents">#484848</color>
+    <color name="colorMapRipple">#39B588</color>
+    <color name="colorRVBorder">#EFEFEF</color>
+    <color name="colorOrange">#F7732D</color>
+    <color name="colorEdit">#878787</color>
+    <color name="colorGreyLight">#F6F6F6</color>
+    <color name="colorLightBlue">#007AFF</color>
+    <color name="colorCalMonthDate">#E0EFFF</color>
+    <color name="colorCalTime">#EFEFF0</color>
+    <color name="colorPrimaryTextWithoutTrans">#30343E</color>
+    <color name="colorDialogBorder">#EDEDED</color>
+    <color name="colorOrangeOffer">#F7A02D</color>
+    <color name="colorSavedOfferBorder">#FBFBFB</color>
+    <color name="colorTitle">#555555</color>
+    <color name="colorTextTitle">#363636</color>
+    <color name="colorValue">#AAAAAA</color>
+    <color name="colorSwitchUncheck">#E9E9EA</color>
+    <color name="colorSalesSummText">#202020</color>
+    <color name="colorSalesSummBook">#F7F8FF</color>
+    <color name="colorSalesSummRevenue">#E5FAEF</color>
+    <color name="colorSalesSummDesc">#515151</color>
+    <color name="colorSalesAgeUnselected">#1A202B</color>
+    <color name="barchartColor">#74B9D8</color>
+    <color name="colorBookSummBorder">#3A445A</color>
+    <color name="colorMyBook">#FEFEFE</color>
+    <color name="colorMyBookMain">#F3F3F3</color>
+
+    <color name="chartDemoGraphColor1">#1DCD70</color>
+    <color name="chartDemoGraphColor2">#B9BFFF</color>
+    <color name="chartDemoGraphColor3">#2D6EF7</color>
+
+    <color name="chartColor1">#061AEE</color>
+    <color name="chartColor2">#E4AD42</color>
+    <color name="chartColor3">#0100F0</color>
+    <color name="chartColor4">#000000</color>
+
+    <color name="colorGreySpread">#B3B3B8</color>
+    <color name="colorTimerOut">#878FFB</color>
+    <color name="colorHintAge">#9E9E9E</color>
+    <color name="colorDialogBlue">#067EFF</color>
+    <color name="colorHeaderBg">#F2F2F2</color>
+    <color name="colorPrimaryOrange">#F97925</color>
+    <color name="colorTransClues">#00000000</color>
+    <color name="colorScanCodeTrans">#CACACA</color>
+    <color name="colorWhatsonBooking">#EEEEEE</color>
+    <color name="colorSplashGreen">#2FE499</color>
+    <color name="colorGreyBooking">#CC7E7E7E</color>
+
+
+</resources>

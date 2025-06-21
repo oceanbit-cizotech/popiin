@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent30"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <carbon.widget.ConstraintLayout
+            android:background="@color/colorWhite"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_60"
+            android:layout_marginRight="@dimen/_margin_60"
+            android:layout_width="0dp"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/text_medium"
+                android:gravity="center"
+                android:id="@+id/tv_message"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_padding"
+                android:textColor="@color/colorDialogMessage"
+                android:textSize="@dimen/medium_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:background="@color/colorStoryText"
+                android:id="@+id/view1"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_message" />
+
+            <TextView
+                style="@style/text_medium"
+                android:gravity="center"
+                android:id="@+id/tv_ok"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_padding"
+                android:textColor="@color/colorBlack"
+                android:text="@string/txt_reset"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

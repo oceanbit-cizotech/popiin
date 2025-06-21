@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bc"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="model"
+            type="com.popiin.res.EventListRes.Event" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{``}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/tv_terms_condition"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_padding_20"
+                android:paddingRight="@dimen/_padding_20"
+                android:paddingBottom="@dimen/_padding2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_whats_on_detail_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/iv_venue"
+                        android:layout_width="@dimen/img_setting_item_size"
+                        android:layout_height="@dimen/img_setting_item_size"
+                        android:background="@color/colorBlue"
+                        android:padding="@dimen/_padding_half"
+                        android:src="@drawable/ic_venue_item"
+                        app:carbon_cornerRadius="@dimen/_corner_radius_18"
+                        app:carbon_tint="@color/colorWhite"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_venue_name"
+                        style="@style/text_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin_half_mid"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@{model.venueevent.venue_name}"
+                        android:textColor="@color/colorHeaderText"
+                        app:layout_constraintBottom_toTopOf="@id/tv_address"
+                        app:layout_constraintLeft_toRightOf="@id/iv_venue"
+                        app:layout_constraintRight_toLeftOf="@id/csb_timer"
+                        app:layout_constraintTop_toTopOf="@id/iv_venue"
+                        tools:text="Venue Name" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/text_small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.venueevent.venue_address +` `+model.venueevent.venue_city+` `+model.venueevent.venue_postal_code}"
+                        android:textColor="@color/colorSecondaryText"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_venue"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_venue_name"
+                        app:layout_constraintRight_toRightOf="@id/tv_venue_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venue_name"
+                        tools:text="Surat" />
+
+
+                    <me.tankery.lib.circularseekbar.CircularSeekBar
+                        android:id="@+id/csb_timer"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        app:cs_circle_color="@color/colorSemiGrey"
+                        app:cs_circle_progress_color="@color/colorBlue"
+                        app:cs_circle_stroke_width="5dp"
+                        app:cs_circle_style="square"
+                        app:cs_disable_pointer="true"
+                        app:cs_disable_progress_glow="true"
+                        app:cs_lock_enabled="true"
+                        app:cs_max="600000"
+                        app:cs_negative_enabled="false"
+                        app:cs_progress="600000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        style="@style/text_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="10:00"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintBottom_toBottomOf="@+id/csb_timer"
+                        app:layout_constraintLeft_toLeftOf="@+id/csb_timer"
+                        app:layout_constraintRight_toRightOf="@+id/csb_timer"
+                        app:layout_constraintTop_toTopOf="@+id/csb_timer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_whats_on_name"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{model.title}"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_address"
+                    app:layout_constraintTop_toBottomOf="@id/tv_address"
+                    tools:text="Whats on name" />
+
+                <TextView
+                    android:id="@+id/tv_whats_on_time"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:text="@string/txt_what_s_on_time"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_address"
+                    app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+                <carbon.widget.LinearLayout
+                    android:id="@+id/ll_basic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:background="@color/colorSemiGrey"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_padding_half"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_event_time">
+
+                    <include
+                        android:id="@+id/incl_start_date"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_event_time}"
+                        bind:time="@{bc.convertDateInFormat(model.what_datetime,`yyyy-MM-dd hh:mm:ss`,`dd MMM yyyy`)}"
+                        bind:title="@{@string/lbl_start_date}" />
+
+                    <include
+                        android:id="@+id/incl_end_date"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_event_time}"
+                        bind:time="@{bc.convertDateInFormat(model.end_time,`yyyy-MM-dd hh:mm:ss`,`dd MMM yyyy`)}"
+                        bind:title="@{@string/lbl_end_date}" />
+
+                    <include
+                        android:id="@+id/incl_start_time"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_clock}"
+
+                        bind:time="@{bc.convertDateInFormat(model.what_datetime,`yyyy-MM-dd hh:mm:ss`,`hh:mma`)}"
+                        bind:title="@{@string/lbl_start_time}" />
+
+                    <include
+                        android:id="@+id/incl_end_time"
+                        layout="@layout/incl_event_time"
+                        bind:img="@{@drawable/ic_clock}"
+                        bind:time="@{bc.convertDateInFormat(model.end_time,`yyyy-MM-dd hh:mm:ss`,`hh:mma`)}"
+                        bind:title="@{@string/lbl_end_time}" />
+
+                </carbon.widget.LinearLayout>
+
+                <include
+                    android:id="@+id/venue_book_type"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin2"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/abt_booking_type}" />
+
+                <include
+                    android:id="@+id/venue_num_people"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/txt_num_of_people}" />
+
+                <include
+                    android:id="@+id/venue_num_people_other"
+                    layout="@layout/row_lbl_text_with_hint_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    bind:hint="@{@string/txt_num_of_people}"
+                    bind:title="@{``}" />
+
+                <TextView
+                    style="@style/text_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:text="Your order details"
+                    android:textColor="@color/colorBlack" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        style="@style/text_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/lbl_price_colon"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <TextView
+                        android:id="@+id/tv_price_value"
+                        style="@style/text_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="end"
+                        android:textColor="@color/colorHeaderText"
+                        tools:text="£40.00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_process_fee"
+                        style="@style/text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/lbl_process_fee_colon"
+                        android:textColor="@color/colorGreyBooking" />
+
+                    <TextView
+                        android:id="@+id/tv_process_fee_value"
+                        style="@style/text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:gravity="right"
+                        android:textColor="@color/colorGreyBooking"
+                        tools:text="£40.00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_service_fee"
+                        style="@style/text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:text="@string/lbl_service_fee_colon"
+                        android:textColor="@color/colorGreyBooking" />
+
+                    <TextView
+                        android:id="@+id/tv_service_fee_value"
+                        style="@style/text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:gravity="right"
+                        android:text="£0.00"
+                        android:textColor="@color/colorGreyBooking" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        style="@style/text_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/lbl_total_colan"
+                        android:textColor="@color/colorHeaderText" />
+
+                    <TextView
+                        android:id="@+id/tv_total_value"
+                        style="@style/text_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="right"
+                        android:textColor="@color/colorHeaderText"
+                        tools:text="£40.00" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <View
+            android:id="@+id/view_book_now"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintBottom_toTopOf="@id/btn_book_now" />
+
+
+        <TextView
+            android:id="@+id/tv_terms_condition"
+            style="@style/text_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/btn_book_now"
+            android:textColorLink="@color/colorPrimary" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_book_now"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin2"
+            android:gravity="center"
+            android:text="@string/txt_book_now"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

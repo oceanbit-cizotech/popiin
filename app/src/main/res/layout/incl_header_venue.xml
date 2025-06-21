@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingVertical="@dimen/_padding_half"
+        android:layout_margin="@dimen/_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:textColor="@color/colorHeaderText"
+            tools:text="Basic Info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{title}"
+            android:fontFamily="@font/inter_semi_bold"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/ui_verified"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/_margin_half_half"
+            app:layout_constraintLeft_toRightOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            android:src="@drawable/ic_ui_verified"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+        <CheckBox
+            android:id="@+id/chk_drop_down"
+            android:layout_marginRight="@dimen/_margin_half_half"
+            android:layout_width="@dimen/chk_venue_size"
+            android:layout_height="@dimen/chk_venue_size"
+            android:layout_gravity="center_vertical"
+            android:button="@null"
+            android:clickable="false"
+            android:background="@drawable/drop_down_selector"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

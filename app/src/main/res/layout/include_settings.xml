@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="image"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="extraText"
+            type="String" />
+
+        <variable
+            name="desc"
+            type="String" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_setting"
+            android:background="@color/colorSemiGrey"
+            android:layout_marginLeft="@dimen/_margin_20"
+            android:padding="@dimen/_padding_10"
+            tools:src="@drawable/ic_music"
+            android:layout_marginVertical="@dimen/_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:carbon_cornerRadius="@dimen/_corner_radius_18"
+            android:src="@{image}"
+            android:visibility="@{image == null ? View.GONE : View.VISIBLE ,default = visible}"
+            android:layout_width="@dimen/img_setting_item_size"
+            android:layout_height="@dimen/img_setting_item_size"/>
+
+        <TextView
+            style="@style/text_small"
+            android:id="@+id/tv_setting_menu"
+            tools:text="Business"
+            android:text="@{title}"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginLeft="@dimen/_margin_half_mid"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintLeft_toRightOf="@id/iv_setting"
+            app:layout_constraintTop_toTopOf="@id/iv_setting"
+            app:layout_constraintBottom_toTopOf="@id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            style="@style/text_xsmall"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:id="@+id/tv_setting_xtra"
+            tools:text="Business"
+            android:text="@{extraText}"
+            android:visibility="@{extraText == null || extraText.empty ? View.GONE : View.VISIBLE ,default = gone}"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/colorGreenBorder"
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:layout_constraintLeft_toRightOf="@id/tv_setting_menu"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_menu"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            tools:text="Business"
+            android:text="@{desc}"
+            style="@style/text_xsmall"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_setting"
+            android:visibility="@{desc == null || desc.empty ? View.GONE : View.VISIBLE ,default = visible}"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="@id/tv_setting_menu"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:src="@drawable/ic_right_arrow"
+            android:layout_marginRight="@dimen/_margin_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_setting"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

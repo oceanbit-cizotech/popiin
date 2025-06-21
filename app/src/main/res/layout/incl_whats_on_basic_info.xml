@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/incl_title"
+            layout="@layout/row_lbl_text_with_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:hint="@{@string/txt_enter_title}"
+            bind:title="@{@string/txt_title}" />
+
+        <include
+            android:id="@+id/incl_description"
+            layout="@layout/row_lbl_with_multiline_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintTop_toBottomOf="@id/incl_title"
+            bind:hint="@{@string/txt_write_here}"
+            bind:title="@{@string/txt_description}" />
+
+        <LinearLayout
+            android:id="@+id/ll_date"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/incl_description"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_start_date"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/lbl_start_date}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_calender}"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+            <include
+                android:id="@+id/incl_end_date"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/lbl_end_date}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_calender}"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_date"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_start_time"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/lbl_start_time}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_time}"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+            <include
+                android:id="@+id/incl_end_time"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:title="@{@string/lbl_end_time}"
+                bind:hint="@{@string/txt_select}"
+                bind:image="@{@drawable/ic_time}"
+                layout="@layout/row_lbl_edittext_with_icon"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_add_images"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_20"
+            android:text="@string/lbl_add_menu_images"
+            app:layout_constraintLeft_toLeftOf="@id/ll_time"
+            app:layout_constraintTop_toBottomOf="@id/ll_time" />
+
+        <LinearLayout
+            android:id="@+id/ll_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_images">
+
+            <ImageView
+                android:id="@+id/img_add_image"
+                android:layout_width="@dimen/venue_add_img_size"
+                android:layout_height="@dimen/venue_add_img_size"
+                android:layout_marginTop="@dimen/_margin"
+                android:src="@drawable/ic_add_image" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin">
+
+                <LinearLayout
+                    android:id="@+id/ll_event_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_save"
+            android:layout_width="@dimen/explore_btn_width"
+            android:layout_height="@dimen/explore_btn_height"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@drawable/bg_black_btn_with_round_corner"
+            android:gravity="center"
+            android:text="@string/txt_save"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_images" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

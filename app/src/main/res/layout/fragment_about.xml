@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_about}" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            android:paddingBottom="@dimen/_padding_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        <include
+            android:id="@+id/incl_terms_use"
+            layout="@layout/include_settings"
+            bind:image="@{@drawable/ic_setting_business}"
+            bind:title="@{@string/txt_terms_use}" />
+
+        <include
+            android:id="@+id/incl_privacy_policy"
+            layout="@layout/include_settings"
+            bind:image="@{@drawable/ic_setting_business}"
+            bind:title="@{@string/txt_privacy_policy}" />
+
+        <include
+            android:id="@+id/incl_help"
+            layout="@layout/include_settings"
+            android:visibility="gone"
+            bind:image="@{@drawable/ic_setting_business}"
+            bind:title="@{@string/txt_help}" />
+
+        <include
+            android:id="@+id/incl_partnership"
+            layout="@layout/include_settings"
+            bind:image="@{@drawable/ic_setting_business}"
+            bind:title="@{@string/txt_partnership}" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

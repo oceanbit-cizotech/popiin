@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_search"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_my_whatson_booking}" />
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/text_large"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_margin"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:text=""
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_header" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhatsonBooking"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event_book_attendees"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_margin_half_mid"
+                tools:itemCount="2"
+                tools:listitem="@layout/adapter_my_whatson_book" />
+        </FrameLayout>
+
+        <include
+            android:id="@+id/incl_message"
+            layout="@layout/include_no_list_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

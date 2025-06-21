@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="viewHide"
+            type="boolean" />
+
+        <variable
+            name="img"
+            type="android.graphics.drawable.Drawable" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorSemiGrey"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_whats_on"
+            android:layout_width="@dimen/img_bar_menu_size"
+            android:layout_height="@dimen/img_bar_menu_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:background="@color/colorWhite"
+            android:padding="@dimen/_padding_half"
+            android:src="@{img}"
+            tools:src="@drawable/ic_clock"
+            app:carbon_cornerRadius="@dimen/_corner_radius_17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_whats_on_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_padding"
+            android:layout_marginLeft="@dimen/_margin_10"
+            android:text="@{title}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_whats_on"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Monday" />
+
+        <TextView
+            android:id="@+id/tv_whats_on_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:text="@{time}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="09:00am - 03:00am" />
+
+        <View
+            android:visibility="@{!viewHide ? View.GONE : View.VISIBLE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/colorMenuView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

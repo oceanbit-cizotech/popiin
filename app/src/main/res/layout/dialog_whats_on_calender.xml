@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTransparent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            android:paddingBottom="@dimen/_padding_40"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/incl_calender"
+                layout="@layout/include_calender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_marginTop="@dimen/_margin2"
+                app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+
+            <carbon.widget.TextView
+                android:id="@+id/btn_select_date"
+                style="@style/btn_style"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin_mid"
+                android:layout_marginBottom="@dimen/_margin"
+                android:gravity="center"
+                android:text="@string/txt_select_date"
+                app:layout_constraintTop_toBottomOf="@id/incl_calender"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

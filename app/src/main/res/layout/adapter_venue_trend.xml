@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="trend"
+            type="com.popiin.res.VenueTrend" />
+    </data>
+
+
+    <carbon.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/_margin_half"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <carbon.widget.ConstraintLayout
+            app:carbon_strokeWidth="1dp"
+            app:carbon_cornerRadius="@dimen/_margin"
+            android:padding="@dimen/_margin_half"
+            app:carbon_stroke="@color/colorRVBorder"
+            android:background="@color/colorGreyLight"
+            android:id="@+id/cl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/tv_title"
+                android:textColor="@color/colorHeaderText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+
+            <ImageView
+                android:layout_marginEnd="@dimen/_margin_half"
+                android:id="@+id/iv_delete_venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete_venue"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+            <ImageView
+                android:layout_marginEnd="@dimen/_margin_10"
+                android:id="@+id/iv_edit_venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit_venue"
+                app:layout_constraintRight_toLeftOf="@id/iv_delete_venue"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_des"
+                style="@style/text_small"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorSecondaryText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="Title" />
+
+            <View
+                android:layout_marginTop="@dimen/_margin_half_half"
+                app:layout_constraintTop_toBottomOf="@+id/tv_des"
+                android:id="@+id/view_line"
+                android:background="@color/colorSecondaryText50"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_margin_half_half"
+                app:layout_constraintTop_toBottomOf="@+id/view_line"
+                android:id="@+id/tv_start_date_time"
+                style="@style/text_xsmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Start date and time"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/colorSecondaryText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintLeft_toLeftOf="parent"
+               />
+
+            <carbon.widget.ImageView
+                app:carbon_cornerRadius="@dimen/image_radius"
+                android:id="@+id/iv_venue"
+                android:scaleType="centerCrop"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_start_date_time"
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
+
+            <TextView
+                android:id="@+id/tv_start_date_time_value"
+                app:layout_constraintTop_toBottomOf="@+id/tv_start_date_time"
+                style="@style/text_xsmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{common.convertDateInFormat(trend.startDatetime,common.yyyyMmDdHhMmSs,common.ddMmYyyyHhMmA)}"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/colorSecondaryText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Start date and time" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_margin_half_half"
+                app:layout_constraintTop_toBottomOf="@+id/tv_start_date_time_value"
+                android:id="@+id/tv_end_date_time"
+                style="@style/text_xsmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Start date and time"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/colorSecondaryText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Start date and time" />
+
+            <TextView
+                android:id="@+id/tv_end_date_time_value"
+                app:layout_constraintTop_toBottomOf="@+id/tv_end_date_time"
+                style="@style/text_xsmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/inter_regular"
+                android:text="@{common.convertDateInFormat(trend.endDatetime,common.yyyyMmDdHhMmSs,common.ddMmYyyyHhMmA)}"
+                android:textColor="@color/colorSecondaryText"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Start date and time"
+                tools:ignore="RtlSymmetry" />
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </carbon.widget.ConstraintLayout>
+
+</layout>

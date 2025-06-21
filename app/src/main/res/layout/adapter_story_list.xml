@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin_20"
+        android:layout_marginVertical="@dimen/_margin_half_half"
+        android:background="@drawable/bg_rv_item"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_padding_half"
+        android:paddingVertical="@dimen/_padding_half">
+
+        <carbon.widget.FrameLayout
+            android:id="@+id/fr_story"
+            android:layout_width="@dimen/img_story_size"
+            android:layout_height="@dimen/img_story_size"
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:carbon_cornerRadius="@dimen/_corner_radius_28"
+            app:carbon_stroke="@color/colorSwitch"
+            app:carbon_strokeWidth="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_story"
+                android:layout_width="@dimen/_civ_img_size"
+                android:layout_height="@dimen/_civ_img_size"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:carbon_cornerRadius="@dimen/_corner_radius_25"
+                tools:src="@drawable/img_four" />
+        </carbon.widget.FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_story_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_margin_half"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/fr_story"
+            app:layout_constraintRight_toLeftOf="@id/iv_delete_venue"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Testing" />
+
+
+        <ImageView
+            android:id="@+id/iv_delete_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:src="@drawable/ic_delete_venue"
+            app:layout_constraintBottom_toBottomOf="@id/fr_story"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fr_story" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <variable
+            name="trend"
+            type="com.popiin.res.Trend" />
+    </data>
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_marginHorizontal="@dimen/_margin"
+        android:layout_marginVertical="@dimen/_margin_half"
+        android:padding="@dimen/_margin"
+        app:carbon_cornerRadius="@dimen/_civ_corner_radius"
+        android:background="@color/colorSemiGrey"
+        app:carbon_stroke="@color/colorDialogBorder"
+        app:carbon_strokeWidth="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/text_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_title"
+            android:textColor="@color/colorHeaderText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            style="@style/text_small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorSecondaryText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Title" />
+
+        <View
+            android:layout_marginTop="@dimen/_margin_half_half"
+            app:layout_constraintTop_toBottomOf="@+id/tv_des"
+            android:id="@+id/view_line"
+            android:background="@color/colorSecondaryText50"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_margin_half_half"
+            app:layout_constraintTop_toBottomOf="@+id/view_line"
+            android:id="@+id/tv_start_date_time"
+            style="@style/text_xsmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Start date and time"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/colorSecondaryText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_start_date_time_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_start_date_time"
+            style="@style/text_xsmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{common.convertDateInFormat(trend.startDatetime,common.yyyyMmDdHhMmSs,common.ddMmYyyyHhMmA)}"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/colorSecondaryText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Start date and time" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_margin_half_half"
+            app:layout_constraintTop_toBottomOf="@+id/tv_start_date_time_value"
+            android:id="@+id/tv_end_date_time"
+            style="@style/text_xsmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Start date and time"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/colorSecondaryText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Start date and time" />
+
+        <TextView
+            android:id="@+id/tv_end_date_time_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_end_date_time"
+            style="@style/text_xsmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/inter_regular"
+            android:text="@{common.convertDateInFormat(trend.endDatetime,common.yyyyMmDdHhMmSs,common.ddMmYyyyHhMmA)}"
+            android:textColor="@color/colorSecondaryText"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Start date and time"
+            tools:ignore="RtlSymmetry" />
+
+
+    </carbon.widget.ConstraintLayout>
+</layout>

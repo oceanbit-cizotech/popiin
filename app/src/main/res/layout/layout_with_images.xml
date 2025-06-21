@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:layout_width="@dimen/civ_img_size"
+            tools:src="@drawable/ic_hotel"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:layout_marginTop="@dimen/_margin"
+            android:id="@+id/img_event"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="@dimen/civ_img_size"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid" />
+
+        <SeekBar
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_bias="0.8"
+            android:id="@+id/seekbar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="@dimen/venue_add_img_size"
+            android:max="100"
+            android:progressTint="@color/colorAccent"
+            android:thumbTint="@color/colorAccent"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible"
+            android:layout_height="wrap_content" />
+
+        <carbon.widget.ImageView
+            android:layout_width="@dimen/close_icon_size"
+            android:id="@+id/img_close"
+            android:layout_height="@dimen/close_icon_size"
+            android:background="@color/colorBlue"
+            android:padding="2dp"
+            android:src="@drawable/ic_close_offer"
+            app:layout_constraintTop_toTopOf="@+id/img_event"
+            app:layout_constraintTop_toBottomOf="@+id/img_event"
+            app:layout_constraintRight_toRightOf="@+id/img_event"
+            app:layout_constraintBottom_toTopOf="@+id/img_event"
+            app:layout_constraintLeft_toRightOf="@+id/img_event"
+            app:carbon_cornerRadius="@dimen/_corner_radius_12"
+            app:carbon_tint="@color/colorWhite" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

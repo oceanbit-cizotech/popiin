@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_padding"
+        android:background="@color/colorTransparent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_margin2_mid"
+            android:layout_marginHorizontal="@dimen/_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_textbox"
+                android:gravity="center"
+                android:padding="@dimen/_padding"
+                android:text="Take Photo"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:background="@drawable/search_textbox"
+                android:gravity="center"
+                android:padding="@dimen/_padding"
+                android:text="Choose from Gallery"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_pdf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:background="@drawable/search_textbox"
+                android:gravity="center"
+                android:padding="@dimen/_padding"
+                android:text="Choose pdf"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_mid"
+                android:background="@drawable/search_textbox"
+                android:gravity="center"
+                android:padding="@dimen/_padding"
+                android:text="Cancel"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

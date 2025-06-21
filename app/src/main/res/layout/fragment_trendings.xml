@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/ll_save"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingBottom="@dimen/_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/top_header"
+                    layout="@layout/incl_header_with_back"
+                    bind:isHide="@{true}"
+                    bind:title="@{@string/txt_trending}" />
+
+                <include
+                    android:id="@+id/incl_choose_venue"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_header"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/lbl_choose_venue}" />
+
+                <include
+                    android:id="@+id/incl_select_trend"
+                    layout="@layout/row_edittext_with_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_choose_venue"
+                    bind:hint="@{@string/txt_select}"
+                    bind:title="@{@string/txt_select_trends}" />
+
+
+                <TextView
+                    android:id="@+id/tv_add_images"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:text="@string/lbl_add_images"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_select_trend"
+                    app:layout_constraintTop_toBottomOf="@id/incl_select_trend" />
+
+                <LinearLayout
+                    android:id="@+id/ll_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin_20"
+                    android:layout_marginRight="@dimen/_margin_20"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add_images">
+                    <ImageView
+                        android:id="@+id/img_add_image"
+                        android:layout_width="@dimen/venue_add_img_size"
+                        android:layout_height="@dimen/venue_add_img_size"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:src="@drawable/ic_add_image" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_margin">
+
+                        <LinearLayout
+                            android:id="@+id/ll_event_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_image_error"
+                    style="@style/text_small"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:textColor="@color/colorErrorText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_images" />
+
+                <include
+                    android:id="@+id/incl_description"
+                    android:layout_margin="@dimen/_margin_20"
+                    layout="@layout/row_lbl_with_multiline_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    app:layout_constraintTop_toBottomOf="@id/tv_image_error"
+                    bind:hint="@{@string/txt_enter_description}"
+                    bind:title="@{@string/txt_description}" />
+
+
+                <TextView
+                    android:id="@+id/tv_saved_offers"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:text="@string/txt_saved_trend"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_description"
+                    app:layout_constraintTop_toBottomOf="@id/incl_description" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_saved_venue_trends"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginVertical="@dimen/_margin_half"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_saved_offers" />
+
+                <TextView
+                    android:id="@+id/tv_no_offers"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin2"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_no_saved_offers_found"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/rv_saved_venue_trends"
+                    app:layout_constraintRight_toRightOf="@id/rv_saved_venue_trends"
+                    app:layout_constraintTop_toBottomOf="@id/rv_saved_venue_trends"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/ll_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <carbon.widget.TextView
+                android:layout_weight="1"
+                android:id="@+id/btn_save"
+                style="@style/btn_style"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:layout_marginBottom="@dimen/_margin_mid"
+                android:gravity="center"
+                android:text="@string/txt_save" />
+
+            <carbon.widget.TextView
+                android:layout_weight="1"
+                android:id="@+id/btn_cancel"
+                style="@style/btn_style"
+                android:background="@color/colorSemiGrey"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/_margin_10"
+                android:layout_marginBottom="@dimen/_margin_mid"
+                android:gravity="center"
+                android:text="@string/lbl_cancel" />
+
+
+            <carbon.widget.TextView
+                android:layout_weight="1"
+                android:id="@+id/btn_update"
+                style="@style/btn_style"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginHorizontal="@dimen/_margin_10"
+                android:layout_marginBottom="@dimen/_margin_mid"
+                android:gravity="center"
+                android:text="@string/lbl_update" />
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

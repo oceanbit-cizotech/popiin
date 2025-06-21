@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorSplashGreen"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="@dimen/_margin_double"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_popiin_splash"
+            app:layout_constraintBottom_toTopOf="@id/btn_come_in"
+            android:layout_height="wrap_content" />
+
+        <carbon.widget.Button
+            android:id="@+id/btn_come_in"
+            style="@style/text_large"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/civ_img_size"
+            android:layout_marginHorizontal="@dimen/_margin_mid"
+            android:layout_marginBottom="@dimen/_margin_double"
+            android:background="@color/colorBlue"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/txt_come_in"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:visibility="invisible"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

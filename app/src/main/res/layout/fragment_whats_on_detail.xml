@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            app:layout_constraintBottom_toTopOf="@id/view_whats_on"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:fillViewport="true"
+            android:layout_marginBottom="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <include
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/top_header"
+                    layout="@layout/incl_header_with_back"
+                    bind:isHide="@{true}"
+                    bind:title="@{@string/txt_whats_on}" />
+
+                <include
+                    android:layout_marginTop="@dimen/_margin"
+                    app:layout_constraintTop_toBottomOf="@id/top_header"
+                    style="@style/incl_venue_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:title="@{@string/txt_basic_info_time}"
+                    android:id="@+id/incl_basic_info"
+                    layout="@layout/incl_header_venue"/>
+
+                <include
+                    style="@style/incl_venue_style"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_basic_info"
+                    android:id="@+id/incl_whats_basic_info"
+                    layout="@layout/incl_whats_on_basic_info"/>
+
+                <View
+                    android:id="@+id/view_whats_basic_info"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintTop_toBottomOf="@id/incl_whats_basic_info"
+                    app:layout_constraintRight_toRightOf="@id/incl_whats_basic_info"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_whats_basic_info"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp" />
+
+                <include
+                    android:id="@+id/incl_booking_info"
+                    style="@style/incl_venue_style"
+                    layout="@layout/incl_header_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    app:layout_constraintTop_toBottomOf="@id/view_whats_basic_info"
+                    bind:title="@{@string/txt_booking_info}" />
+
+                <include
+                    android:id="@+id/incl_whats_booking_info"
+                    style="@style/incl_venue_style"
+                    layout="@layout/incl_whats_on_booking_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/incl_booking_info" />
+
+                <View
+                    android:id="@+id/view_whats_booking_info"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_whats_booking_info"
+                    app:layout_constraintRight_toRightOf="@id/incl_whats_booking_info"
+                    app:layout_constraintTop_toBottomOf="@id/incl_whats_booking_info" />
+
+                <include
+                    android:id="@+id/incl_other_details"
+                    style="@style/incl_venue_style"
+                    layout="@layout/incl_header_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    app:layout_constraintTop_toBottomOf="@id/view_whats_booking_info"
+                    bind:title="@{@string/txt_other_details}" />
+
+                <include
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    app:layout_constraintTop_toBottomOf="@id/incl_other_details"
+                    android:id="@+id/incl_venue_other_details"
+                    style="@style/incl_venue_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/incl_whats_on_other_details"/>
+
+                <View
+                    android:id="@+id/view_address"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_venue_other_details"
+                    app:layout_constraintRight_toRightOf="@id/incl_venue_other_details"
+                    app:layout_constraintTop_toBottomOf="@id/incl_venue_other_details" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view_whats_on"
+            android:layout_marginBottom="@dimen/_margin_half"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_preview"
+            android:background="@color/colorRVBorder"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_preview"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin_mid"
+            android:gravity="center"
+            android:text="@string/txt_preview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

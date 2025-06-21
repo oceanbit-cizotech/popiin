@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_whats_booking_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin2"
+            android:background="@color/colorRVBorder"
+            android:paddingHorizontal="@dimen/_padding_40"
+            android:paddingVertical="@dimen/_padding_half"
+            android:text="@string/txt_add_camel"
+            android:textColor="@color/colorHeaderText"
+            app:carbon_cornerRadius="@dimen/_corner_radius_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_whats_booking_info" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin"
+            android:background="@drawable/bg_black_btn_with_round_corner"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_padding2"
+            android:paddingVertical="@dimen/_padding_half"
+            android:text="@string/txt_save"
+            android:textColor="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_add" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_padding2">
+
+            <include
+                android:id="@+id/top_header"
+                layout="@layout/incl_header_with_back"
+                bind:isHide="@{true}"
+                bind:title="@{@string/txt_edit_profile}" />
+
+            <FrameLayout
+                android:id="@+id/fl_image"
+                android:layout_width="@dimen/profile_img_height"
+                android:layout_height="@dimen/profile_img_height"
+                android:layout_marginTop="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_header">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_profile"
+                    android:layout_width="@dimen/setting_menu_height"
+                    android:layout_height="@dimen/setting_menu_height"
+                    android:src="@drawable/ic_hotel" />
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_camera"
+                    android:layout_width="@dimen/profile_camera_size"
+                    android:layout_height="@dimen/profile_camera_size"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="@dimen/_margin_half_half"
+                    android:background="@color/colorWhite"
+                    android:padding="@dimen/_padding_half_half_6"
+                    android:src="@drawable/ic_camera"
+                    app:carbon_cornerRadius="@dimen/_corner_radius" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_personal_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin_mid"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="@string/txt_personal_details"
+                android:textColor="@color/colorHeaderText"
+                android:textSize="@dimen/medium_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_image" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_padding_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_personal_details">
+
+                <include
+                    android:id="@+id/incl_first_name"
+                    layout="@layout/row_lbl_text_with_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:inputType="text"
+                    app:layout_constraintTop_toTopOf="parent"
+                    bind:hint="@{@string/txt_enter_first_name}"
+                    bind:title="@{@string/txt_firstname}" />
+
+                <TextView
+                    android:id="@+id/tv_msg_firstname"
+                    style="@style/text_signup_error_msg"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_first_name"
+                    app:layout_constraintTop_toBottomOf="@id/incl_first_name" />
+
+
+                <include
+                    android:id="@+id/incl_last_name"
+                    layout="@layout/row_lbl_text_with_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:inputType="text"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_firstname"
+                    bind:hint="@{@string/txt_enter_last_name}"
+                    bind:title="@{@string/txt_lastname}" />
+
+                <TextView
+                    android:id="@+id/tv_msg_lastname"
+                    style="@style/text_signup_error_msg"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_last_name"
+                    app:layout_constraintTop_toBottomOf="@id/incl_last_name" />
+
+                <LinearLayout
+                    android:id="@+id/ll_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_lastname">
+
+                    <include
+                        android:id="@+id/incl_gender"
+                        layout="@layout/row_lbl_with_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_margin_half"
+                        android:layout_weight="1"
+                        android:inputType="text"
+                        bind:title="@{@string/txt_gender}" />
+
+                    <include
+                        android:id="@+id/incl_dob"
+                        layout="@layout/row_lbl_edittext_with_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin_half"
+                        android:layout_weight="1"
+                        android:inputType="text"
+                        bind:hint="@{``}"
+                        bind:image="@{@drawable/ic_calender_profile}"
+                        bind:title="@{@string/txt_date_of_birth}" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/incl_email"
+                    layout="@layout/row_lbl_text_with_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:inputType="text"
+                    app:layout_constraintTop_toBottomOf="@id/ll_email"
+                    bind:hint="@{@string/txt_enter_email}"
+                    bind:title="@{@string/txt_email}" />
+
+                <TextView
+                    android:id="@+id/lbl_password"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_password"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_email" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_password"
+                    style="@style/edt_signup"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:hint="@string/txt_enter_password"
+                    android:inputType="textPassword"
+                    android:paddingRight="@dimen/_padding"
+                    android:textColorHint="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_password" />
+
+                <TextView
+                    android:id="@+id/tv_msg_password"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/edt_password"
+                    app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+                <TextView
+                    android:id="@+id/lbl_conf_password"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_confirm_password"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_password" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_conf_password"
+                    style="@style/edt_signup"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:hint="@string/enter_confirm_password"
+                    android:inputType="textPassword"
+                    android:paddingRight="@dimen/_padding"
+                    android:textColorHint="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_conf_password" />
+
+                <CheckBox
+                    android:id="@+id/chk_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/password_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/edt_password"
+                    app:layout_constraintEnd_toEndOf="@id/edt_password"
+                    app:layout_constraintTop_toTopOf="@id/edt_password" />
+
+                <CheckBox
+                    android:id="@+id/chk_confirm_psw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/password_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/edt_conf_password"
+                    app:layout_constraintEnd_toEndOf="@id/edt_conf_password"
+                    app:layout_constraintTop_toTopOf="@id/edt_conf_password" />
+
+                <TextView
+                    android:id="@+id/tv_msg_conf_password"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/edt_conf_password"
+                    app:layout_constraintTop_toBottomOf="@id/edt_conf_password" />
+
+                <include
+                    android:id="@+id/incl_city"
+                    layout="@layout/row_lbl_with_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_conf_password"
+                    bind:title="@{@string/txt_city}" />
+
+                <include
+                    android:id="@+id/incl_postal_code"
+                    layout="@layout/row_lbl_text_with_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:inputType="number"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/incl_city"
+                    bind:hint="@{@string/txt_enter_postal_code}"
+                    bind:title="@{@string/txt_postal_code}" />
+
+                <TextView
+                    android:id="@+id/tv_msg_postal_code"
+                    style="@style/text_signup_error_msg"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_postal_code"
+                    app:layout_constraintTop_toBottomOf="@id/incl_postal_code" />
+
+                <include
+                    android:id="@+id/incl_address"
+                    layout="@layout/row_lbl_with_multiline_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:inputType="text"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_postal_code"
+                    bind:hint="@{@string/txt_enter_address}"
+                    bind:title="@{@string/txt_address}" />
+
+                <TextView
+                    android:id="@+id/tv_msg_address"
+                    style="@style/text_signup_error_msg"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_address"
+                    app:layout_constraintTop_toBottomOf="@id/incl_address" />
+
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_update_changes"
+                    style="@style/btn_style"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin_40"
+                    android:gravity="center"
+                    android:background="@color/colorWhatsonBooking"
+                    android:text="@string/txt_save"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_address" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_delete_account"
+                    style="@style/btn_style"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:layout_marginBottom="@dimen/_margin_mid"
+                    android:gravity="center"
+                    android:text="@string/txt_delete"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_update_changes" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

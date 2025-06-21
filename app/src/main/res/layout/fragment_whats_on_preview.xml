@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="match_parent">
+
+        <include
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_whats_on_preview}" />
+
+        <include
+            android:id="@+id/incl_preview"
+            android:layout_width="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            app:layout_constraintRight_toLeftOf="@id/tv_venue_type"
+            android:layout_height="wrap_content"
+            layout="@layout/include_preview" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_venue_type"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin_20"
+            android:background="@color/colorSemiGrey"
+            android:fontFamily="@font/inter_semi_bold"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_padding_half_mid"
+            app:carbon_cornerRadius="@dimen/_corner_radius_12"
+            app:layout_constraintBottom_toBottomOf="@id/incl_preview"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            tools:text="Hello Text" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintTop_toBottomOf="@id/incl_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_whats_on"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_margin_half_mid"
+                tools:text="Fri, 12 Jan 2024 • 01:43PM"
+                style="@style/text_xsmall"
+                android:layout_marginTop="@dimen/_margin_10"
+                android:background="@color/colorWhite"
+                android:drawablePadding="@dimen/_padding_half"
+                android:drawableLeft="@drawable/ic_clock"
+                android:fontFamily="@font/inter_semi_bold"
+                android:paddingHorizontal="@dimen/_padding_half"
+                android:paddingVertical="@dimen/_padding_half_half"
+                android:textColor="@color/colorBlue"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+                app:layout_constraintTop_toTopOf="@id/iv_whats_on"
+                app:layout_constraintLeft_toLeftOf="@id/iv_whats_on" />
+
+            <TextView
+                tools:text="11111"
+                android:id="@+id/tv_title"
+                android:fontFamily="@font/inter_semi_bold"
+                style="@style/text_x_medium"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="@dimen/_margin_half_mid"
+                android:layout_marginBottom="@dimen/_margin"
+                app:layout_constraintBottom_toBottomOf="@id/iv_whats_on"
+                app:layout_constraintLeft_toLeftOf="@id/iv_whats_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/_margin"
+                android:id="@+id/tv_music"
+                app:layout_constraintRight_toLeftOf="@id/tv_view_more"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half"
+                style="@style/text_small"
+                android:drawableLeft="@drawable/ic_music"
+                android:drawablePadding="@dimen/_padding_half_half"
+                android:drawableTint="@color/colorBlue"
+                android:textColor="@color/colorSecondaryText"
+                app:layout_constraintLeft_toLeftOf="@id/iv_whats_on"
+                app:layout_constraintTop_toBottomOf="@id/iv_whats_on"
+                tools:text="Canary Wharf London" />
+
+            <TextView
+                android:id="@+id/tv_entertainment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/text_small"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:drawableLeft="@drawable/ic_emoji"
+                android:drawablePadding="@dimen/_padding_half_half"
+                app:layout_constraintRight_toRightOf="@id/tv_music"
+                android:textColor="@color/colorSecondaryText"
+                app:layout_constraintLeft_toLeftOf="@id/tv_music"
+                app:layout_constraintTop_toBottomOf="@id/tv_music" />
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_view_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_padding_half_mid"
+                android:paddingVertical="@dimen/_padding_half_half_6"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:text="@string/txt_view_more"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_17"
+                app:layout_constraintRight_toRightOf="@id/iv_whats_on"
+                app:layout_constraintTop_toBottomOf="@id/iv_whats_on" />
+
+            <View
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@color/colorRVBorder"
+                app:layout_constraintTop_toBottomOf="@id/tv_entertainment"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/rv_tickets"
+            app:layout_constraintTop_toBottomOf="@+id/card"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:text="fdfdf"
+            android:visibility="gone"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/ll_venue_footer"
+            android:layout_marginBottom="@dimen/_margin2"
+            android:weightSum="2"
+            android:layout_marginHorizontal="@dimen/_margin_half"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height">
+
+            <carbon.widget.LinearLayout
+                android:id="@+id/ll_edit"
+                android:layout_marginRight="@dimen/_margin_half_half"
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:carbon_cornerRadius="@dimen/_corner_radius_25"
+                android:drawablePadding="@dimen/_padding_half"
+                android:layout_width="match_parent"
+                android:background="@color/colorSemiGrey"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:src="@drawable/ic_venue_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <carbon.widget.TextView
+                    android:textColor="@color/colorHeaderText"
+                    android:gravity="center"
+                    android:text="@string/txt_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </carbon.widget.LinearLayout>
+
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_submit_save"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_marginLeft="@dimen/_margin_half_half"
+                app:carbon_cornerRadius="@dimen/_corner_radius_25"
+                android:drawablePadding="@dimen/_padding_half"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

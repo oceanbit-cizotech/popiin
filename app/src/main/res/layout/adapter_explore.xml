@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryList"
+            type="String" />
+
+        <variable
+            name="offerList"
+            type="String" />
+
+
+        <variable
+            name="openClosedText"
+            type="String" />
+
+
+        <variable
+            name="isTimeClose"
+            type="boolean" />
+
+        <variable
+            name="isMusic"
+            type="boolean" />
+
+        <variable
+            name="selected"
+            type="boolean" />
+
+        <variable
+            name="isFavorite"
+            type="int" />
+
+        <variable
+            name="image"
+            type="String" />
+
+        <variable
+            name="venueName"
+            type="String" />
+
+        <variable
+            name="distance"
+            type="Double" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="15dp"
+            app:cardUseCompatPadding="true"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:layout_height="wrap_content">
+            <carbon.widget.ConstraintLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_image"
+                    app:carbon_cornerRadiusTopStart="@dimen/_corner_radius"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_venue_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginVertical="@dimen/_margin_half"
+                    android:drawablePadding="@dimen/_padding_half_half"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    style="@style/text_medium"
+                    android:textColor="@color/colorPrimaryText"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@{venueName}"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_image"
+                    tools:text="Cirque Le Soir" />
+
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_margin_half_mid"
+                    android:background="@color/colorWhite"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:drawablePadding="@dimen/_padding_half"
+                    style="@style/text_xsmall"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:paddingVertical="@dimen/_padding_half_half"
+                    android:paddingHorizontal="@dimen/_padding_half"
+                    tools:text="Hours may vary"
+                    android:text="@{openClosedText}"
+                    android:visibility="@{openClosedText.empty ? View.INVISIBLE : View.VISIBLE}"
+                    android:textColor="@color/colorBlue"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_image" />
+
+
+
+                <carbon.widget.ImageView
+                    android:id="@+id/iv_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:layout_marginEnd="@dimen/_margin_half"
+                    android:padding="@dimen/_padding_half"
+                    android:background="@color/colorTransparent30"
+                    app:tint="@color/colorWhite"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintRight_toLeftOf="@id/cb_like"
+                    app:layout_constraintTop_toTopOf="@id/iv_image" />
+
+                <CheckBox
+                    android:id="@+id/cb_like"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_share"
+                    android:layout_width="@dimen/img_venue_fav_size"
+                    android:layout_height="@dimen/img_venue_fav_size"
+                    android:layout_marginEnd="@dimen/_margin_half_mid"
+                    android:button="@null"
+                    android:background="@drawable/venue_detail_heart_selector"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:padding="@dimen/_padding"
+                    android:checked="@{isFavorite == 1 ? true : false}"
+                    app:layout_constraintRight_toRightOf="@id/iv_image"
+                    app:layout_constraintTop_toTopOf="@id/iv_image" />
+
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin"
+                    android:layout_marginBottom="@dimen/_margin"
+                    android:drawablePadding="@dimen/_padding_half_half"
+                    style="@style/text_xsmall"
+                    android:text="@{common.getOneDecimalFormatValueWithMiles(distance)}"
+                    android:textColor="@color/colorPrimaryText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_venue_name"
+                    app:drawableLeftCompat="@drawable/ic_location_white"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                    tools:text="1 mile away" />
+
+                <TextView
+                    android:id="@+id/tv_venue_type"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_margin_half_mid"
+                    android:layout_marginBottom="@dimen/_margin_half_half"
+                    android:drawablePadding="@dimen/_padding_half_half"
+                    android:fontFamily="@font/inter_medium"
+                    style="@style/text_xsmall"
+                    android:visibility="gone"
+                    android:textColor="@color/colorExploreText"
+                    app:layout_constraintRight_toLeftOf="@id/tv_whats_on_tag"
+                    app:layout_constraintBottom_toTopOf="@id/tv_venue_name"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                    tools:text="Bar, Restaurants" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_offer_tag"
+                    style="@style/tag_style"
+                    android:background="@color/colorWhite"
+                    android:drawableStart="@drawable/ic_offers"
+                    android:gravity="center"
+                    android:text="@string/txt_offers"
+                    android:visibility="gone"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                    app:layout_constraintRight_toRightOf="@id/iv_image"
+                    android:textColor="@color/colorBlue" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_whats_on_tag"
+                    style="@style/tag_style"
+                    android:visibility="gone"
+                    android:background="@color/colorBlue"
+                    android:drawableStart="@drawable/ic_award"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_margin_half"
+                    android:textColor="@color/colorWhite"
+                    app:carbon_tint="@color/colorWhite"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    app:layout_constraintBottom_toTopOf="@id/tv_offer_tag"
+                    app:layout_constraintRight_toRightOf="@id/iv_image"
+                    android:text="@string/txt_whats_on" />
+
+                <TextView
+                    android:id="@+id/tv_music_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    style="@style/text_xsmall"
+                    android:drawableLeft="@{isMusic ? @drawable/ic_music : @drawable/ic_restro_reserve}"
+                    android:drawablePadding="@dimen/_padding_half"
+                    tools:drawableLeft="@drawable/ic_music"
+                    android:text="@{categoryList}"
+                    android:visibility="gone"
+                    tools:visibility="@{categoryList.equals(`N/A`) ? View.GONE : View.GONE}"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                    app:layout_constraintRight_toRightOf="@id/iv_image"
+                    app:layout_constraintTop_toBottomOf="@id/iv_image"
+                    tools:text="Afrobeat, Jazz, Classicals, hiphop, R&amp;B, Pop, Opera, Afro Rave, Amapiano" />
+
+                <ImageView
+                    android:id="@+id/iv_venue_entertainment"
+                    android:layout_width="@dimen/venue_check_size"
+                    android:layout_height="@dimen/venue_check_size"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:visibility="gone"
+                    android:src="@{isMusic ? @drawable/ic_entertainment_venue : @drawable/ic_restro_reserve}"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_music_type"
+                    tools:src="@drawable/ic_music" />
+
+                <TextView
+                    android:id="@+id/tv_entertainment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/text_xsmall"
+                    android:layout_marginEnd="@dimen/_margin2"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    app:layout_constraintLeft_toRightOf="@id/iv_venue_entertainment"
+                    app:layout_constraintRight_toLeftOf="@id/btn_book_now"
+                    app:layout_constraintTop_toBottomOf="@id/tv_music_type"
+                    tools:text="Lounge, Games, Bowling, Karaoke" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_book_now"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_blue_btn_with_round_corner"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="@dimen/_margin"
+                    android:layout_marginVertical="@dimen/_margin_half"
+                    android:paddingHorizontal="@dimen/_padding_half_mid"
+                    android:text="@string/txt_book_now"
+                    android:paddingVertical="@dimen/_padding_6"
+                    android:layout_marginEnd="@dimen/_margin_half"
+                    android:textColor="@color/colorWhite"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:layout_constraintTop_toTopOf="@id/tv_location"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+            </carbon.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

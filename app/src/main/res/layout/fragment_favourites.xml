@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_favorites"
+            android:layout_marginLeft="@dimen/_margin_20"
+            android:layout_marginTop="@dimen/_margin2"
+            android:textColor="@color/colorHeaderText"
+            android:textSize="@dimen/large_text"
+            android:fontFamily="@font/inter_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:text="@string/txt_favourites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_tags"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:layout_marginHorizontal="@dimen/_margin"-->
+<!--            android:layout_marginTop="@dimen/_margin"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tv_favorites"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_margin_mid"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_favorites"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="fill"
+            app:tabIndicator="@null"
+            app:tabMinWidth="50dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/colorWhite"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabTextColor="@color/colorBlack"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_venues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_venue" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_events"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_events" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fav_events"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="@dimen/_margin"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <include
+            app:layout_constraintRight_toRightOf="@id/rv_fav_events"
+            app:layout_constraintLeft_toLeftOf="@id/rv_fav_events"
+            app:layout_constraintBottom_toBottomOf="@id/rv_fav_events"
+            app:layout_constraintTop_toTopOf="@id/rv_fav_events"
+            android:id="@+id/incl_no_data"
+            android:visibility="gone"
+            layout="@layout/include_no_list_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/ll_no_data"-->
+        <!--            android:gravity="center"-->
+        <!--            android:visibility="gone"-->
+        <!--            android:orientation="vertical"-->
+        <!--           -->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content">-->
+
+        <!--            <ImageView-->
+        <!--                android:src="@drawable/ic_fav_no_events"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"/>-->
+
+        <!--            <TextView-->
+        <!--                android:layout_marginTop="@dimen/_margin_10"-->
+        <!--                android:id="@+id/tv_oops_error"-->
+        <!--                android:textColor="@color/colorHeaderText"-->
+        <!--                android:fontFamily="@font/inter_bold"-->
+        <!--                android:textSize="@dimen/medium_text"-->
+        <!--                android:text="@string/txt_oops_error"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"/>-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/tv_no_events"-->
+        <!--                android:textColor="@color/colorGrey"-->
+        <!--                android:textSize="@dimen/medium_text"-->
+        <!--                android:text="@string/txt_no_favourites"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"/>-->
+
+        <!--        </LinearLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

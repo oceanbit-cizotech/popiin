@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:id="@+id/ll_offer_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/incl_offer_details"
+                bind:image="@{@drawable/ic_offer_details}"
+                bind:title="@{@string/txt_offer_details}"
+                layout="@layout/row_offer_preview" />
+
+            <include
+                android:id="@+id/incl_offer_starts"
+                bind:image="@{@drawable/ic_clock}"
+                bind:title="@{@string/txt_offer_stars}"
+                layout="@layout/row_offer_preview" />
+
+            <include
+                android:id="@+id/incl_offer_ends"
+                bind:image="@{@drawable/ic_clock}"
+                bind:title="@{@string/txt_offer_ends}"
+                layout="@layout/row_offer_preview" />
+
+            <include
+                android:id="@+id/incl_offer_day"
+                bind:image="@{@drawable/ic_calender_whats_on}"
+                bind:title="@{@string/txt_offer_day}"
+                layout="@layout/row_offer_preview" />
+
+            <include
+                android:id="@+id/incl_offer_status"
+                bind:image="@{@drawable/ic_offer_status}"
+                bind:title="@{@string/txt_offer_status}"
+                layout="@layout/row_offer_preview" />
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/view_offer_preview"
+            android:layout_marginVertical="@dimen/_margin_half"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/ll_offer_preview"
+            app:layout_constraintLeft_toLeftOf="@id/ll_offer_preview"
+            app:layout_constraintTop_toBottomOf="@id/ll_offer_preview"
+            android:background="@color/colorSemiGrey"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

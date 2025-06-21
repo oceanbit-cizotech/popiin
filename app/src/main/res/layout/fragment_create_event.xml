@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_create_event}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginTop="@dimen/_margin_mid"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btn_create_event"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingBottom="@dimen/_padding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/incl_venue_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:title="@{@string/txt_basic_info}"
+                    android:id="@+id/incl_basic_info"
+                    layout="@layout/incl_header_venue"/>
+
+                <include
+                    style="@style/incl_venue_style"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_basic_info"
+                    android:id="@+id/incl_event_basic_info"
+                    layout="@layout/incl_event_basic_info_ui"/>
+
+                <View
+                    android:id="@+id/view_basic_info"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintTop_toBottomOf="@id/incl_event_basic_info"
+                    app:layout_constraintRight_toRightOf="@id/incl_event_basic_info"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_event_basic_info"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <include
+                    android:id="@+id/incl_address"
+                    style="@style/incl_venue_style"
+                    layout="@layout/incl_header_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    app:layout_constraintTop_toBottomOf="@id/view_basic_info"
+                    bind:title="@{@string/txt_address}" />
+
+                <include
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    app:layout_constraintTop_toBottomOf="@id/incl_address"
+                    android:id="@+id/incl_venue_address"
+                    style="@style/incl_venue_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/incl_venue_address_ui"/>
+
+                <View
+                    android:id="@+id/view_address"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_venue_address"
+                    app:layout_constraintRight_toRightOf="@id/incl_venue_address"
+                    app:layout_constraintTop_toBottomOf="@id/incl_venue_address" />
+
+                <include
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    app:layout_constraintTop_toBottomOf="@id/view_address"
+                    style="@style/incl_venue_style"
+                    android:id="@+id/incl_time"
+                    bind:title="@{@string/txt_event_time}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/incl_header_venue"/>
+
+                <include
+                    style="@style/incl_venue_style"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_time"
+                    android:id="@+id/incl_event_time"
+                    layout="@layout/incl_event_time_ui"/>
+                <View
+                    android:id="@+id/view_create_event"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintTop_toBottomOf="@id/incl_event_time"
+                    app:layout_constraintRight_toRightOf="@id/incl_event_time"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_event_time"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <include
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    app:layout_constraintTop_toBottomOf="@id/view_create_event"
+                    style="@style/incl_venue_style"
+                    bind:title="@{@string/txt_other_details}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/incl_other_details"
+                    layout="@layout/incl_header_venue"/>
+
+                <include
+                    style="@style/incl_venue_style"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/incl_other_details"
+                    android:id="@+id/incl_event_other_details"
+                    layout="@layout/incl_event_other_details"/>
+
+                <View
+                    android:id="@+id/view_other_details"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:background="@color/colorRVBorder"
+                    app:layout_constraintTop_toBottomOf="@id/incl_event_other_details"
+                    app:layout_constraintRight_toRightOf="@id/incl_event_other_details"
+                    app:layout_constraintLeft_toLeftOf="@id/incl_event_other_details"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <carbon.widget.TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/btn_create_event"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="@dimen/_margin_20"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            style="@style/btn_style"
+            android:gravity="center"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/txt_save_event"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

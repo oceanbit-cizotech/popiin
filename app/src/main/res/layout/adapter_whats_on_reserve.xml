@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.res.WhatsOnReserveListRes.Data" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin_20"
+        android:layout_marginVertical="@dimen/_margin_half_mid"
+        android:background="@drawable/bg_rv_item"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_padding_half"
+        android:paddingTop="@dimen/_padding_half"
+        android:paddingRight="@dimen/_padding_half"
+        android:paddingBottom="@dimen/_padding"
+        tools:background="@drawable/bg_rv_item">
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_my_events"
+            android:layout_width="@dimen/img_setting_item_size"
+            android:layout_height="@dimen/img_setting_item_size"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:background="@color/colorBlue"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_venue_item"
+            app:carbon_cornerRadius="@dimen/_corner_radius_18"
+            app:carbon_tint="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_my_venue"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_10"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="@{model.ticket_type}"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="@id/iv_my_events"
+            app:layout_constraintLeft_toRightOf="@id/iv_my_events"
+            app:layout_constraintTop_toTopOf="@id/iv_my_events"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Business" />
+
+        <ImageView
+            android:id="@+id/iv_delete_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin_half"
+            android:src="@drawable/ic_delete_venue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_my_venue"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_my_venue" />
+
+        <ImageView
+            android:id="@+id/iv_edit_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin_10"
+            android:src="@drawable/ic_edit_venue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_my_venue"
+            app:layout_constraintRight_toLeftOf="@id/iv_delete_venue"
+            app:layout_constraintTop_toTopOf="@id/tv_my_venue" />
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:text="@{`Quantity: `+model.quantity}"
+            app:layout_constraintLeft_toLeftOf="@id/iv_my_events"
+            app:layout_constraintRight_toLeftOf="@id/tv_price"
+            app:layout_constraintTop_toBottomOf="@id/iv_my_events"
+            tools:text="Quantity :  10" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:text="@{`Price: £`+model.price}"
+            app:layout_constraintLeft_toRightOf="@id/tv_quantity"
+            app:layout_constraintRight_toRightOf="@id/iv_delete_venue"
+            app:layout_constraintTop_toBottomOf="@id/iv_my_events"
+            tools:text="Price :  10" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

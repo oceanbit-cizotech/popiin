@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_address}" />
+
+        <carbon.widget.EditText
+            android:id="@+id/edt_search_address"
+            style="@style/edt_signup"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:hint="@{@string/txt_search_location}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_header"
+            tools:hint="@string/txt_search_location" />
+
+        <ImageView
+            android:id="@+id/iv_search_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_margin"
+            android:src="@drawable/ic_search_close"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search_address"
+            app:layout_constraintRight_toRightOf="@id/edt_search_address"
+            app:layout_constraintTop_toTopOf="@id/edt_search_address" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_address_search"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_search_address" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

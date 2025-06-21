@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.popiin.res.WhatsOnBookingAttendeesRes.Data" />
+
+        <variable
+            name="bc"
+            type="com.popiin.util.Common" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_margin_half_half"
+            android:layout_marginTop="@dimen/_margin"
+            android:layout_marginBottom="@dimen/_margin"
+            android:background="@drawable/adapter_bg_unselect"
+            android:paddingLeft="@dimen/_margin"
+            android:paddingTop="@dimen/_margin_half"
+            android:paddingRight="@dimen/_margin"
+            android:paddingBottom="@dimen/_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/adapter_bg_unselect">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_booking_id"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="Name" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{``+data.id}"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/ba_guests" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_name"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="Name" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_guests"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/ba_guests" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/text_small"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.user.first_name+` `+data.user.last_name}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="Test" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        style="@style/text_small"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{``+data.quantity}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_booking_type"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="Booking type" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_deposit"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_deposit" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/text_small"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.ticket_type}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="Test1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        style="@style/text_small"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{`£`+  bc.getDecimalFormatValue(data.price)}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="5" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_start_date"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_start_date" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_end_date"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_end_date" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        style="@style/text_small"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.whatson.what_datetime != null ? bc.convertDateInFormat(data.ticket.whatson.what_datetime,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) : `-`}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="11 Apr 2020" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        style="@style/text_small"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.whatson.end_time != null ? bc.convertDateInFormat(data.ticket.whatson.end_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`) : `-`}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="05:25 AM" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_time"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_time" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_until"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_until" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.whatson.what_datetime != null ? bc.convertDateInFormat(data.ticket.whatson.what_datetime,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) : `-`}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="11 Apr 2020" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.whatson.end_time != null ? bc.convertDateInFormat(data.ticket.whatson.end_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`) : `-`}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="05:25 AM" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_scan_code"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="Scan code" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/ba_status"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="Status" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:paddingTop="@dimen/_margin_half">
+
+                        <ImageView
+                            android:id="@+id/img_scan_code"
+                            style="@style/text_medium"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="fitStart"
+                            android:src="@{data.is_scanned==0 ? @drawable/icn_qrcodegraytrans : @drawable/icn_qrcodeorangetrans , default = @drawable/icn_qrcodegraytrans}" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/text_small"
+                        android:layout_weight="0.6"
+                        android:id="@+id/tv_status"
+                        android:fontFamily="@font/inter_medium"
+                        tools:text="Confired" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_whats_on_camel"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_whats_on_camel" />
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half_half"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.ticket.whatson.title != null ? data.ticket.whatson.title : `-`}"
+                        android:textColor="@color/colorSecondaryText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_venue"
+                        android:textColor="@color/colorStoryText"
+                        tools:text="@string/txt_venue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/text_small"
+                        android:layout_marginTop="@dimen/_margin_half_half"
+                        android:layout_weight="0.6"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@{data.venue.venue_name}"
+                        android:textColor="@color/colorSecondaryText" />
+                </LinearLayout>
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_cancel"
+                    style="@style/btn_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/txt_cancel" />
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.popiin.res.EventBookingAttendeesRes.Data" />
+
+        <variable
+            name="bc"
+            type="com.popiin.util.Common" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="@dimen/_margin_half"
+            android:paddingBottom="@dimen/_margin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/_margin"
+            android:layout_marginBottom="@dimen/_margin"
+            android:paddingLeft="@dimen/_margin"
+            android:paddingRight="@dimen/_margin"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/adapter_bg_unselect"
+            tools:background="@drawable/adapter_bg_unselect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:textColor="@color/colorStoryText"
+                    android:text="Booking Number"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@{``+data.id}"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:textColor="@color/colorStoryText"
+                    android:text="@string/ba_name"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Name" />
+                <TextView
+                    style="@style/text_medium"
+                    android:textColor="@color/colorStoryText"
+                    android:text="@string/ba_quantity"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_weight="0.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Quantity" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@{data.user.first_name+` `+data.user.last_name}"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="" />
+                <TextView
+                    android:layout_weight="0.6"
+                    android:text="@{``+data.qty}"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:text="@string/ba_booking_type"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Booking type" />
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.6"
+                    android:text="@string/ba_price"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Price" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.4"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.ticket.name}"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Test1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:text="@{`£`+  bc.getDecimalFormatValue(data.ticket.price)}"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="5" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:text="@string/ba_booking_date"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_height="wrap_content"
+                    tools:text="Booking Date" />
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.6"
+                    android:text="@string/ba_booking_time"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_height="wrap_content"
+                    tools:text="Booking Time" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.4"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/colorSecondaryText"
+                    android:text="@{bc.convertDateInFormat(data.created_at,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`)}"
+                    android:layout_height="wrap_content"
+                    tools:text="11 Apr 2020" />
+                <TextView
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@{bc.convertDateInFormat(data.created_at,`yyyy-MM-dd HH:mm:ss`,`hh:mma`)}"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_height="wrap_content"
+                    tools:text="05:25 AM" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:text="@string/ba_scan_code"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_height="wrap_content"
+                    tools:text="Status" />
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.6"
+                    android:text="@string/ba_status"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_height="wrap_content"
+                    tools:text="Scan code" />
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:paddingTop="@dimen/_margin_half"
+                    android:layout_weight="0.4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_scan_code"
+                        style="@style/text_medium"
+                        android:scaleType="fitStart"
+                        android:src="@{data.is_scanned==0 ? @drawable/icn_qrcodegraytrans : @drawable/icn_qrcodegraytrans , default = @drawable/icn_qrcodegraytrans}"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@{data.is_scanned==0 ? @color/colorSwitch : @color/colorBlue}"
+                    android:text="@{data.is_scanned==0 ? @string/ba_status_confirm : @string/ba_status_entry_accepted}"
+                    android:layout_height="wrap_content"
+                    tools:text="Confired" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:text="@string/ba_event"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:layout_height="wrap_content"
+                    tools:text="Status" />
+                <TextView
+                    android:layout_marginTop="@dimen/_margin_half_half"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@{data.event.name}"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_medium"
+                    android:layout_weight="0.4"
+                    android:text="@string/ba_special_request"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorStoryText"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/ba_special_request" />
+                <TextView
+                    android:layout_marginTop="@dimen/_margin_half_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_weight="0.6"
+                    android:text="@{data.special_request == null ? `Not specified` : data.special_request }"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

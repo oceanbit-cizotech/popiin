@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="img"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingVertical="@dimen/_padding_half"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv_summary"
+            android:src="@{img}"
+            android:padding="@dimen/_padding_half_half_6"
+            tools:src="@drawable/ic_music"
+            app:carbon_cornerRadius="@dimen/_corner_radius_13"
+            android:background="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/summary_img_size"
+            android:layout_height="@dimen/summary_img_size"/>
+
+        <TextView
+            tools:text="Title"
+            android:text="@{title}"
+            android:textColor="@color/colorStoryText"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:id="@+id/tv_title"
+            app:layout_constraintLeft_toRightOf="@id/iv_summary"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            tools:text="Description"
+            android:textColor="@color/colorGrey"
+            android:id="@+id/rv_image"
+            android:orientation="horizontal"
+            android:layout_marginRight="@dimen/_margin_20"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

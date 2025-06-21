@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_direction_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_margin2"
+            android:background="@drawable/bg_edt"
+            app:carbon_elevation="@dimen/_elevation_half"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_ok"
+                style="@style/btn_style"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:gravity="center"
+                android:text="@string/btn_retry"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="@dimen/_margin2"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+
+            <TextView
+                android:id="@+id/text_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_margin"
+                android:layout_margin="@dimen/_margin"
+                android:gravity="center"
+                android:textColor="@color/colorStoryText"
+                android:text="@string/noInternetConnection"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_ok"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+
+        </carbon.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

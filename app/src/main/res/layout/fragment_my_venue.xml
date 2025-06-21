@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_header"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/top_header"
+                layout="@layout/incl_header_with_search"
+                bind:isHide="@{false}"
+                bind:title="@{@string/txt_my_venues}" />
+
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/search_bar"
+            layout="@layout/row_search_with_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/fl_header"
+            app:layout_constraintRight_toRightOf="@id/fl_header"
+            app:layout_constraintTop_toBottomOf="@id/fl_header"
+            bind:hint="@{@string/txt_search_venue}" />
+
+    <LinearLayout
+        android:id="@+id/ll_venue_verification_status"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin_20"
+        android:layout_marginVertical="@dimen/_margin_half_mid"
+        android:background="@drawable/bg_rv_item"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_padding_half"
+        android:visibility="gone"
+        android:paddingTop="@dimen/_padding_half"
+        android:paddingRight="@dimen/_padding_half"
+        android:paddingBottom="@dimen/_padding"
+        tools:background="@drawable/bg_rv_item">
+
+        <TextView
+            android:id="@+id/tv_verify_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_medium"
+            android:layout_marginStart="@dimen/_margin_10"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/verify_your_venue"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@string/verify_your_venue" />
+
+        <TextView
+            android:id="@+id/tv_my_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_medium"
+            android:layout_marginStart="@dimen/_margin_10"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/kindly_submit_your_business_documents"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="@string/kindly_submit_your_business_documents" />
+
+    </LinearLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_create_venue"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin_mid"
+            android:gravity="center"
+            android:text="@string/txt_register_venue"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintTop_toBottomOf="@id/ll_venue_verification_status"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_venues"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_create_venue"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <include
+            android:id="@+id/incl_message"
+            layout="@layout/include_no_list_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

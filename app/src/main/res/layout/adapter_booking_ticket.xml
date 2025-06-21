@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="ticket"
+            type="com.popiin.res.EventListRes.Tickets" />
+
+        <variable
+            name="favouriteTicket"
+            type="com.popiin.res.FavouriteEventsRes.Tickets" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:alpha=".4"
+        android:alpha="@{(favouriteTicket == null ? ticket.available_quantity > 0 : favouriteTicket.available_quantity > 0) ? 1f :.4f}">
+
+        <CheckBox
+            android:id="@+id/cb_select"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/reserve_selector"
+            android:button="@null"
+            android:checked="@{favouriteTicket == null ? ticket.selected : favouriteTicket.selected}"
+            android:enabled="false"
+            android:gravity="center"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:checked="true"
+            tools:text=" " />
+
+        <TextView
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_margin_half"
+            android:foreground="@{(favouriteTicket == null ? ticket.available_quantity > 0 : favouriteTicket.available_quantity > 0) ? null : @drawable/textview_strike}"
+            android:text="@{favouriteTicket == null ? ticket.name : favouriteTicket.name}"
+            android:textColor="@{(favouriteTicket == null ? ticket.selected : favouriteTicket.selected) ? @color/colorBlack: @color/colorBlack }"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_select"
+            app:layout_constraintLeft_toRightOf="@+id/cb_select"
+            app:layout_constraintTop_toTopOf="@+id/cb_select"
+            tools:foreground="@null"
+            tools:text="Ticket Name"
+            tools:textColor="@color/colorBlack" />
+
+        <View
+            style="@style/line_light"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb_select" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

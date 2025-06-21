@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:src="@drawable/ic_close_dialog"
+            android:layout_margin="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/cl_pass"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/cl_pass"
+            android:layout_marginTop="@dimen/_margin_10"
+            android:background="@color/colorWhite"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_header"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                android:background="@color/colorView"
+                android:layout_marginTop="@dimen/_margin_10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"/>
+
+            <TextView
+                tools:text="Refer Title"
+                android:id="@+id/tv_refer_title"
+                android:layout_marginLeft="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_header"
+                android:fontFamily="@font/inter_semi_bold"
+                style="@style/text_small"
+                android:text="@string/txt_refer_title"
+                android:textColor="@color/colorHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="Refer Title"
+                android:id="@+id/tv_refer_link"
+                android:layout_marginLeft="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_refer_title"
+                android:fontFamily="@font/inter_semi_bold"
+                style="@style/text_medium"
+                android:textColor="@color/colorHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_copy_code"
+                android:text="@string/txt_copy_link"
+                style="@style/text_xsmall"
+                app:layout_constraintLeft_toLeftOf="@id/tv_refer_link"
+                app:layout_constraintTop_toBottomOf="@id/tv_refer_link"
+                android:textColor="@color/colorGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_copy_code"
+                android:src="@drawable/ic_black_copy_code"
+                android:padding="@dimen/_padding_half"
+                app:carbon_tint="@color/white"
+                app:carbon_cornerRadius="@dimen/_corner_radius_18"
+                android:background="@color/colorBlue"
+                android:layout_marginRight="@dimen/_margin_20"
+                app:layout_constraintBottom_toBottomOf="@id/tv_copy_code"
+                app:layout_constraintTop_toTopOf="@id/tv_refer_link"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="@dimen/img_setting_item_size"
+                android:layout_height="@dimen/img_setting_item_size" />
+
+            <View
+                android:id="@+id/view_refer"
+                android:layout_marginTop="@dimen/_margin2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_copy_code"
+                android:background="@color/colorRVBorder"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <carbon.widget.LinearLayout
+                android:id="@+id/btn_share"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_refer"
+                android:layout_marginBottom="@dimen/_margin_60"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                style="@style/btn_style"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height">
+                <ImageView
+                    android:layout_marginRight="@dimen/_margin_half"
+                    app:tint="@color/white"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="@string/txt_share"
+                    android:layout_gravity="center"
+                    style="@style/text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </carbon.widget.LinearLayout>
+        </carbon.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="hint"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="0dp"
+            style="@style/text_xsmall"
+            android:textColor="@color/colorSecondaryText"
+            android:fontFamily="@font/inter_medium"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            tools:text="Title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_info"
+            android:layout_marginLeft="@dimen/_margin_half_half"
+            app:layout_constraintBottom_toBottomOf="@id/lbl_title"
+            app:layout_constraintTop_toTopOf="@id/lbl_title"
+            app:layout_constraintLeft_toRightOf="@id/lbl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <carbon.widget.EditText
+            style="@style/edt_signup"
+            android:id="@+id/edt_text"
+            android:layout_height="@dimen/edt_special_request_height"
+            android:padding="@dimen/_padding"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            tools:hint="@string/txt_write_here"
+            android:hint="@{hint}"
+            android:layout_marginTop="@dimen/_margin_10"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/edt_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_error"
+            style="@style/text_small"
+            android:visibility="gone"
+            android:textColor="@color/colorErrorText"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

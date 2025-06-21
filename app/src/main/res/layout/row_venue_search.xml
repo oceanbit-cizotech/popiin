@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.model.VenueModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:layout_marginTop="@dimen/_margin_half_mid"
+            android:id="@+id/iv_venue_image"
+            android:layout_width="@dimen/map_list_item_width"
+            android:layout_height="@dimen/map_Lis_item_height"
+            android:layout_marginStart="@dimen/_margin_20"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_hotel"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.TextView
+            android:id="@+id/tv_venue_type"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/map_list_item_tv_height"
+            android:layout_marginHorizontal="@dimen/_margin_half_half"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:background="@color/colorWhite"
+            style="@style/text_xsmall"
+            android:gravity="center"
+            android:textColor="@color/colorBlue"
+            android:fontFamily="@font/inter_semi_bold"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+            app:layout_constraintBottom_toBottomOf="@id/iv_venue_image"
+            app:layout_constraintLeft_toLeftOf="@id/iv_venue_image"
+            app:layout_constraintRight_toRightOf="@id/iv_venue_image"
+            tools:text="Restaurant" />
+
+        <TextView
+            android:id="@+id/tv_event_name"
+            style="@style/text_x_medium"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:gravity="start"
+            android:layout_marginHorizontal="@dimen/_margin_half_mid"
+            android:ellipsize="end"
+            app:layout_constraintRight_toRightOf="parent"
+            android:fontFamily="@font/inter_semi_bold"
+            android:textColor="@color/colorWhatsOn"
+            android:singleLine="true"
+            tools:text="Title"
+            app:layout_constraintLeft_toRightOf="@id/iv_venue_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:drawableStart="@drawable/ic_location_white"
+            android:drawablePadding="@dimen/_padding_half_half"
+            style="@style/text_xsmall"
+            android:textColor="@color/colorStoryText"
+            app:drawableTint="@color/colorBlue"
+            app:layout_constraintLeft_toLeftOf="@id/tv_event_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_event_name" />
+
+        <TextView
+            android:id="@+id/tv_restro"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_margin_20"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half_half"
+            android:drawableStart="@drawable/ic_music"
+            android:drawablePadding="@dimen/_padding_half_half"
+            style="@style/text_xsmall"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/colorStoryText"
+            app:layout_constraintLeft_toLeftOf="@id/tv_location"
+            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+
+        <carbon.widget.LinearLayout
+            android:id="@+id/ll_event_footer"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_height="@dimen/map_list_item_heart_size"
+            android:layout_marginBottom="@dimen/_margin2"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/tv_restro"
+            app:layout_constraintLeft_toLeftOf="@id/tv_restro">
+
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_get_directions"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/_padding_half_mid"
+                android:layout_height="match_parent"
+                app:carbon_cornerRadius="@dimen/_corner_radius"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_margin_half"
+                style="@style/text_xsmall"
+                android:visibility="visible"
+                android:fontFamily="@font/inter_medium"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:text="@string/txt_get_directions"
+                android:textColor="@color/colorWhite" />
+
+        </carbon.widget.LinearLayout>
+
+
+        <View
+            android:id="@+id/view_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_margin_20"
+            android:background="@color/colorSemiGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_venue_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

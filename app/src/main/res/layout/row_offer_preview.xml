@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="image"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="value"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingVertical="@dimen/_padding_half"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_offer_preview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorSemiGrey"
+            tools:src="@drawable/ic_music"
+            android:src="@{image}"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            android:padding="@dimen/_padding_half_half_6"
+            android:layout_width="@dimen/map_list_item_heart_size"
+            android:layout_height="@dimen/map_list_item_heart_size"/>
+
+        <TextView
+            tools:text="Title"
+            android:textColor="@color/colorGrey"
+            style="@style/text_small"
+            android:text="@{title}"
+            android:id="@+id/tv_offer_title"
+            app:layout_constraintRight_toLeftOf="@id/tv_offer_value"
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:layout_constraintLeft_toRightOf="@id/iv_offer_preview"
+            app:layout_constraintBottom_toBottomOf="@id/iv_offer_preview"
+            app:layout_constraintTop_toTopOf="@id/iv_offer_preview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/black"
+            style="@style/text_small"
+            android:text="@{value}"
+            android:id="@+id/tv_offer_value"
+            android:singleLine="true"
+            tools:text="Offer Value"
+            android:gravity="right"
+            android:paddingLeft="@dimen/_padding"
+            android:layout_marginRight="@dimen/_margin_half"
+            app:layout_constraintLeft_toRightOf="@id/tv_offer_title"
+            android:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="@id/iv_offer_preview"
+            app:layout_constraintTop_toTopOf="@id/iv_offer_preview"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

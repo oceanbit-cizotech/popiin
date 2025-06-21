@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_offer_preview"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/default_image"
+            app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+            android:textColor="@color/colorBlue"
+            android:layout_margin="@dimen/_margin_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/explore_btn_height"
+            android:layout_height="@dimen/explore_btn_height"/>
+
+        <TextView
+            android:id="@+id/tv_offer_preview_name"
+            style="@style/text_medium"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginLeft="@dimen/_margin_half"
+            app:layout_constraintLeft_toRightOf="@id/iv_offer_preview"
+            app:layout_constraintTop_toTopOf="@id/iv_offer_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/text_xsmall"
+            android:drawablePadding="@dimen/_padding_half_half"
+            android:textColor="@color/colorSecondaryText"
+            android:drawableLeft="@drawable/ic_orange_location"
+            app:layout_constraintLeft_toLeftOf="@id/tv_offer_preview_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_offer_preview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            style="@style/text_xsmall"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginLeft="@dimen/_margin_half_half"
+            app:layout_constraintLeft_toRightOf="@id/tv_location"
+            app:layout_constraintBottom_toBottomOf="@id/tv_location"
+            app:layout_constraintTop_toTopOf="@id/tv_location"
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_offer_preview"
+            android:layout_marginRight="@dimen/_margin_20"
+            android:layout_marginTop="@dimen/_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/iv_offer_preview"
+            app:layout_constraintTop_toBottomOf="@id/iv_offer_preview"
+            android:background="@color/colorSemiGrey"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

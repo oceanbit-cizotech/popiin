@@ -1,0 +1,89 @@
+{
+  "project_info": {
+    "project_number": "849048029297",
+    "firebase_url": "https://poppin-9886b.firebaseio.com",
+    "project_id": "poppin-9886b",
+    "storage_bucket": "poppin-9886b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849048029297:android:6f76d7a4773afd0f9233d0",
+        "android_client_info": {
+          "package_name": "com.cizotech.popiin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849048029297-0r260b82v5on2bus0pn7d3fuvtremf2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Nswa1IWhCyvCbwNjfb3H6WheU7s59IQ"
+        },
+        {
+          "current_key": "AIzaSyCbDre5gKNHkST9gxDTw_ELApgGkx0Fz_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849048029297-0r260b82v5on2bus0pn7d3fuvtremf2i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "849048029297-ukqhievkvh628bkmqcvfn8ht8p336esj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cizotech.poppin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849048029297:android:6e613d804ab175f09233d0",
+        "android_client_info": {
+          "package_name": "com.popiin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849048029297-0r260b82v5on2bus0pn7d3fuvtremf2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Nswa1IWhCyvCbwNjfb3H6WheU7s59IQ"
+        },
+        {
+          "current_key": "AIzaSyCbDre5gKNHkST9gxDTw_ELApgGkx0Fz_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849048029297-0r260b82v5on2bus0pn7d3fuvtremf2i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "849048029297-ukqhievkvh628bkmqcvfn8ht8p336esj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cizotech.poppin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

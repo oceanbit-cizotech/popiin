@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:cursorVisible="false"
+            android:id="@+id/cursor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_margin"
+            android:id="@+id/lbl_title"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            tools:text="jignesh"
+            android:textColor="@color/colorPrimaryTextWithoutTrans"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout
+            android:id="@+id/frm_date"
+            android:layout_marginTop="@dimen/_margin_half"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/edt_signup"
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+            <ImageView
+                android:id="@+id/img_down_arrow"
+                android:src="@drawable/carbon_arrow_down"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_gravity="right|center_vertical"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/frm_date"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_error"
+            style="@style/text_small"
+            android:visibility="gone"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

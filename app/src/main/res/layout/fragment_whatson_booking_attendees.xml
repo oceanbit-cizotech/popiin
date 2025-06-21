@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_search"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_whatson_book_attendee}" />
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/text_large"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_margin"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:text=""
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_header" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/zsideview"
+            app:layout_constraintTop_toBottomOf="@+id/text_title">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event_book_attendees"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_margin"
+                android:layout_marginTop="@dimen/_margin_half" />
+        </FrameLayout>
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/rv_event_book_attendees"-->
+        <!--            android:layout_marginTop="@dimen/_margin_20"-->
+        <!--            android:layout_marginLeft="@dimen/_margin_20"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintRight_toLeftOf="@id/zsideview"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/top_header"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"/>-->
+
+        <com.popiin.views.ZSideBar
+            android:id="@+id/zsideview"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_margin_half"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+        <include
+            android:id="@+id/incl_message"
+            layout="@layout/include_no_list_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_message"-->
+        <!--            style="@style/text_medium"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="@string/no_information_to_display"-->
+        <!--            android:textColor="@color/colorValue"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/text_title" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

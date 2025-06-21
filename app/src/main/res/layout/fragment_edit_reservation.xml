@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/img_back_size"
+            android:layout_height="@dimen/img_back_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_marginTop="@dimen/_margin2"
+            android:background="@color/colorSemiGrey"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_left_arrow"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_edit_reservation"
+            style="@style/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="@string/txt_edit_reservation"
+            android:textColor="@color/colorHeaderText"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+        <carbon.widget.NestedScrollView
+            android:id="@+id/nsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom"
+            app:layout_constraintLeft_toLeftOf="@id/iv_back"
+            app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_padding">
+
+                <ImageView
+                    android:id="@+id/iv_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin"
+                    android:layout_marginTop="@dimen/_margin2"
+                    android:src="@drawable/ic_reservation_blue_filled"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_reservation_name"
+                    style="@style/text_xsmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin_10"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:textColor="@color/colorHeaderText"
+                    app:layout_constraintLeft_toRightOf="@id/iv_reserve"
+                    app:layout_constraintTop_toTopOf="@id/iv_reserve" />
+
+                <TextView
+                    android:id="@+id/tv_venue_confirm_require"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_margin_10"
+                    android:text="@string/txt_venue_reserve_confirm"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toRightOf="@id/iv_reserve"
+                    app:layout_constraintTop_toBottomOf="@id/tv_reservation_name" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/switch_venue_confirm"
+                    android:layout_width="@dimen/switch_width"
+                    android:layout_height="@dimen/switch_height"
+                    android:layout_marginRight="@dimen/_margin_20"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_venue_confirm_require"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_reservation_name"
+                    app:sb_background="@color/colorSwitchUncheck"
+                    app:sb_checked_color="@color/colorSwitch"
+                    app:sb_show_indicator="false"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_venue_confirm_desc"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:text="@string/txt_venue_reserve_desc"
+                    android:textColor="@color/colorStoryText"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_reserve"
+                    app:layout_constraintRight_toRightOf="@id/switch_venue_confirm"
+                    app:layout_constraintTop_toBottomOf="@id/tv_venue_confirm_require" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_venue_reserve_book"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_padding"
+                    android:paddingTop="@dimen/_padding_half"
+                    android:paddingRight="@dimen/_padding"
+                    android:paddingBottom="@dimen/_padding2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_venue_confirm_desc">
+
+                    <include
+                        android:id="@+id/venue_booking_options"
+                        layout="@layout/include_spin_dropdown"
+                        bind:title="@{@string/txt_booking_options}" />
+
+
+                    <include
+                        android:id="@+id/edt_number_tables"
+                        layout="@layout/include_edittext_with_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        bind:title="@{@string/txt_num_tables}" />
+
+                    <include
+                        android:id="@+id/venue_start_date_time"
+                        layout="@layout/row_lbl_edittext_with_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        bind:hint="@{``}"
+                        bind:image="@{@drawable/ic_calender}"
+                        bind:title="@{@string/txt_start_date_time}" />
+
+                    <include
+                        android:id="@+id/venue_end_date_time"
+                        layout="@layout/row_lbl_edittext_with_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin"
+                        bind:hint="@{``}"
+                        bind:image="@{@drawable/ic_calender}"
+                        bind:title="@{@string/txt_end_date_time}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_margin2"
+                        android:visibility="gone"
+                        android:background="@color/colorSemiGrey" />
+
+                    <include
+                        android:id="@+id/venue_deposit_required"
+                        layout="@layout/row_lbl_venue_confirm_reserve"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_mid"
+                        android:visibility="gone"
+                        bind:desc="@{@string/txt_turn_on_payment_details}"
+                        bind:title="@{@string/txt_deposit_required}" />
+
+
+                    <include
+                        android:id="@+id/venue_deposit_amount"
+                        layout="@layout/row_lbl_with_textview_with_hint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half_mid"
+                        android:visibility="gone"
+                        bind:hint="@{@string/pound_sign}"
+                        bind:title="@{@string/txt_deposit_amount}" />
+
+                    <View
+                        android:id="@+id/view_bottom_terms"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:background="@color/colorRVBorder" />
+
+                    <TextView
+                        android:id="@+id/lbl_title"
+                        style="@style/text_xsmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half_mid"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/txt_venue_booking_terms"
+                        android:textColor="@color/colorSecondaryText"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Title" />
+
+                    <carbon.widget.EditText
+                        android:id="@+id/edt_venue_terms"
+                        style="@style/edt_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/event_header_img_height"
+                        android:layout_marginTop="@dimen/_margin_10"
+                        android:gravity="top|left"
+                        android:hint="@string/txt_write_here"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="@dimen/_padding"
+                        android:paddingTop="@dimen/_padding_half"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_title"
+                        tools:hint="@string/txt_write_here" />
+
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </carbon.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view_bottom"
+            app:layout_constraintBottom_toTopOf="@id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_margin_half"
+            android:background="@color/colorRVBorder" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btn_submit"
+            style="@style/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginHorizontal="@dimen/_margin_20"
+            android:layout_marginBottom="@dimen/_margin2"
+            android:gravity="center"
+            android:text="@string/txt_submit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

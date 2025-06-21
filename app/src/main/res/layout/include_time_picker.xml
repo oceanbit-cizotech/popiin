@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aigestudio="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_hour_minutes_view"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:background="@drawable/bg_spinner"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/wp_hours"
+                app:layout_constraintTop_toTopOf="@+id/wp_hours"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <View
+                android:id="@+id/view_center"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_corner_radius_20"
+                app:layout_constraintLeft_toRightOf="@id/wp_hours"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="2dp"
+                android:background="@drawable/bg_vertical_line"
+                android:layout_height="0dp" />
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                app:layout_constraintTop_toTopOf="@+id/view_center"
+                app:layout_constraintLeft_toRightOf="@+id/view_center"
+                android:layout_marginLeft="@dimen/_margin_6"
+                android:id="@+id/wp_minutes"
+                android:layout_width="40dp"
+                android:layout_height="130dp"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="false"
+                aigestudio:wheel_cyclic="false"
+                app:wheel_visible_item_count="3"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="#A7A7DB"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black" />
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                app:layout_constraintLeft_toRightOf="@id/view_start"
+                app:layout_constraintTop_toTopOf="@+id/view_center"
+                android:id="@+id/wp_hours"
+                android:layout_marginRight="@dimen/_margin_6"
+                android:layout_width="40dp"
+                android:layout_height="130dp"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="false"
+                aigestudio:wheel_cyclic="false"
+                app:wheel_visible_item_count="3"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="#A7A7DB"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black" />
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                android:layout_marginRight="@dimen/_margin_20"
+                app:layout_constraintTop_toTopOf="@+id/view_end"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/view_end"
+                android:id="@+id/wp_am_pm"
+                android:layout_width="40dp"
+                android:layout_height="130dp"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="false"
+                aigestudio:wheel_cyclic="false"
+                app:wheel_visible_item_count="3"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="#A7A7DB"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black" />
+
+            <View
+                android:id="@+id/view_start"
+                android:layout_marginTop="@dimen/_corner_radius_20"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/_margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/wp_hours"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="2dp"
+                android:layout_marginEnd="@dimen/_margin_10"
+                android:background="@drawable/bg_vertical_line"
+                android:layout_height="0dp" />
+
+            <View
+                android:id="@+id/view_end"
+                android:layout_marginTop="@dimen/_corner_radius_20"
+                android:visibility="invisible"
+                android:layout_marginEnd="@dimen/_corner_radius_20"
+                app:layout_constraintLeft_toRightOf="@+id/wp_minutes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="2dp"
+                android:layout_marginStart="@dimen/_margin_10"
+                android:background="@drawable/bg_vertical_line"
+                android:layout_height="0dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

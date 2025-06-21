@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.ConstraintLayout
+        app:carbon_cornerRadius="@dimen/_corner_radius"
+        android:background="@color/colorSemiGrey"
+        android:layout_margin="@dimen/_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_basic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/_margin_half"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/incl_venue_type"
+                bind:desc="@{@string/txt_venue_type}"
+                bind:img="@{@drawable/ic_my_venues}"
+                layout="@layout/incl_image_with_title_desc" />
+
+            <include
+                bind:desc="@{@string/txt_plain_music}"
+                bind:img="@{@drawable/ic_music}"
+                android:id="@+id/incl_music"
+                layout="@layout/incl_image_with_title_desc" />
+
+            <include
+                android:id="@+id/incl_entertainment"
+                layout="@layout/incl_image_with_title_desc"
+                bind:desc="@{@string/txt_entertainment}"
+                bind:img="@{@drawable/ic_entertainment_venue}" />
+
+            <include
+                android:id="@+id/incl_dress_code"
+                bind:desc="@{@string/txt_dress_code}"
+                bind:img="@{@drawable/ic_dress_code}"
+                layout="@layout/incl_image_with_title_desc" />
+
+            <include
+                android:id="@+id/incl_entry_policy"
+                bind:desc="@{@string/txt_entry_policy}"
+                bind:img="@{@drawable/ic_dress_code}"
+                layout="@layout/incl_image_with_title_desc" />
+
+            <include
+                android:id="@+id/incl_last_entry_policy"
+                bind:desc="@{@string/txt_last_entry_policy_text}"
+                bind:img="@{@drawable/ic_dress_code}"
+                layout="@layout/incl_image_with_title_desc" />
+
+            <include
+                bind:desc="@{@string/txt_offers}"
+                bind:img="@{@drawable/ic_offers}"
+                android:id="@+id/incl_offers"
+                layout="@layout/incl_image_with_title_desc"/>
+
+            <include
+                android:id="@+id/incl_outdoor"
+                bind:img="@{@drawable/ic_outdoor_chairs}"
+                bind:desc="@{@string/lbl_outdoor}"
+                layout="@layout/incl_image_with_title_desc"/>
+
+            <include
+                android:id="@+id/incl_reservation"
+                bind:desc="@{@string/txt_venue_reservation}"
+                bind:img="@{@drawable/ic_venue_reserve}"
+                layout="@layout/incl_image_with_title_desc"/>
+
+            <include
+                bind:desc="@{@string/txt_other_information_camel}"
+                bind:img="@{@drawable/ic_other_info}"
+                android:id="@+id/incl_other_info"
+                layout="@layout/incl_image_with_title_desc"/>
+
+        </LinearLayout>
+
+
+
+
+    </carbon.widget.ConstraintLayout>
+</layout>

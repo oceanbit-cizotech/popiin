@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <carbon.widget.ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/img_back_size"
+            android:layout_height="@dimen/img_back_size"
+            android:layout_marginLeft="@dimen/_margin"
+            android:layout_marginTop="@dimen/_margin2"
+            android:background="@color/colorSemiGrey"
+            android:padding="@dimen/_padding_half"
+            android:src="@drawable/ic_left_arrow"
+            app:carbon_cornerRadius="@dimen/_corner_radius_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/iv_back"
+            app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingBottom="@dimen/_padding2"
+                android:layout_marginHorizontal="@dimen/_margin_20"
+                android:layout_marginTop="@dimen/_margin_20"
+                >
+
+                <TextView
+                    android:id="@+id/tv_create_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/txt_create_your_account"
+                    android:textColor="@color/colorHeaderText"
+                    android:textSize="@dimen/large_text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lbl_full_name"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_margin_mid"-->
+<!--                    android:layout_marginRight="@dimen/_margin_half_mid"-->
+<!--                    android:fontFamily="@font/inter_medium"-->
+<!--                    android:text="@string/txt_full_name"-->
+<!--                    app:layout_constraintLeft_toLeftOf="@id/tv_create_account"-->
+<!--                    app:layout_constraintRight_toRightOf="@id/tv_create_account"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_create_account" />-->
+
+<!--                <carbon.widget.EditText-->
+<!--                    android:id="@+id/edt_full_name"-->
+<!--                    style="@style/edt_signup"-->
+<!--                    android:hint="@string/txt_enter_full_name"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    android:textColorHint="@color/colorPrimaryText"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/lbl_full_name" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_msg_full_name"-->
+<!--                    style="@style/text_signup_error_msg"-->
+<!--                    android:layout_marginRight="@dimen/_margin_10"-->
+<!--                    android:textColor="@color/colorErrorText"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/edt_full_name" />-->
+
+
+                <TextView
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:id="@+id/lbl_firstname"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_firstname"
+                    app:layout_constraintRight_toLeftOf="@id/lbl_lastname"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_create_account" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="@dimen/_margin"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_lastname"
+                    android:text="@string/txt_lastname"
+                    app:layout_constraintLeft_toRightOf="@id/lbl_firstname"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_create_account" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_firstname"
+                    style="@style/edt_signup"
+                    android:inputType="textPersonName"
+                    android:hint="@string/txt_enter_first_name"
+                    android:nextFocusDown="@id/edt_lastname"
+                    android:nextFocusForward="@id/edt_lastname"
+                    app:layout_constraintEnd_toEndOf="@id/lbl_firstname"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_firstname" />
+
+                <carbon.widget.EditText
+                    android:hint="@string/txt_enter_last_name"
+                    android:id="@+id/edt_lastname"
+                    style="@style/edt_signup"
+                    android:inputType="textPersonName"
+                    android:nextFocusDown="@id/spin_gender"
+                    android:nextFocusForward="@id/spin_gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edt_firstname"
+                    app:layout_constraintStart_toStartOf="@id/lbl_lastname"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_lastname" />
+                <TextView
+                    android:id="@+id/tv_msg_firstname"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_msg_lastname"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="gone"
+                    android:textColor="@color/colorErrorText"
+                    app:layout_constraintTop_toBottomOf="@id/edt_firstname"/>
+
+                <TextView
+                    android:id="@+id/tv_msg_lastname"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@+id/tv_msg_firstname"
+                    app:layout_constraintTop_toBottomOf="@id/edt_lastname"/>
+
+                <TextView
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:id="@+id/lbl_gender"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_gender"
+                    app:layout_constraintRight_toLeftOf="@id/lbl_dob"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_lastname" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:layout_width="0dp"
+                    style="@style/text_xsmall"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_dob"
+                    android:text="@string/txt_date_of_birth"
+                    app:layout_constraintLeft_toRightOf="@id/lbl_gender"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_lastname" />
+
+                <Spinner
+                    android:id="@+id/spin_gender"
+                    style="@style/edt_signup"
+                    android:textSize="@dimen/small_text"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:focusable="true"
+                    android:paddingLeft="@dimen/_padding_half_half"
+                    android:focusableInTouchMode="true"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_half_half_mid"
+                    app:layout_constraintLeft_toLeftOf="@id/lbl_gender"
+                    app:layout_constraintRight_toLeftOf="@id/edt_dob"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_gender" />
+
+                <ImageView
+                    android:id="@+id/img_drop_down"
+                    android:layout_width="@dimen/drop_down_size"
+                    android:layout_height="@dimen/drop_down_size"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_margin"
+                    android:src="@drawable/ic_drop_down"
+                    app:layout_constraintBottom_toBottomOf="@id/spin_gender"
+                    app:layout_constraintEnd_toEndOf="@id/spin_gender"
+                    app:layout_constraintTop_toTopOf="@id/spin_gender" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_dob"
+                    style="@style/edt_signup"
+                    android:layout_marginLeft="@dimen/_margin_10"
+                    android:drawableRight="@drawable/ic_calender"
+                    android:gravity="center_vertical"
+                    android:hint="@string/txt_select_dob"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textSize="@dimen/small_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/spin_gender"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_dob" />
+
+                <TextView
+                    android:id="@+id/tv_msg_gender"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_msg_dob"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spin_gender" />
+
+
+                <TextView
+                    android:id="@+id/tv_msg_dob"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginLeft="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_msg_gender"
+                    app:layout_constraintTop_toBottomOf="@id/edt_dob" />
+
+                <include
+                    android:id="@+id/lbl_email_address"
+                    layout="@layout/row_lbl_text_with_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spin_gender"
+                    bind:hint="@{@string/txt_enter_email}"
+                    bind:title="@{@string/txt_email_address}" />
+
+
+                <TextView
+                    android:id="@+id/lbl_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:fontFamily="@font/inter_medium"
+                    style="@style/text_xsmall"
+                    android:text="@string/txt_password"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_email_address" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_password"
+                    style="@style/edt_signup"
+                    android:hint="@string/txt_enter_password"
+                    android:inputType="textPassword"
+                    android:paddingRight="@dimen/_padding"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_password" />
+
+                <TextView
+                    android:id="@+id/tv_msg_password"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+                <TextView
+                    android:id="@+id/lbl_conf_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_20"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_confirm_password"
+                    style="@style/text_xsmall"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_password" />
+
+                <carbon.widget.EditText
+                    android:id="@+id/edt_conf_password"
+                    style="@style/edt_signup"
+                    android:hint="@string/enter_confirm_password"
+                    android:inputType="textPassword"
+                    android:paddingRight="@dimen/_padding"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_conf_password" />
+
+                <CheckBox
+                    android:id="@+id/chk_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/password_selector"
+                    app:layout_constraintTop_toTopOf="@id/edt_password"
+                    app:layout_constraintBottom_toBottomOf="@id/edt_password"
+                    app:layout_constraintEnd_toEndOf="@id/edt_password"/>
+
+                <CheckBox
+                    android:id="@+id/chk_confirm_psw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/password_selector"
+                    app:layout_constraintTop_toTopOf="@id/edt_conf_password"
+                    app:layout_constraintBottom_toBottomOf="@id/edt_conf_password"
+                    app:layout_constraintEnd_toEndOf="@id/edt_conf_password" />
+
+                <TextView
+                    android:id="@+id/tv_msg_conf_password"
+                    style="@style/text_signup_error_msg"
+                    android:layout_marginRight="@dimen/_margin_10"
+                    android:textColor="@color/colorErrorText"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_conf_password" />
+
+                <TextView
+                    android:id="@+id/tv_terms_condition_join"
+                    style="@style/text_xsmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin2"
+                    android:textColor="@color/colorSecondaryText"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_msg_conf_password"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msg_conf_password" />
+
+                <CheckBox
+                    android:layout_width="@dimen/img_setting_item_size"
+                    android:id="@+id/chk_terms"
+                    android:layout_height="@dimen/img_setting_item_size"
+                    android:layout_marginTop="@dimen/_margin_half_mid"
+                    android:button="@null"
+                    android:checked="true"
+                    android:background="@drawable/terms_selector"
+                    app:layout_constraintTop_toBottomOf="@id/tv_terms_condition_join"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/chk_terms"
+                    app:layout_constraintBottom_toBottomOf="@id/chk_terms"
+                    android:text="@string/txt_terms"
+                    style="@style/text_xsmall"
+                    android:textColor="@color/colorSecondaryText"
+                    android:id="@+id/tv_terms_condition"
+                    app:layout_constraintLeft_toRightOf="@id/chk_terms" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_create_account"
+                    style="@style/btn_style"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginTop="@dimen/_margin_40"
+                    android:gravity="center"
+                    android:text="@string/txt_countinue"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_terms_condition" />
+
+                <LinearLayout
+                    android:id="@+id/ll_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_margin_half"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_create_account">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        style="@style/text_xsmall"
+                        android:text="@string/txt_already_have_an_account"
+                        android:textColor="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_xsmall"
+                        android:text="@string/txt_login"
+                        android:padding="@dimen/_padding_half_half"
+                        android:textColor="@color/colorBlue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_padding2"
+                    app:layout_constraintTop_toBottomOf="@id/ll_login">
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/iv_google"
+                        android:layout_width="@dimen/ic_social_size"
+                        android:layout_height="@dimen/ic_social_size"
+                        android:layout_marginEnd="@dimen/_margin_10"
+                        android:background="@drawable/bg_edt"
+                        android:padding="@dimen/_padding"
+                        android:src="@drawable/ic_google"
+                        app:carbon_cornerRadius="@dimen/_corner_social_radius"
+                        app:carbon_stroke="@color/colorRVBorder"
+                        app:carbon_strokeWidth="1dp" />
+
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/ic_facebook"
+                        android:layout_width="@dimen/ic_social_size"
+                        android:layout_height="@dimen/ic_social_size"
+                        android:layout_marginStart="@dimen/_margin_10"
+                        android:background="@drawable/bg_edt"
+                        android:padding="@dimen/_padding"
+                        android:src="@drawable/ic_facebook"
+                        app:carbon_cornerRadius="@dimen/_corner_social_radius"
+                        app:carbon_stroke="@color/colorRVBorder"
+                        app:carbon_strokeWidth="1dp" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

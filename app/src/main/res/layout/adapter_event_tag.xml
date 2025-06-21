@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="com.popiin.model.TagModel" />
+    </data>
+
+    <carbon.widget.ConstraintLayout
+        android:layout_marginHorizontal="@dimen/_margin_half"
+        app:carbon_cornerRadius="@dimen/_corner_radius_half_mid"
+        android:background="@color/colorSemiGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:textColor="@color/colorStoryText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:padding="@dimen/_padding_10"
+            android:textSize="@dimen/small_text"
+            tools:text="Most Popular"
+            android:text="@{model.tag}"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </carbon.widget.ConstraintLayout>
+</layout>

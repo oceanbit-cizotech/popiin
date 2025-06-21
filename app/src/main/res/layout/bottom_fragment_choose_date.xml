@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="fromDate"
+            type="String" />
+
+        <variable
+            name="toDate"
+            type="String" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <carbon.widget.LinearLayout
+            android:id="@+id/cl_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:padding="@dimen/_padding"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <carbon.widget.ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_margin_half_half"
+                android:background="@color/colorView"
+                app:carbon_cornerRadius="@dimen/_corner_radius_half_2_5d"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_20"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/txt_filter"
+                android:textColor="@color/colorHeaderText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_view" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:text="@string/txt_from"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/edt_from_date"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:cursorVisible="false"
+                android:drawableRight="@drawable/ic_calender"
+                android:focusableInTouchMode="false"
+                android:gravity="center_vertical"
+                android:hint="@string/txt_from_date"
+                android:paddingRight="@dimen/_padding"
+                android:text="@{fromDate}"
+                android:textColor="@color/colorSecondaryText"
+                tools:text="20/12/2020" />
+
+            <TextView
+                android:id="@+id/tv_error_from_date"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_from_date"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/text_xsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:text="@string/txt_to"
+                android:textColor="@color/colorSecondaryText" />
+
+            <carbon.widget.EditText
+                android:id="@+id/edt_to_date"
+                style="@style/edt_signup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_margin_half"
+                android:cursorVisible="false"
+                android:drawableRight="@drawable/ic_calender"
+                android:focusableInTouchMode="false"
+                android:gravity="center_vertical"
+                android:hint="@string/txt_to_date"
+                android:paddingRight="@dimen/_padding"
+                android:text="@{toDate}"
+                android:textColor="@color/colorSecondaryText"
+                tools:text="20/12/2020" />
+
+            <TextView
+                android:id="@+id/tv_error_to_date"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_padding_half_half"
+                android:text="@string/err_to_date"
+                android:textColor="@color/colorErrorText"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <carbon.widget.TextView
+                android:id="@+id/btn_search"
+                style="@style/btn_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_marginVertical="@dimen/_margin2"
+                android:gravity="center"
+                android:text="@string/txt_apply"
+                android:textAllCaps="false" />
+
+        </carbon.widget.LinearLayout>
+
+
+        <carbon.widget.ImageView
+            android:id="@+id/img_close"
+            android:layout_width="@dimen/img_setting_item_size"
+            android:layout_height="@dimen/img_setting_item_size"
+            android:layout_margin="@dimen/_margin"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintBottom_toTopOf="@id/cl_info"
+            app:layout_constraintRight_toRightOf="@+id/cl_info" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

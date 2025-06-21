@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="message"
+            type="String" />
+
+        <variable
+            name="negativeButton"
+            type="String" />
+
+        <variable
+            name="positiveButton"
+            type="String" />
+
+    </data>
+
+    <carbon.widget.FrameLayout
+        android:background="@color/colorTransparent30"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_padding_60">
+
+        <carbon.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorDialogBg"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_padding_half"
+            android:paddingBottom="@dimen/_padding_half_half"
+            app:carbon_cornerRadius="@dimen/_corner_radius"
+            app:carbon_elevation="@dimen/_elevation_half">
+
+            <TextView
+                android:id="@+id/tv_tittle"
+                style="@style/text_x_medium"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_margin"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{title}"
+                android:textColor="@color/colorDialogTittle"
+                android:fontFamily="@font/inter_semi_bold"
+                android:visibility="@{title == null || title.empty ? View.GONE : View.VISIBLE }"
+                tools:text="Dialog tittle"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                style="@style/text_small"
+                android:paddingHorizontal="@dimen/_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/inter_medium"
+                android:maxLines="5"
+                android:minLines="2"
+                android:text="@{message}"
+                android:textColor="@color/colorHeaderText"
+                android:visibility="@{message == null || message.empty ? View.GONE : View.VISIBLE }"
+                tools:text="Dialog Message goes\nhere."
+                tools:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_margin"
+                android:background="@color/colorRVBorder"
+                tools:visibility="visible" />
+            <!--android:visibility="@{data.message == null || data.message.empty ? View.GONE : View.VISIBLE }"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_negative"
+                    style="@style/text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/explore_btn_height"
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:background="@color/colorDialogNagetive"
+                    android:gravity="center"
+                    android:maxLength="13"
+                    android:textAllCaps="false"
+                    android:maxWidth="@dimen/dlg_com_max_width"
+                    android:text="@{negativeButton}"
+                    android:textColor="@color/colorDialogBlue"
+                    android:visibility="@{negativeButton == null || negativeButton.empty ? View.GONE : View.VISIBLE }"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                    tools:text="No"
+                    tools:visibility="visible" />
+                <View
+                    android:background="@color/colorRVBorder"
+                    android:layout_width="1dp"
+                    android:visibility="@{negativeButton == null || negativeButton.empty ? View.GONE : View.VISIBLE }"
+                    android:layout_height="@dimen/explore_btn_height"/>
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_positive"
+                    style="@style/text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/explore_btn_height"
+                    android:layout_marginRight="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:background="@color/colorDialogPositive"
+                    android:gravity="center"
+                    android:maxWidth="@dimen/dlg_com_max_width"
+                    android:maxLength="13"
+                    android:textAllCaps="false"
+                    android:text="@{positiveButton}"
+                    android:textColor="@color/colorDialogBlue"
+                    android:visibility="@{positiveButton == null || positiveButton.empty ? View.GONE : View.VISIBLE }"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                    tools:text="YES"
+                    tools:visibility="visible" />
+
+
+
+            </LinearLayout>
+        </carbon.widget.LinearLayout>
+    </carbon.widget.FrameLayout>
+
+
+</layout>

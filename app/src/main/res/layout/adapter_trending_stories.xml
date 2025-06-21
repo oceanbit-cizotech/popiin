@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="@dimen/_margin_half"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/fl_story_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_story"
+                android:layout_width="@dimen/view_width"
+                android:layout_height="@dimen/view_width"
+                tools:src="@drawable/story_one"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/text_medium"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintRight_toRightOf="@id/fl_story_image"
+            app:layout_constraintLeft_toLeftOf="@id/fl_story_image"
+            app:layout_constraintTop_toBottomOf="@id/fl_story_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

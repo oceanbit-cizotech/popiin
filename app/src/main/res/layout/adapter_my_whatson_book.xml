@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.res.MyWhatsonBookRes.Data" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+    </data>
+
+
+    <carbon.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_margin_half"
+        android:layout_marginVertical="@dimen/_margin"
+        android:background="@color/colorWhite"
+        android:paddingBottom="@dimen/_padding"
+        app:carbon_cornerRadius="@dimen/_corner_radius"
+        app:carbon_elevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_margin_half_mid"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin_half_mid"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ba_name"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Name" />
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_booking_number"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="@string/txt_booking_number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{model.user.first_name+` `+model.user.last_name}"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="Test" />
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{``+model.id}"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ba_quantity"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Quantity" />
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ba_booking_type"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="Booking type" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{``+model.quantity}"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="Test1" />
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{model.ticket.ticket_type}"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="5" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ba_price"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="@string/ba_price" />
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ba_status"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="@string/ba_status" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="@{model.price == 0 ? `Free` : `£`+common.getDecimalFormatValue(model.price)}"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    style="@style/text_xsmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_semi_bold"
+                    tools:text="Accepted" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_margin"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/txt_whats_on_camel"
+                    android:textColor="@color/colorStoryText"
+                    tools:text="@string/txt_whats_on_camel" />
+
+                <TextView
+                    style="@style/text_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_margin_half_half"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@{model.ticket.whatson.title}"
+                    android:textColor="@color/colorSecondaryText" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="@dimen/_margin"
+                android:src="@drawable/dashed_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_cancel_book"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/civ_img_size"
+                android:layout_marginTop="@dimen/_margin_20"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_forgot_password">
+
+                <carbon.widget.TextView
+                    android:id="@+id/tv_get_directions"
+                    style="@style/text_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_margin_half"
+                    android:layout_marginEnd="@dimen/_margin_half_half"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:drawablePadding="@dimen/_padding_half"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:text="@string/txt_get_directions"
+                    android:textColor="@color/colorHeaderText"
+                    app:carbon_cornerRadius="@dimen/_corner_radius_25"
+                    app:carbon_stroke="@color/colorHeaderText"
+                    app:carbon_strokeWidth="1dp" />
+
+                <carbon.widget.TextView
+                    android:id="@+id/btn_view_book_code"
+                    style="@style/btn_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_margin_half"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/txt_view_booking_code" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </carbon.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,6 @@
+rootProject.name = "Popiin"
+include ':app'
+include ':WheelPicker'
+include ':zoomage'
+include ':videotrimmer'
+include ':indexrecyclerview'

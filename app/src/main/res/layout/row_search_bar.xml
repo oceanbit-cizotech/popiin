@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="hint"
+            type="String" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/_padding_half"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <carbon.widget.EditText
+            android:textSize="@dimen/xsmall_text"
+            android:layout_marginStart="@dimen/_margin_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawablePadding="@dimen/_padding_10"
+            android:id="@+id/edt_search"
+            app:layout_constraintRight_toLeftOf="@id/iv_filter"
+            style="@style/edt_signup"
+            android:background="@color/colorSemiGrey"
+            android:hint="@string/txt_search_explore"
+            android:focusable="false"
+            android:clickable="true"
+            app:carbon_cornerRadius="@dimen/_corner_radius_25"
+            android:cursorVisible="false"
+            android:drawableLeft="@drawable/ic_explore_search"
+            android:layout_marginRight="@dimen/_margin_10" />
+
+
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/_margin"
+            android:id="@+id/iv_search_close"
+            android:src="@drawable/ic_search_close"
+            app:layout_constraintRight_toRightOf="@id/edt_search"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search"
+            app:layout_constraintTop_toTopOf="@id/edt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_marginRight="@dimen/_margin_20"
+            android:id="@+id/iv_filter"
+            app:layout_constraintBottom_toBottomOf="@id/edt_search"
+            app:layout_constraintTop_toTopOf="@id/edt_search"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

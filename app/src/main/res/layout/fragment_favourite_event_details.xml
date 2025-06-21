@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.popiin.res.FavouriteEventsRes.FavouriteEvent" />
+
+        <variable
+            name="common"
+            type="com.popiin.util.Common" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="username"
+            type="String" />
+        <variable
+            name="isFavorite"
+            type="int" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/top_header"
+            layout="@layout/incl_header_with_back"
+            bind:isHide="@{true}"
+            bind:title="@{@string/txt_event_details}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_margin"
+            app:layout_constraintBottom_toTopOf="@id/view_event_info"
+            app:layout_constraintLeft_toLeftOf="@id/top_header"
+            app:layout_constraintRight_toRightOf="@id/top_header"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_padding2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fl_event"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/event_header_height"
+                    android:layout_marginTop="@dimen/_margin_mid"
+                    android:paddingBottom="@dimen/_padding"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/iv_event"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/event_header_img_height"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        android:scaleType="centerCrop"
+                        app:carbon_cornerRadius="@dimen/_corner_radius"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_margin_half"
+                        android:layout_marginEnd="@dimen/_margin_half"
+                        android:background="@color/colorTransparent30"
+                        android:padding="@dimen/_padding_half"
+                        android:src="@drawable/ic_share"
+                        app:carbon_cornerRadius="@dimen/_corner_radius_20"
+                        app:layout_constraintRight_toLeftOf="@id/cb_like"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/colorWhite" />
+
+                    <carbon.widget.CheckBox
+                        android:id="@+id/cb_like"
+                        android:layout_width="@dimen/venue_detail_item_heart_size"
+                        android:layout_height="@dimen/venue_detail_item_heart_size"
+                        android:layout_margin="@dimen/_margin_half"
+                        android:background="@drawable/venue_detail_heart_selector"
+                        android:button="@null"
+                        android:checked="@{isFavorite == 1 ? true : false}"
+                        app:layout_constraintRight_toRightOf="@id/iv_event"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_margin2"
+                        android:layout_marginBottom="@dimen/_margin_half"
+                        app:cardCornerRadius="@dimen/_corner_radius_13"
+                        app:cardElevation="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="@dimen/_padding">
+
+                            <TextView
+                                android:id="@+id/tv_event_name"
+                                style="@style/text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_margin"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:text="@{model.event.name}"
+                                android:textColor="@color/colorWhatsOn"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Cirque Le Soir" />
+
+                            <TextView
+                                android:id="@+id/tv_event_location"
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_margin_half_half"
+                                android:drawableLeft="@drawable/ic_location_white"
+                                android:drawablePadding="@dimen/_padding_half_half"
+                                android:drawableTint="@color/colorBlue"
+                                android:text="@{model.event.address+`, `+model.event.city+`, `+model.event.postal_code}"
+                                android:textColor="@color/colorSecondaryText"
+                                app:layout_constraintLeft_toLeftOf="@id/tv_event_name"
+                                app:layout_constraintTop_toBottomOf="@id/tv_event_name"
+                                tools:text="Canary Wharf London" />
+
+                            <TextView
+                                android:id="@+id/tv_date"
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_margin_half_half"
+                                android:drawableLeft="@drawable/ic_blue_calendar"
+                                android:drawablePadding="@dimen/_padding_half_half"
+                                android:text="@{common.convertDateInFormat(model.event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`)}"
+                                android:textColor="@color/colorSecondaryText"
+                                app:layout_constraintLeft_toLeftOf="@id/tv_event_location"
+                                app:layout_constraintTop_toBottomOf="@id/tv_event_location"
+                                tools:text="26 Mar, 2022" />
+
+
+                            <carbon.widget.ImageView
+                                android:id="@+id/iv_dot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:layout_marginLeft="@dimen/_margin_half_half"
+                                android:src="@drawable/ic_round_dot"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                                app:layout_constraintLeft_toRightOf="@id/tv_date"
+                                app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+                            <TextView
+                                android:id="@+id/tv_calender_time"
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:layout_marginLeft="@dimen/_margin_half_half"
+                                android:drawablePadding="@dimen/_padding_half"
+                                android:text="@{common.convertDateInFormat(model.event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`)}"
+                                android:textColor="@color/colorSecondaryText"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                                app:layout_constraintLeft_toRightOf="@id/iv_dot"
+                                app:layout_constraintTop_toTopOf="@id/tv_date"
+                                tools:text="9 PM" />
+
+                            <TextView
+                                style="@style/text_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_margin"
+                                android:drawableLeft="@drawable/ic_yellow_star"
+                                android:drawablePadding="@dimen/_padding_half_half"
+                                android:text="@string/txt_default_ratings"
+                                android:visibility="gone"
+                                android:textColor="@color/colorEvents"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_event_name"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/tv_event_name"
+                               />
+
+                            <carbon.widget.TextView
+                                android:id="@+id/tv_price"
+                                style="@style/text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_margin"
+                                android:background="@color/colorSemiGrey"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:paddingHorizontal="@dimen/_padding_half"
+                                android:textColor="@color/colorBlue"
+                                app:carbon_cornerRadius="@dimen/_corner_radius"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_calender_time"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/tv_calender_time"
+                                tools:text="$50" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <carbon.widget.ConstraintLayout
+                    android:id="@+id/cl_event_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_margin_20"
+                    android:background="@color/colorSecondaryText50"
+                    android:paddingVertical="@dimen/_padding"
+                    app:carbon_cornerRadius="@dimen/_corner_radius"
+                    app:carbon_stroke="@color/colorMenuView"
+                    app:carbon_strokeWidth="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fl_event">
+
+                    <LinearLayout
+                        android:id="@+id/ll_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            bind:desc="@{common.convertDateInFormat(model.event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM yyyy`)}"
+                            bind:name="@{@string/txt_start_date}" />
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            bind:desc="@{common.convertDateInFormat(model.event.end_date_time,`yyyy-MM-dd HH:mm:ss`,`dd MMM  yyyy`)}"
+                            bind:name="@{@string/txt_end_date}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_margin_20"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintTop_toBottomOf="@id/ll_four">
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            bind:desc="@{common.convertDateInFormat(model.event.start_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`)}"
+                            bind:name="@{@string/txt_start_time}" />
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            bind:desc="@{common.convertDateInFormat(model.event.end_date_time,`yyyy-MM-dd HH:mm:ss`,`hh:mma`)}"
+                            bind:name="@{@string/txt_end_time}" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ll_dashed_view_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_20"
+                        android:src="@drawable/dashed_line"
+                        app:layout_constraintTop_toBottomOf="@id/ll_five" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_margin_20"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/ll_dashed_view_two">
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            bind:desc="@{model.event.venue}"
+                            bind:name="@{@string/txt_venue}" />
+
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:desc="@{model.event.age}"
+                            bind:name="@{@string/txt_age}" />
+
+                        <include
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:desc="@{model.event.description}"
+                            bind:name="@{@string/txt_description}" />
+
+                        <include
+                            android:id="@+id/incl_event_music"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            bind:name="@{@string/txt_plain_music}" />
+
+                        <include
+                            android:id="@+id/incl_event_dj_line_up"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:visibility="@{model.event.music_djlineup == null || model.event.music_djlineup.empty ? View.GONE : View.VISIBLE,default = gone}"
+                            bind:desc="@{model.event.music_djlineup}"
+                            bind:name="@{@string/txt_dj_lip_up_preformes}" />
+
+                        <include
+                            android:id="@+id/incl_event_dress_code"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:visibility="@{model.event.dress_code == null || model.event.dress_code.empty ? View.GONE : View.VISIBLE,default = gone}"
+                            bind:desc="@{model.event.dress_code}"
+                            bind:name="@{@string/txt_dress_code}" />
+
+                        <include
+                            android:id="@+id/incl_event_last_entry"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:name="@{@string/txt_last_entry}" />
+
+                        <include
+                            android:id="@+id/incl_event_tags"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            bind:name="@{@string/txt_tags}" />
+
+                        <include
+                            android:id="@+id/incl_event_entertainment"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            bind:name="@{@string/txt_entertainment}" />
+
+                        <include
+                            android:id="@+id/incl_event_entry_policy"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:name="@{@string/txt_entry_policy}" />
+
+                        <include
+                            android:id="@+id/incl_event_other_info"
+                            layout="@layout/include_event_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_margin_half"
+                            android:layout_weight="1"
+                            bind:name="@{@string/txt_other_information_plain}" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ll_dashed_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginHorizontal="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_20"
+                        android:src="@drawable/dashed_line"
+                        app:layout_constraintTop_toBottomOf="@id/ll_one" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/tv_add_to_calendar"
+                        style="@style/text_xsmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half_mid"
+                        android:background="@color/colorWhite"
+                        android:drawableLeft="@drawable/ic_calender_whats_on"
+                        android:drawablePadding="@dimen/_padding_half_half"
+                        android:fontFamily="@font/inter_medium"
+                        android:padding="@dimen/_padding_half"
+                        android:text="@string/txt_add_to_calendar"
+                        android:textColor="@color/colorBlue"
+                        app:carbon_cornerRadius="@dimen/_corner_radius"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll_dashed_view" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/tv_special_request"
+                        style="@style/text_xsmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin"
+                        android:background="@color/colorWhite"
+                        android:drawableLeft="@drawable/ic_special_request"
+                        android:drawablePadding="@dimen/_padding_half_half"
+                        android:fontFamily="@font/inter_medium"
+                        android:padding="@dimen/_padding_half"
+                        android:text="@string/txt_special_request"
+                        android:textColor="@color/colorBlue"
+                        android:visibility="gone"
+                        app:carbon_cornerRadius="@dimen/_corner_radius"
+                        app:layout_constraintLeft_toRightOf="@id/tv_add_to_calendar"
+                        app:layout_constraintTop_toBottomOf="@id/ll_dashed_view" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/tv_invite_friends"
+                        style="@style/text_xsmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_margin"
+                        android:layout_marginTop="@dimen/_margin_half_mid"
+                        android:background="@color/colorWhite"
+                        android:drawableLeft="@drawable/ic_invite_friends"
+                        android:drawablePadding="@dimen/_padding_half_half"
+                        android:fontFamily="@font/inter_medium"
+                        android:padding="@dimen/_padding_half"
+                        android:text="@string/txt_invite_friends"
+                        android:textColor="@color/colorBlue"
+                        app:carbon_cornerRadius="@dimen/_corner_radius"
+                        app:layout_constraintLeft_toRightOf="@id/tv_add_to_calendar"
+                        app:layout_constraintTop_toBottomOf="@id/ll_dashed_view" />
+                </carbon.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view_event_info"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_margin"
+            android:background="@color/colorRVBorder"
+            app:layout_constraintBottom_toTopOf="@id/ll_event_footer" />
+
+        <LinearLayout
+            android:id="@+id/ll_event_footer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:layout_marginHorizontal="@dimen/_margin_half"
+            android:layout_marginBottom="@dimen/_margin"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_get_directions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_margin_half"
+                android:layout_marginRight="@dimen/_margin_half_half"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                app:carbon_stroke="@color/colorHeaderText"
+                app:carbon_strokeWidth="1dp"
+                android:drawablePadding="@dimen/_padding_half"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:text="@string/txt_directions"
+                android:textColor="@color/colorHeaderText"
+                app:carbon_cornerRadius="@dimen/_corner_radius_22_5" />
+
+
+            <carbon.widget.TextView
+                android:id="@+id/tv_view_booking_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_margin_half_half"
+                android:layout_marginRight="@dimen/_margin_half"
+                android:layout_weight="1"
+                android:background="@drawable/bg_black_btn_with_round_corner"
+                android:drawablePadding="@dimen/_padding_half"
+                android:gravity="center"
+                android:text="@string/txt_book_now"
+                android:textColor="@color/colorWhite"
+                app:carbon_cornerRadius="@dimen/_corner_radius_25" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
